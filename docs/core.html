@@ -75,10 +75,11 @@ summary: "summary"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="s2">&quot;../config/user_info.json&quot;</span><span class="p">),</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">user_config_file</span><span class="p">:</span>
-        <span class="n">config</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">user_config_file</span><span class="p">)</span>
-        <span class="n">user</span> <span class="o">=</span> <span class="n">UserWithUserTokenBasedAuthentication</span><span class="p">(</span><span class="n">user_token</span><span class="o">=</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;user_token&quot;</span><span class="p">],</span>
-                                                   <span class="n">user_agent</span><span class="o">=</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;user_agent&quot;</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Example UserWithUserTokenBasedAuthentication</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="s2">&quot;../config/example_user_info.json&quot;</span><span class="p">),</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">user_config_file</span><span class="p">:</span>
+    <span class="n">config</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">user_config_file</span><span class="p">)</span>
+    <span class="n">user</span> <span class="o">=</span> <span class="n">UserWithUserTokenBasedAuthentication</span><span class="p">(</span><span class="n">user_token</span><span class="o">=</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;user_token&quot;</span><span class="p">],</span>
+                                                <span class="n">user_agent</span><span class="o">=</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;user_agent&quot;</span><span class="p">])</span>
 </pre></div>
 
     </div>

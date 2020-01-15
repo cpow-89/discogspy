@@ -3,7 +3,8 @@
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
 index = {"BASE_URL": "00_core.ipynb",
-         "UserWithUserTokenBasedAuthentication": "00_core.ipynb"}
+         "UserWithUserTokenBasedAuthentication": "00_core.ipynb",
+         "get_releases": "01_discogs_requests_database.ipynb"}
 
 modules = ["core.py",
            "discogs_requests/database.py"]

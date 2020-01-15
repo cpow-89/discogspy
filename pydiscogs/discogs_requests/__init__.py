@@ -1,1 +1,1 @@
-from pydiscogs.core import *
+from .database import *
