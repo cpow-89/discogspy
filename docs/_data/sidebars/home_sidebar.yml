@@ -11,7 +11,7 @@ entries:
       url: /
     - output: web,pdf
       title: Title
-      url: /discogs_requests_database
+      url: /discogs_requests.database
     output: web
     title: pydiscogs
   output: web
