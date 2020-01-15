@@ -140,3 +140,4 @@ checklink/cookies.txt
 .gitconfig
 
 /config/user_info.json
+/main_test.py
