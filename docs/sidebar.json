@@ -1,6 +1,7 @@
 {
   "pydiscogs": {
     "Overview": "/",
-    "Title": "/discogs_requests.database"
+    "pydiscogs.core": "/core",
+    "pydiscogs.discogs_requests.database": "/discogs_requests.database"
   }
 }

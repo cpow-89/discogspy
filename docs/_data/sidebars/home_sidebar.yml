@@ -10,7 +10,10 @@ entries:
       title: Overview
       url: /
     - output: web,pdf
-      title: Title
+      title: pydiscogs.core
+      url: /core
+    - output: web,pdf
+      title: pydiscogs.discogs_requests.database
       url: /discogs_requests.database
     output: web
     title: pydiscogs
