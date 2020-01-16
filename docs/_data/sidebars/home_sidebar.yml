@@ -10,11 +10,11 @@ entries:
       title: Overview
       url: /
     - output: web,pdf
-      title: Core
-      url: /core
+      title: Core User
+      url: /core.discogs_user
     - output: web,pdf
-      title: Discogs Requests Database
-      url: /discogs_requests.database
+      title: Core Database Requests
+      url: /core.database_rq
     output: web
     title: pydiscogs
   output: web

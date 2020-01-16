@@ -1,7 +1,7 @@
 {
   "pydiscogs": {
     "Overview": "/",
-    "Core": "/core",
-    "Discogs Requests Database": "/discogs_requests.database"
+    "Core User": "/core.discogs_user",
+    "Core Database Requests": "/core.database_rq"
   }
 }
