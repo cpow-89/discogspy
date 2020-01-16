@@ -2,10 +2,12 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {"UserWithUserTokenBasedAuthentication": "00_core.discogs_user.ipynb",
-         "get_release": "01_core.database_rq.ipynb"}
+index = {"BASE_URL": "00_core.constants.ipynb",
+         "UserWithUserTokenBasedAuthentication": "01_core.discogs_user.ipynb",
+         "get_release": "02_core.database_rq.ipynb"}
 
-modules = ["core/discogs_user.py",
+modules = ["core/constants.py",
+           "core/discogs_user.py",
            "core/database_rq.py"]
 
 doc_url = "https://cpow-89.github.io/pydiscogs/"

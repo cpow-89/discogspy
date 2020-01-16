@@ -10,6 +10,9 @@ entries:
       title: Overview
       url: /
     - output: web,pdf
+      title: Core Constants
+      url: /core.constants
+    - output: web,pdf
       title: Core User
       url: /core.discogs_user
     - output: web,pdf
