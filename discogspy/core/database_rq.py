@@ -8,7 +8,8 @@ from typing import Union
 from . import *
 
 # Cell
-def get_release(user:UserWithUserTokenBasedAuthentication,
+def get_release(user:Union[UserWithoutAuthentication,
+                           UserWithUserTokenBasedAuthentication],
                 release_id:int,
                 curr_abbr=Union[str, None])->requests.models.Response:
     """
@@ -20,13 +21,14 @@ def get_release(user:UserWithUserTokenBasedAuthentication,
     """
     url = f"{RELEASES_URL}/{release_id}"
     headers = user.headers
-    params = {"token": user.user_token}
+    params = user.params
     if curr_abbr and curr_abbr in VALID_CURR_ABBR:
         params["curr_addr"] = curr_abbr
     return requests.get(url, headers=headers, params=params)
 
 # Cell
-def get_release_rating_by_user(user:UserWithUserTokenBasedAuthentication,
+def get_release_rating_by_user(user:Union[UserWithoutAuthentication,
+                                          UserWithUserTokenBasedAuthentication],
                                release_id:int,
                                username=str)->requests.models.Response:
     """
@@ -36,5 +38,5 @@ def get_release_rating_by_user(user:UserWithUserTokenBasedAuthentication,
     """
     url = f"{RELEASES_URL}/{release_id}/rating/{username}"
     headers = user.headers
-    params = {"token": user.user_token}
+    params = user.params
     return requests.get(url, headers=headers, params=params)
