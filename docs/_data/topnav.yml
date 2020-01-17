@@ -2,7 +2,7 @@ topnav:
 - title: Topnav
   items:
     - title: GitHub
-      external_url: https://github.com/cpow-89/pydiscogs
+      external_url: https://github.com/cpow-89/discogspy
 
 #Topnav dropdowns
 topnav_dropdowns:

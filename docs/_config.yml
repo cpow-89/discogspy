@@ -1,7 +1,7 @@
-repository: cpow-89/pydiscogs
+repository: cpow-89/discogspy
 output: web
-topnav_title: pydiscogs
-site_title: pydiscogs
+topnav_title: discogspy
+site_title: discogspy
 company_name: Christoph Powazny
 description: A set of wrapper and tools to make use of the discogs api
 # Set to false to disable KaTeX math
@@ -61,4 +61,4 @@ sidebars:
 permalink: pretty
 
 theme: jekyll-theme-cayman
-baseurl: /pydiscogs/
+baseurl: /discogspy/

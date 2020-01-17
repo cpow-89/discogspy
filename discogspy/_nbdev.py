@@ -13,8 +13,8 @@ modules = ["core/constants.py",
            "core/discogs_user.py",
            "core/database_rq.py"]
 
-doc_url = "https://cpow-89.github.io/pydiscogs/"
+doc_url = "https://cpow-89.github.io/discogspy/"
 
-git_url = "https://github.com/cpow-89/pydiscogs/tree/master/"
+git_url = "https://github.com/cpow-89/discogspy/tree/master/"
 
 def custom_doc_links(name): return None

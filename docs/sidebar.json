@@ -1,5 +1,5 @@
 {
-  "pydiscogs": {
+  "discogspy": {
     "Overview": "/",
     "Core Constants": "/core.constants",
     "Core User": "/core.discogs_user",
