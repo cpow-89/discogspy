@@ -8,7 +8,8 @@ index = {"BASE_URL": "00_core.constants.ipynb",
          "UserWithoutAuthentication": "01_core.discogs_user.ipynb",
          "UserWithUserTokenBasedAuthentication": "01_core.discogs_user.ipynb",
          "get_release": "02_core.database_rq.ipynb",
-         "get_release_rating_by_user": "02_core.database_rq.ipynb"}
+         "get_release_rating_by_user": "02_core.database_rq.ipynb",
+         "update_release_rating_for_given_user": "02_core.database_rq.ipynb"}
 
 modules = ["core/constants.py",
            "core/discogs_user.py",

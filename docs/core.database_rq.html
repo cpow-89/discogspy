@@ -37,7 +37,7 @@ summary: "function wrapper around the discogs api for database interactions"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_release" class="doc_header"><code>get_release</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/database_rq.py#L11" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_release</code>(<strong><code>user</code></strong>:<code>Union</code>[<a href="/discogspy/core.discogs_user#UserWithoutAuthentication"><code>UserWithoutAuthentication</code></a>, <a href="/discogspy/core.discogs_user#UserWithUserTokenBasedAuthentication"><code>UserWithUserTokenBasedAuthentication</code></a>], <strong><code>release_id</code></strong>:<code>int</code>, <strong><code>curr_abbr</code></strong>=<em><code>typing.Union[str, NoneType]</code></em>)</p>
+<h4 id="get_release" class="doc_header"><code>get_release</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/database_rq.py#L13" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_release</code>(<strong><code>user</code></strong>:<code>Union</code>[<a href="/discogspy/core.discogs_user#UserWithoutAuthentication"><code>UserWithoutAuthentication</code></a>, <a href="/discogspy/core.discogs_user#UserWithUserTokenBasedAuthentication"><code>UserWithUserTokenBasedAuthentication</code></a>], <strong><code>release_id</code></strong>:<code>int</code>, <strong><code>curr_abbr</code></strong>:<code>Optional</code>[<code>str</code>])</p>
 </blockquote>
 <p>Get information to a particular release from discogs database.
 A release represents a particular physical or digital object released by
@@ -94,9 +94,9 @@ one or more Artists.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_release_rating_by_user" class="doc_header"><code>get_release_rating_by_user</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/database_rq.py#L30" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_release_rating_by_user</code>(<strong><code>user</code></strong>:<code>Union</code>[<a href="/discogspy/core.discogs_user#UserWithoutAuthentication"><code>UserWithoutAuthentication</code></a>, <a href="/discogspy/core.discogs_user#UserWithUserTokenBasedAuthentication"><code>UserWithUserTokenBasedAuthentication</code></a>], <strong><code>release_id</code></strong>:<code>int</code>, <strong><code>username</code></strong>=<em><code>'str'</code></em>)</p>
+<h4 id="get_release_rating_by_user" class="doc_header"><code>get_release_rating_by_user</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/database_rq.py#L34" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_release_rating_by_user</code>(<strong><code>user</code></strong>:<code>Union</code>[<a href="/discogspy/core.discogs_user#UserWithoutAuthentication"><code>UserWithoutAuthentication</code></a>, <a href="/discogspy/core.discogs_user#UserWithUserTokenBasedAuthentication"><code>UserWithUserTokenBasedAuthentication</code></a>], <strong><code>release_id</code></strong>:<code>int</code>, <strong><code>username</code></strong>:<code>str</code>)</p>
 </blockquote>
-<p>Get the rating of a release for a given user.</p>
+<p>Get the rating of a release made by a given user.</p>
 <p>No user Authentication needed.</p>
 
 </div>
@@ -129,6 +129,63 @@ one or more Artists.</p>
 
 <div class="output_text output_subarea output_execute_result">
 <pre>&lt;Response [200]&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="update_release_rating_for_given_user" class="doc_header"><code>update_release_rating_for_given_user</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/database_rq.py#L51" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>update_release_rating_for_given_user</code>(<strong><code>user</code></strong>:<a href="/discogspy/core.discogs_user#UserWithUserTokenBasedAuthentication"><code>UserWithUserTokenBasedAuthentication</code></a>, <strong><code>release_id</code></strong>:<code>int</code>, <strong><code>username</code></strong>:<code>str</code>, <strong><code>rating</code></strong>:<code>int</code>)</p>
+</blockquote>
+<p>Update the rating of a release made by a given user.</p>
+<p>User Authentication needed.</p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Example for usage of update_release_rating_for_given_user</span>
+
+<span class="n">update_release_rating_for_given_user</span><span class="p">(</span><span class="n">example_user</span><span class="p">,</span> <span class="n">release_id</span><span class="o">=</span><span class="mi">11690093</span><span class="p">,</span> 
+                                     <span class="n">username</span><span class="o">=</span><span class="s2">&quot;derneueweg-label&quot;</span><span class="p">,</span> <span class="n">rating</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;Response [201]&gt;</pre>
 </div>
 
 </div>
