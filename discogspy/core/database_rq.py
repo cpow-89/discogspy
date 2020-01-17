@@ -11,9 +11,13 @@ from . import *
 def get_release(user:UserWithUserTokenBasedAuthentication,
                 release_id:int,
                 curr_abbr=Union[str, None])->requests.models.Response:
-    """Get information to a particular release from discogs database.
-       A release represents a particular physical or digital object released by
-       one or more Artists."""
+    """
+    Get information to a particular release from discogs database.
+    A release represents a particular physical or digital object released by
+    one or more Artists.
+
+    No user Authentication needed.
+    """
     url = f"{RELEASES_URL}/{release_id}"
     headers = user.headers
     params = {"token": user.user_token}
@@ -25,7 +29,11 @@ def get_release(user:UserWithUserTokenBasedAuthentication,
 def get_release_rating_by_user(user:UserWithUserTokenBasedAuthentication,
                                release_id:int,
                                username=str)->requests.models.Response:
-    """Get the rating of a release for a given user."""
+    """
+    Get the rating of a release for a given user.
+
+    No user Authentication needed.
+    """
     url = f"{RELEASES_URL}/{release_id}/rating/{username}"
     headers = user.headers
     params = {"token": user.user_token}
