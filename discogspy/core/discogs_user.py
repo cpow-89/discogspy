@@ -3,6 +3,8 @@
 __all__ = ['UserWithoutAuthentication', 'UserWithUserTokenBasedAuthentication']
 
 # Cell
+
+
 class UserWithoutAuthentication(object):
     """A wrapper for information about an user without authentication"""
     def __init__(self):
@@ -13,6 +15,8 @@ class UserWithoutAuthentication(object):
         self.params = {}
 
 # Cell
+
+
 class UserWithUserTokenBasedAuthentication(object):
     """A wrapper for information about an user with user token based authentication"""
     def __init__(self, user_token, user_agent):
