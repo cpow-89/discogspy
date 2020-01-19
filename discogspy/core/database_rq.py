@@ -2,7 +2,7 @@
 
 __all__ = ['get_release', 'get_release_rating_by_user', 'update_release_rating_for_given_user',
            'delete_release_rating_by_user', 'get_release_rating_by_community', 'get_master_release',
-           'get_releases_related_to_master_release', 'get_artist', 'get_artist_releases']
+           'get_releases_related_to_master_release', 'get_artist', 'get_artist_releases', 'get_label']
 
 # Cell
 import requests
@@ -206,5 +206,24 @@ def get_artist_releases(user: Union[UserWithoutAuthentication,
         params["sort"] = sort
     if sort_order and sort_order in VALID_SORT_ORDER:
         params["sort_order"] = sort_order
+
+    return requests.get(url, headers=headers, params=params)
+
+# Cell
+
+
+def get_label(user: Union[UserWithoutAuthentication,
+                          UserWithUserTokenBasedAuthentication],
+              label_id: int) -> requests.models.Response:
+    """
+    Get information about an label.
+    A label resource represents a label, company,
+    recording studio, location, or other entity involved with artists and releases.
+
+    No user Authentication needed.
+    """
+    url = f"{LABEL_URL}/{label_id}"
+    headers = user.headers
+    params = user.params
 
     return requests.get(url, headers=headers, params=params)
