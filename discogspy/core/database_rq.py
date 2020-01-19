@@ -202,7 +202,7 @@ def get_artist_releases(user: Union[UserWithoutAuthentication,
         params["page"] = max(1, page)
     if per_page:
         params["per_page"] = max(1, per_page)
-    if sort and sort in VALID_SORT_OPTIONS_MASTERS:
+    if sort and sort in VALID_SORT_OPTIONS_ARTIST:
         params["sort"] = sort
     if sort_order and sort_order in VALID_SORT_ORDER:
         params["sort_order"] = sort_order
