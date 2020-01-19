@@ -2,7 +2,7 @@
 
 __all__ = ['get_release', 'get_release_rating_by_user', 'update_release_rating_for_given_user',
            'delete_release_rating_by_user', 'get_release_rating_by_community', 'get_master_release',
-           'get_releases_related_to_master_release', 'get_artist']
+           'get_releases_related_to_master_release', 'get_artist', 'get_artist_releases']
 
 # Cell
 import requests
@@ -15,7 +15,7 @@ from . import *
 def get_release(user: Union[UserWithoutAuthentication,
                             UserWithUserTokenBasedAuthentication],
                 release_id: int,
-                curr_abbr: Union[str, None]) -> requests.models.Response:
+                curr_abbr: Union[str, None]=None) -> requests.models.Response:
     """
     Get information to a particular release from discogs database.
     A release represents a particular physical or digital object released by
@@ -140,6 +140,7 @@ def get_releases_related_to_master_release(user: Union[UserWithoutAuthentication
 
     No user Authentication needed.
     """
+
     url = f"{MASTERS_URL}/{master_id}/versions"
     headers = user.headers
     params = user.params
@@ -155,7 +156,7 @@ def get_releases_related_to_master_release(user: Union[UserWithoutAuthentication
         params["released"] = released
     if country:
         params["country"] = country
-    if sort and sort in VALID_SORT_OPTIONS:
+    if sort and sort in VALID_SORT_OPTIONS_MASTERS:
         params["sort"] = sort
     if sort_order and sort_order in VALID_SORT_ORDER:
         params["sort_order"] = sort_order
@@ -176,4 +177,34 @@ def get_artist(user: Union[UserWithoutAuthentication,
     url = f"{ARTIST_URL}/{artist_id}"
     headers = user.headers
     params = user.params
+    return requests.get(url, headers=headers, params=params)
+
+# Cell
+
+
+def get_artist_releases(user: Union[UserWithoutAuthentication,
+                                    UserWithUserTokenBasedAuthentication],
+                        artist_id: int,
+                        page: Union[int, None] = None,
+                        per_page: Union[int, None] = None,
+                        sort: Union[str, None]=None,
+                        sort_order: Union[str, None]=None) -> requests.models.Response:
+    """
+    Get a list of releases and masters associated with the given artist.
+
+    No user Authentication needed.
+    """
+    url = f"{ARTIST_URL}/{artist_id}/releases"
+    headers = user.headers
+    params = user.params
+
+    if page:
+        params["page"] = max(1, page)
+    if per_page:
+        params["per_page"] = max(1, per_page)
+    if sort and sort in VALID_SORT_OPTIONS_MASTERS:
+        params["sort"] = sort
+    if sort_order and sort_order in VALID_SORT_ORDER:
+        params["sort_order"] = sort_order
+
     return requests.get(url, headers=headers, params=params)
