@@ -16,7 +16,7 @@ from . import *
 def get_release(user: Union[UserWithoutAuthentication,
                             UserWithUserTokenBasedAuthentication],
                 release_id: int,
-                curr_abbr: Union[str, None]=None) -> requests.models.Response:
+                curr_abbr: Union[CurrAbbr, None] = None) -> requests.models.Response:
     """
     Get information to a particular release from discogs database.
     A release represents a particular physical or digital object released by
@@ -27,8 +27,8 @@ def get_release(user: Union[UserWithoutAuthentication,
     url = f"{RELEASES_URL}/{release_id}"
     headers = user.headers
     params = user.params
-    if curr_abbr and curr_abbr in VALID_CURR_ABBR:
-        params["curr_addr"] = curr_abbr
+    if curr_abbr:
+        params["curr_abbr"] = curr_abbr.name
     return requests.get(url, headers=headers, params=params)
 
 # Cell
@@ -134,8 +134,8 @@ def get_releases_related_to_master_release(user: Union[UserWithoutAuthentication
                                            label: Union[str, None] = None,
                                            released: Union[str, None] = None,
                                            country: Union[str, None] = None,
-                                           sort: Union[str, None] = None,
-                                           sort_order: Union[str, None] = None) -> requests.models.Response:
+                                           sort: Union[SortOptionsMaster, None] = None,
+                                           sort_order: Union[SortOrder, None] = None) -> requests.models.Response:
     """
     Get a list of all Releases that are versions of a given master release.
 
@@ -157,10 +157,10 @@ def get_releases_related_to_master_release(user: Union[UserWithoutAuthentication
         params["released"] = released
     if country:
         params["country"] = country
-    if sort and sort in VALID_SORT_OPTIONS_MASTERS:
-        params["sort"] = sort
-    if sort_order and sort_order in VALID_SORT_ORDER:
-        params["sort_order"] = sort_order
+    if sort:
+        params["sort"] = sort.name
+    if sort_order:
+        params["sort_order"] = sort_order.name
     return requests.get(url, headers=headers, params=params)
 
 # Cell
@@ -188,8 +188,8 @@ def get_artist_releases(user: Union[UserWithoutAuthentication,
                         artist_id: int,
                         page: Union[int, None] = None,
                         per_page: Union[int, None] = None,
-                        sort: Union[str, None]=None,
-                        sort_order: Union[str, None]=None) -> requests.models.Response:
+                        sort: Union[SortOptionsArtist, None] = None,
+                        sort_order: Union[SortOrder, None] = None) -> requests.models.Response:
     """
     Get a list of releases and masters associated with the given artist.
 
@@ -203,10 +203,10 @@ def get_artist_releases(user: Union[UserWithoutAuthentication,
         params["page"] = max(1, page)
     if per_page:
         params["per_page"] = max(1, per_page)
-    if sort and sort in VALID_SORT_OPTIONS_ARTIST:
-        params["sort"] = sort
-    if sort_order and sort_order in VALID_SORT_ORDER:
-        params["sort_order"] = sort_order
+    if sort:
+        params["sort"] = sort.name
+    if sort_order:
+        params["sort_order"] = sort_order.name
 
     return requests.get(url, headers=headers, params=params)
 
@@ -234,13 +234,13 @@ def get_label(user: Union[UserWithoutAuthentication,
 
 def get_label_releases(user: Union[UserWithoutAuthentication,
                                    UserWithUserTokenBasedAuthentication],
-                        label_id: int,
-                        page: Union[int, None] = None,
-                        per_page: Union[int, None] = None,
-                        sort: Union[str, None]=None,
-                        sort_order: Union[str, None]=None) -> requests.models.Response:
+                       label_id: int,
+                       page: Union[int, None] = None,
+                       per_page: Union[int, None] = None,
+                       sort: Union[SortOptionsLabel, None] = None,
+                       sort_order: Union[SortOrder, None] = None) -> requests.models.Response:
     """
-    Get a list of releases and masters associated with the given artist.
+    Get a list of releases and masters associated with the given label.
 
     No user Authentication needed.
     """
@@ -252,9 +252,9 @@ def get_label_releases(user: Union[UserWithoutAuthentication,
         params["page"] = max(1, page)
     if per_page:
         params["per_page"] = max(1, per_page)
-    if sort and sort in VALID_SORT_OPTIONS_LABEL:
-        params["sort"] = sort
-    if sort_order and sort_order in VALID_SORT_ORDER:
-        params["sort_order"] = sort_order
+    if sort:
+        params["sort"] = sort.name
+    if sort_order:
+        params["sort_order"] = sort_order.name
 
     return requests.get(url, headers=headers, params=params)

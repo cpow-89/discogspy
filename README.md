@@ -8,9 +8,9 @@
 
 -->
 
-# Project name here
+# Discogspy
 
-> Summary description here.
+> Discogspy is an easy to use python wrapper around the discogs api.
 
 
 This file will become your README and also the index of your documentation.
