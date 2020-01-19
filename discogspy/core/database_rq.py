@@ -2,7 +2,7 @@
 
 __all__ = ['get_release', 'get_release_rating_by_user', 'update_release_rating_for_given_user',
            'delete_release_rating_by_user', 'get_release_rating_by_community', 'get_master_release',
-           'get_releases_related_to_master_release']
+           'get_releases_related_to_master_release', 'get_artist']
 
 # Cell
 import requests
@@ -129,7 +129,7 @@ def get_releases_related_to_master_release(user: Union[UserWithoutAuthentication
                                            master_id: int,
                                            page: Union[int, None] = None,
                                            per_page: Union[int, None] = None,
-                                           format: Union[str, None] = None,
+                                           release_format: Union[str, None] = None,
                                            label: Union[str, None] = None,
                                            released: Union[str, None] = None,
                                            country: Union[str, None] = None,
@@ -147,8 +147,8 @@ def get_releases_related_to_master_release(user: Union[UserWithoutAuthentication
         params["page"] = max(1, page)
     if per_page:
         params["per_page"] = max(1, per_page)
-    if format:
-        params["format"] = format
+    if release_format:
+        params["format"] = release_format
     if label:
         params["label"] = label
     if released:
@@ -159,4 +159,21 @@ def get_releases_related_to_master_release(user: Union[UserWithoutAuthentication
         params["sort"] = sort
     if sort_order and sort_order in VALID_SORT_ORDER:
         params["sort_order"] = sort_order
+    return requests.get(url, headers=headers, params=params)
+
+# Cell
+
+
+def get_artist(user: Union[UserWithoutAuthentication,
+                           UserWithUserTokenBasedAuthentication],
+               artist_id: int) -> requests.models.Response:
+    """
+    Get information about an artist.
+    An Artist represents a person in the Discogs database who contributed to a Release in some capacity.
+
+    No user Authentication needed.
+    """
+    url = f"{ARTIST_URL}/{artist_id}"
+    headers = user.headers
+    params = user.params
     return requests.get(url, headers=headers, params=params)
