@@ -10,6 +10,7 @@ index = {"BASE_URL": "00_core.constants.ipynb",
          "VALID_CURR_ABBR": "00_core.constants.ipynb",
          "VALID_SORT_OPTIONS_MASTERS": "00_core.constants.ipynb",
          "VALID_SORT_OPTIONS_ARTIST": "00_core.constants.ipynb",
+         "VALID_SORT_OPTIONS_LABEL": "00_core.constants.ipynb",
          "VALID_SORT_ORDER": "00_core.constants.ipynb",
          "UserWithoutAuthentication": "01_core.discogs_user.ipynb",
          "UserWithUserTokenBasedAuthentication": "01_core.discogs_user.ipynb",
@@ -22,7 +23,8 @@ index = {"BASE_URL": "00_core.constants.ipynb",
          "get_releases_related_to_master_release": "02_core.database_rq.ipynb",
          "get_artist": "02_core.database_rq.ipynb",
          "get_artist_releases": "02_core.database_rq.ipynb",
-         "get_label": "02_core.database_rq.ipynb"}
+         "get_label": "02_core.database_rq.ipynb",
+         "get_label_releases": "02_core.database_rq.ipynb"}
 
 modules = ["core/constants.py",
            "core/discogs_user.py",

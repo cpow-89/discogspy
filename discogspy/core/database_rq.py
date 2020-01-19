@@ -2,7 +2,8 @@
 
 __all__ = ['get_release', 'get_release_rating_by_user', 'update_release_rating_for_given_user',
            'delete_release_rating_by_user', 'get_release_rating_by_community', 'get_master_release',
-           'get_releases_related_to_master_release', 'get_artist', 'get_artist_releases', 'get_label']
+           'get_releases_related_to_master_release', 'get_artist', 'get_artist_releases', 'get_label',
+           'get_label_releases']
 
 # Cell
 import requests
@@ -225,5 +226,35 @@ def get_label(user: Union[UserWithoutAuthentication,
     url = f"{LABEL_URL}/{label_id}"
     headers = user.headers
     params = user.params
+
+    return requests.get(url, headers=headers, params=params)
+
+# Cell
+
+
+def get_label_releases(user: Union[UserWithoutAuthentication,
+                                   UserWithUserTokenBasedAuthentication],
+                        label_id: int,
+                        page: Union[int, None] = None,
+                        per_page: Union[int, None] = None,
+                        sort: Union[str, None]=None,
+                        sort_order: Union[str, None]=None) -> requests.models.Response:
+    """
+    Get a list of releases and masters associated with the given artist.
+
+    No user Authentication needed.
+    """
+    url = f"{LABEL_URL}/{label_id}/releases"
+    headers = user.headers
+    params = user.params
+
+    if page:
+        params["page"] = max(1, page)
+    if per_page:
+        params["per_page"] = max(1, per_page)
+    if sort and sort in VALID_SORT_OPTIONS_LABEL:
+        params["sort"] = sort
+    if sort_order and sort_order in VALID_SORT_ORDER:
+        params["sort_order"] = sort_order
 
     return requests.get(url, headers=headers, params=params)
