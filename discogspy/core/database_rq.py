@@ -18,7 +18,7 @@ def get_release(user: Union[UserWithoutAuthentication,
                 release_id: int,
                 curr_abbr: Union[CurrAbbr, None] = None) -> requests.models.Response:
     """
-    Get information to a particular release from discogs database.
+    Get information to a particular release from Discogs database.
     A release represents a particular physical or digital object released by
     one or more Artists.
 
@@ -111,7 +111,7 @@ def get_master_release(user: Union[UserWithoutAuthentication,
                                    UserWithUserTokenBasedAuthentication],
                        master_id: int) -> requests.models.Response:
     """
-    Get information to a particular master release from discogs database.
+    Get information to a particular master release from Discogs database.
     A Master release represents a set of similar Releases.
     Masters releases have a “main release” which is often the chronologically earliest.
 
@@ -217,7 +217,7 @@ def get_label(user: Union[UserWithoutAuthentication,
                           UserWithUserTokenBasedAuthentication],
               label_id: int) -> requests.models.Response:
     """
-    Get information about an label.
+    Get information about a label.
     A label resource represents a label, company,
     recording studio, location, or other entity involved with artists and releases.
 

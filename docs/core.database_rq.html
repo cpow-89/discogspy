@@ -5,7 +5,7 @@ title: Core Database Requests
 keywords: fastai
 sidebar: home_sidebar
 
-summary: "function wrapper around the discogs api for database interactions"
+summary: "Core.database_rq is a collection of function wrappers around the Discogs api for database interactions."
 ---
 <!--
 
@@ -45,7 +45,7 @@ summary: "function wrapper around the discogs api for database interactions"
 <div class="output_markdown rendered_html output_subarea ">
 <h4 id="get_release" class="doc_header"><code>get_release</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/database_rq.py#L16" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_release</code>(<strong><code>user</code></strong>:<code>Union</code>[<a href="/discogspy/core.discogs_user#UserWithoutAuthentication"><code>UserWithoutAuthentication</code></a>, <a href="/discogspy/core.discogs_user#UserWithUserTokenBasedAuthentication"><code>UserWithUserTokenBasedAuthentication</code></a>], <strong><code>release_id</code></strong>:<code>int</code>, <strong><code>curr_abbr</code></strong>:<code>Optional</code>[<a href="/discogspy/core.constants#CurrAbbr"><code>CurrAbbr</code></a>]=<em><code>None</code></em>)</p>
 </blockquote>
-<p>Get information to a particular release from discogs database.
+<p>Get information to a particular release from Discogs database.
 A release represents a particular physical or digital object released by
 one or more Artists.</p>
 <p>No user Authentication needed.</p>
@@ -342,7 +342,7 @@ the total number of user ratings for a given release.</p>
 <div class="output_markdown rendered_html output_subarea ">
 <h4 id="get_master_release" class="doc_header"><code>get_master_release</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/database_rq.py#L110" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_master_release</code>(<strong><code>user</code></strong>:<code>Union</code>[<a href="/discogspy/core.discogs_user#UserWithoutAuthentication"><code>UserWithoutAuthentication</code></a>, <a href="/discogspy/core.discogs_user#UserWithUserTokenBasedAuthentication"><code>UserWithUserTokenBasedAuthentication</code></a>], <strong><code>master_id</code></strong>:<code>int</code>)</p>
 </blockquote>
-<p>Get information to a particular master release from discogs database.
+<p>Get information to a particular master release from Discogs database.
 A Master release represents a set of similar Releases.
 Masters releases have a “main release” which is often the chronologically earliest.</p>
 <p>No user Authentication needed.</p>
@@ -575,7 +575,7 @@ An Artist represents a person in the Discogs database who contributed to a Relea
 <div class="output_markdown rendered_html output_subarea ">
 <h4 id="get_label" class="doc_header"><code>get_label</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/database_rq.py#L216" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_label</code>(<strong><code>user</code></strong>:<code>Union</code>[<a href="/discogspy/core.discogs_user#UserWithoutAuthentication"><code>UserWithoutAuthentication</code></a>, <a href="/discogspy/core.discogs_user#UserWithUserTokenBasedAuthentication"><code>UserWithUserTokenBasedAuthentication</code></a>], <strong><code>label_id</code></strong>:<code>int</code>)</p>
 </blockquote>
-<p>Get information about an label.
+<p>Get information about a label.
 A label resource represents a label, company,
 recording studio, location, or other entity involved with artists and releases.</p>
 <p>No user Authentication needed.</p>

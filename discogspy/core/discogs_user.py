@@ -6,7 +6,7 @@ __all__ = ['UserWithoutAuthentication', 'UserWithUserTokenBasedAuthentication']
 
 
 class UserWithoutAuthentication(object):
-    """A wrapper for information about an user without authentication"""
+    """A wrapper for information about a user without authentication"""
     def __init__(self):
         self.headers = {
             "Accept": "json",
@@ -18,7 +18,7 @@ class UserWithoutAuthentication(object):
 
 
 class UserWithUserTokenBasedAuthentication(object):
-    """A wrapper for information about an user with user token based authentication"""
+    """A wrapper for information about a user with user token-based authentication"""
     def __init__(self, user_token, user_agent):
         self.headers = {
             "Accept": "json",

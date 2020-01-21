@@ -10,7 +10,7 @@
 
 # Discogspy
 
-> Discogspy is an easy to use python wrapper around the discogs api.
+> Discogspy is an easy to use python wrapper around the Discogs api.
 
 
 Important: This package is under substantial development. See Road Map for more information.
@@ -36,9 +36,10 @@ Important: This package is under substantial development. See Road Map for more 
 2. Create response wrapper
 
 ## How to use
-> For detailed explanation please visit the [documentation](https: //cpow-89.github.io/discogspy/).
 
-Currently, you have two options for starting requests to discogs.
+For detailed explanation please visit the [documentation](https://cpow-89.github.io/discogspy/).
+
+Currently, you have two options for starting requests to Discogs.
 
 1. Create a user object without authentication. This will limit your options cause a lot of api calls require authentication.
 <div class="codecell" markdown="1">
