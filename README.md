@@ -10,7 +10,7 @@
 
 # Discogspy
 
-> Discogspy is an easy to use python wrapper around the Discogs api.
+> Discogspy is a  type-safe and easy to use python wrapper around the Discogs API.
 
 
 Important: This package is under substantial development. See Road Map for more information.
@@ -22,7 +22,7 @@ Important: This package is under substantial development. See Road Map for more 
 
 ## Road Map
 
-1. Create type save python wrapper around the discogs api
+1. Create type save python wrapper around the Discogs API
     
     a) Wrap database calls (done - except search request cause I personally dont have any usecase for it)<br>
     b) Wrap marketplace calls<br>
@@ -47,10 +47,10 @@ Currently, you have two options for starting requests to Discogs.
 
 ```python
 from discogspy.core.discogs_user import UserWithoutAuthentication
-from discogspy.core import database_rq
+from discogspy.core import rq_database
 
 user = UserWithoutAuthentication()
-resp = database_rq.get_release(user, 1972502)
+resp = rq_database.get_release(user, 1972502)
 ```
 
 </div>
@@ -63,11 +63,11 @@ resp = database_rq.get_release(user, 1972502)
 
 ```python
 from discogspy.core.discogs_user import UserWithUserTokenBasedAuthentication
-from discogspy.core import database_rq
+from discogspy.core import rq_database
 
 user_with_authentication = UserWithUserTokenBasedAuthentication(user_token="your_user_token",
                                                                 user_agent="your_user_agent")
-resp = database_rq.get_release(user, 1972502)
+resp = rq_database.get_release(user, 1972502)
 ```
 
 </div>

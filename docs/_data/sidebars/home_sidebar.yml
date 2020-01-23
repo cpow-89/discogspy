@@ -17,7 +17,10 @@ entries:
       url: /core.discogs_user
     - output: web,pdf
       title: Core Database Requests
-      url: /core.database_rq
+      url: /core.rq_database
+    - output: web,pdf
+      title: Core Marketplace Requests
+      url: /core.rq_marketplace
     output: web
     title: discogspy
   output: web

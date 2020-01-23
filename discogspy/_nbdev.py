@@ -14,21 +14,22 @@ index = {"BASE_URL": "00_core.constants.ipynb",
          "SortOrder": "00_core.constants.ipynb",
          "UserWithoutAuthentication": "01_core.discogs_user.ipynb",
          "UserWithUserTokenBasedAuthentication": "01_core.discogs_user.ipynb",
-         "get_release": "02_core.database_rq.ipynb",
-         "get_release_rating_by_user": "02_core.database_rq.ipynb",
-         "update_release_rating_for_given_user": "02_core.database_rq.ipynb",
-         "delete_release_rating_by_user": "02_core.database_rq.ipynb",
-         "get_release_rating_by_community": "02_core.database_rq.ipynb",
-         "get_master_release": "02_core.database_rq.ipynb",
-         "get_releases_related_to_master_release": "02_core.database_rq.ipynb",
-         "get_artist": "02_core.database_rq.ipynb",
-         "get_artist_releases": "02_core.database_rq.ipynb",
-         "get_label": "02_core.database_rq.ipynb",
-         "get_label_releases": "02_core.database_rq.ipynb"}
+         "get_release": "02_core.rq_database.ipynb",
+         "get_release_rating_by_user": "02_core.rq_database.ipynb",
+         "update_release_rating_for_given_user": "02_core.rq_database.ipynb",
+         "delete_release_rating_by_user": "02_core.rq_database.ipynb",
+         "get_release_rating_by_community": "02_core.rq_database.ipynb",
+         "get_master_release": "02_core.rq_database.ipynb",
+         "get_releases_related_to_master_release": "02_core.rq_database.ipynb",
+         "get_artist": "02_core.rq_database.ipynb",
+         "get_artist_releases": "02_core.rq_database.ipynb",
+         "get_label": "02_core.rq_database.ipynb",
+         "get_label_releases": "02_core.rq_database.ipynb"}
 
 modules = ["core/constants.py",
            "core/discogs_user.py",
-           "core/database_rq.py"]
+           "core/rq_database.py",
+           "core/rq_marketplace.py"]
 
 doc_url = "https://cpow-89.github.io/discogspy/"
 

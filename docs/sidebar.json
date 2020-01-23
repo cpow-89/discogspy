@@ -3,6 +3,7 @@
     "Overview": "/",
     "Core Constants": "/core.constants",
     "Core User": "/core.discogs_user",
-    "Core Database Requests": "/core.database_rq"
+    "Core Database Requests": "/core.rq_database",
+    "Core Marketplace Requests": "/core.rq_marketplace"
   }
 }
