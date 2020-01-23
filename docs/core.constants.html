@@ -41,6 +41,7 @@ summary: "Constants"
 <span class="n">MASTERS_URL</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{BASE_URL}</span><span class="s2">/masters&quot;</span>
 <span class="n">ARTIST_URL</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{BASE_URL}</span><span class="s2">/artists&quot;</span>
 <span class="n">LABEL_URL</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{BASE_URL}</span><span class="s2">/labels&quot;</span>
+<span class="n">USERS_URL</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{BASE_URL}</span><span class="s2">/users&quot;</span>
 </pre></div>
 
     </div>
@@ -70,18 +71,18 @@ summary: "Constants"
 <span class="sd">    Valid currencies for marketplace data</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     
-    <span class="n">USD</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">GBP</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="n">EUR</span> <span class="o">=</span> <span class="mi">2</span>
-    <span class="n">CAD</span> <span class="o">=</span> <span class="mi">3</span>
-    <span class="n">AUD</span> <span class="o">=</span> <span class="mi">4</span>
-    <span class="n">JPY</span> <span class="o">=</span> <span class="mi">5</span>
-    <span class="n">CHF</span> <span class="o">=</span> <span class="mi">6</span>
-    <span class="n">MXN</span> <span class="o">=</span> <span class="mi">7</span>
-    <span class="n">BRL</span> <span class="o">=</span> <span class="mi">8</span>
-    <span class="n">NZD</span> <span class="o">=</span> <span class="mi">9</span>
-    <span class="n">SEK</span> <span class="o">=</span> <span class="mi">10</span>
-    <span class="n">ZAR</span> <span class="o">=</span> <span class="mi">11</span>
+    <span class="n">USD</span> <span class="o">=</span> <span class="s2">&quot;USD&quot;</span>
+    <span class="n">GBP</span> <span class="o">=</span> <span class="s2">&quot;GBP&quot;</span>
+    <span class="n">EUR</span> <span class="o">=</span> <span class="s2">&quot;EUR&quot;</span>
+    <span class="n">CAD</span> <span class="o">=</span> <span class="s2">&quot;CAD&quot;</span>
+    <span class="n">AUD</span> <span class="o">=</span> <span class="s2">&quot;AUD&quot;</span>
+    <span class="n">JPY</span> <span class="o">=</span> <span class="s2">&quot;JPY&quot;</span>
+    <span class="n">CHF</span> <span class="o">=</span> <span class="s2">&quot;CHF&quot;</span>
+    <span class="n">MXN</span> <span class="o">=</span> <span class="s2">&quot;MXN&quot;</span>
+    <span class="n">BRL</span> <span class="o">=</span> <span class="s2">&quot;BRL&quot;</span>
+    <span class="n">NZD</span> <span class="o">=</span> <span class="s2">&quot;NZD&quot;</span>
+    <span class="n">SEK</span> <span class="o">=</span> <span class="s2">&quot;SEK&quot;</span>
+    <span class="n">ZAR</span> <span class="o">=</span> <span class="s2">&quot;ZAR&quot;</span>
     
 </pre></div>
 
@@ -99,7 +100,7 @@ summary: "Constants"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="CurrAbbr" class="doc_header"><code>class</code> <code>CurrAbbr</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/constants.py#L21" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>CurrAbbr</code>(<strong><code>value</code></strong>, <strong><code>names</code></strong>=<em><code>None</code></em>, <strong><code>module</code></strong>=<em><code>None</code></em>, <strong><code>qualname</code></strong>=<em><code>None</code></em>, <strong><code>type</code></strong>=<em><code>None</code></em>, <strong><code>start</code></strong>=<em><code>1</code></em>) :: <code>Enum</code></p>
+<h2 id="CurrAbbr" class="doc_header"><code>class</code> <code>CurrAbbr</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/constants.py#L23" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>CurrAbbr</code>(<strong><code>value</code></strong>, <strong><code>names</code></strong>=<em><code>None</code></em>, <strong><code>module</code></strong>=<em><code>None</code></em>, <strong><code>qualname</code></strong>=<em><code>None</code></em>, <strong><code>type</code></strong>=<em><code>None</code></em>, <strong><code>start</code></strong>=<em><code>1</code></em>) :: <code>Enum</code></p>
 </blockquote>
 <p>Valid currencies for marketplace data</p>
 
@@ -127,12 +128,12 @@ summary: "Constants"
 <span class="sd">    Valid sort options for master releases.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     
-    <span class="n">released</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">title</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="nb">format</span> <span class="o">=</span> <span class="mi">2</span>
-    <span class="n">label</span> <span class="o">=</span> <span class="mi">3</span>
-    <span class="n">catno</span> <span class="o">=</span> <span class="mi">4</span>
-    <span class="n">country</span> <span class="o">=</span> <span class="mi">5</span>
+    <span class="n">released</span> <span class="o">=</span> <span class="s2">&quot;released&quot;</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;title&quot;</span>
+    <span class="nb">format</span> <span class="o">=</span> <span class="s2">&quot;format&quot;</span>
+    <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;label&quot;</span>
+    <span class="n">catno</span> <span class="o">=</span> <span class="s2">&quot;catno&quot;</span>
+    <span class="n">country</span> <span class="o">=</span> <span class="s2">&quot;country&quot;</span>
     
 
 <span class="k">class</span> <span class="nc">SortOptionsArtist</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
@@ -140,9 +141,9 @@ summary: "Constants"
 <span class="sd">    Valid sort options for artist releases.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     
-    <span class="n">year</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">title</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="nb">format</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="n">year</span> <span class="o">=</span> <span class="s2">&quot;year&quot;</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;title&quot;</span>
+    <span class="nb">format</span> <span class="o">=</span> <span class="s2">&quot;format&quot;</span>
 
 
 <span class="k">class</span> <span class="nc">SortOptionsLabel</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
@@ -150,9 +151,25 @@ summary: "Constants"
 <span class="sd">    Valid sort options for label releases.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     
-    <span class="n">year</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">title</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="nb">format</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="n">year</span> <span class="o">=</span> <span class="s2">&quot;year&quot;</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;title&quot;</span>
+    <span class="nb">format</span> <span class="o">=</span> <span class="s2">&quot;format&quot;</span>
+
+
+<span class="k">class</span> <span class="nc">SortOptionsInventory</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Valid sort options for inventory.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="n">listed</span> <span class="o">=</span> <span class="s2">&quot;listed&quot;</span>
+    <span class="n">price</span> <span class="o">=</span> <span class="s2">&quot;price&quot;</span>
+    <span class="n">item</span> <span class="o">=</span> <span class="s2">&quot;item&quot;</span>
+    <span class="n">artist</span> <span class="o">=</span> <span class="s2">&quot;artist&quot;</span>
+    <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;label&quot;</span>
+    <span class="n">catno</span> <span class="o">=</span> <span class="s2">&quot;catno&quot;</span>
+    <span class="n">audio</span> <span class="o">=</span> <span class="s2">&quot;audio&quot;</span>
+    <span class="n">status</span> <span class="o">=</span> <span class="s2">&quot;status&quot;</span> <span class="c1"># when authenticated as the inventory owner</span>
+    <span class="n">location</span> <span class="o">=</span> <span class="s2">&quot;location&quot;</span> <span class="c1"># when authenticated as the inventory owner</span>
 </pre></div>
 
     </div>
@@ -169,7 +186,7 @@ summary: "Constants"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="SortOptionsMaster" class="doc_header"><code>class</code> <code>SortOptionsMaster</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/constants.py#L43" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>SortOptionsMaster</code>(<strong><code>value</code></strong>, <strong><code>names</code></strong>=<em><code>None</code></em>, <strong><code>module</code></strong>=<em><code>None</code></em>, <strong><code>qualname</code></strong>=<em><code>None</code></em>, <strong><code>type</code></strong>=<em><code>None</code></em>, <strong><code>start</code></strong>=<em><code>1</code></em>) :: <code>Enum</code></p>
+<h2 id="SortOptionsMaster" class="doc_header"><code>class</code> <code>SortOptionsMaster</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/constants.py#L45" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>SortOptionsMaster</code>(<strong><code>value</code></strong>, <strong><code>names</code></strong>=<em><code>None</code></em>, <strong><code>module</code></strong>=<em><code>None</code></em>, <strong><code>qualname</code></strong>=<em><code>None</code></em>, <strong><code>type</code></strong>=<em><code>None</code></em>, <strong><code>start</code></strong>=<em><code>1</code></em>) :: <code>Enum</code></p>
 </blockquote>
 <p>Valid sort options for master releases.</p>
 
@@ -190,7 +207,7 @@ summary: "Constants"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="SortOptionsArtist" class="doc_header"><code>class</code> <code>SortOptionsArtist</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/constants.py#L56" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>SortOptionsArtist</code>(<strong><code>value</code></strong>, <strong><code>names</code></strong>=<em><code>None</code></em>, <strong><code>module</code></strong>=<em><code>None</code></em>, <strong><code>qualname</code></strong>=<em><code>None</code></em>, <strong><code>type</code></strong>=<em><code>None</code></em>, <strong><code>start</code></strong>=<em><code>1</code></em>) :: <code>Enum</code></p>
+<h2 id="SortOptionsArtist" class="doc_header"><code>class</code> <code>SortOptionsArtist</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/constants.py#L58" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>SortOptionsArtist</code>(<strong><code>value</code></strong>, <strong><code>names</code></strong>=<em><code>None</code></em>, <strong><code>module</code></strong>=<em><code>None</code></em>, <strong><code>qualname</code></strong>=<em><code>None</code></em>, <strong><code>type</code></strong>=<em><code>None</code></em>, <strong><code>start</code></strong>=<em><code>1</code></em>) :: <code>Enum</code></p>
 </blockquote>
 <p>Valid sort options for artist releases.</p>
 
@@ -211,9 +228,30 @@ summary: "Constants"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="SortOptionsLabel" class="doc_header"><code>class</code> <code>SortOptionsLabel</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/constants.py#L66" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>SortOptionsLabel</code>(<strong><code>value</code></strong>, <strong><code>names</code></strong>=<em><code>None</code></em>, <strong><code>module</code></strong>=<em><code>None</code></em>, <strong><code>qualname</code></strong>=<em><code>None</code></em>, <strong><code>type</code></strong>=<em><code>None</code></em>, <strong><code>start</code></strong>=<em><code>1</code></em>) :: <code>Enum</code></p>
+<h2 id="SortOptionsLabel" class="doc_header"><code>class</code> <code>SortOptionsLabel</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/constants.py#L68" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>SortOptionsLabel</code>(<strong><code>value</code></strong>, <strong><code>names</code></strong>=<em><code>None</code></em>, <strong><code>module</code></strong>=<em><code>None</code></em>, <strong><code>qualname</code></strong>=<em><code>None</code></em>, <strong><code>type</code></strong>=<em><code>None</code></em>, <strong><code>start</code></strong>=<em><code>1</code></em>) :: <code>Enum</code></p>
 </blockquote>
 <p>Valid sort options for label releases.</p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h2 id="SortOptionsInventory" class="doc_header"><code>class</code> <code>SortOptionsInventory</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/constants.py#L78" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>SortOptionsInventory</code>(<strong><code>value</code></strong>, <strong><code>names</code></strong>=<em><code>None</code></em>, <strong><code>module</code></strong>=<em><code>None</code></em>, <strong><code>qualname</code></strong>=<em><code>None</code></em>, <strong><code>type</code></strong>=<em><code>None</code></em>, <strong><code>start</code></strong>=<em><code>1</code></em>) :: <code>Enum</code></p>
+</blockquote>
+<p>Valid sort options for inventory.</p>
 
 </div>
 
@@ -239,8 +277,8 @@ summary: "Constants"
 <span class="sd">    Valid sort order options.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     
-    <span class="n">asc</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">desc</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">asc</span> <span class="o">=</span> <span class="s2">&quot;asc&quot;</span>
+    <span class="n">desc</span> <span class="o">=</span> <span class="s2">&quot;desc&quot;</span>
 </pre></div>
 
     </div>
@@ -257,9 +295,55 @@ summary: "Constants"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="SortOrder" class="doc_header"><code>class</code> <code>SortOrder</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/constants.py#L79" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>SortOrder</code>(<strong><code>value</code></strong>, <strong><code>names</code></strong>=<em><code>None</code></em>, <strong><code>module</code></strong>=<em><code>None</code></em>, <strong><code>qualname</code></strong>=<em><code>None</code></em>, <strong><code>type</code></strong>=<em><code>None</code></em>, <strong><code>start</code></strong>=<em><code>1</code></em>) :: <code>Enum</code></p>
+<h2 id="SortOrder" class="doc_header"><code>class</code> <code>SortOrder</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/constants.py#L96" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>SortOrder</code>(<strong><code>value</code></strong>, <strong><code>names</code></strong>=<em><code>None</code></em>, <strong><code>module</code></strong>=<em><code>None</code></em>, <strong><code>qualname</code></strong>=<em><code>None</code></em>, <strong><code>type</code></strong>=<em><code>None</code></em>, <strong><code>start</code></strong>=<em><code>1</code></em>) :: <code>Enum</code></p>
 </blockquote>
 <p>Valid sort order options.</p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Status-options">Status options<a class="anchor-link" href="#Status-options">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">StatusInventory</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Valid status options for inventory items.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="n">for_sale</span> <span class="o">=</span> <span class="s2">&quot;for sale&quot;</span>
+    <span class="n">sold</span> <span class="o">=</span> <span class="s2">&quot;sold&quot;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h2 id="StatusInventory" class="doc_header"><code>class</code> <code>StatusInventory</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/constants.py#L107" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>StatusInventory</code>(<strong><code>value</code></strong>, <strong><code>names</code></strong>=<em><code>None</code></em>, <strong><code>module</code></strong>=<em><code>None</code></em>, <strong><code>qualname</code></strong>=<em><code>None</code></em>, <strong><code>type</code></strong>=<em><code>None</code></em>, <strong><code>start</code></strong>=<em><code>1</code></em>) :: <code>Enum</code></p>
+</blockquote>
+<p>Valid status options for inventory items.</p>
 
 </div>
 

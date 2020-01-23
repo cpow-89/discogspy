@@ -28,7 +28,7 @@ def get_release(user: Union[UserWithoutAuthentication,
     headers = user.headers
     params = user.params
     if curr_abbr:
-        params["curr_abbr"] = curr_abbr.name
+        params["curr_abbr"] = curr_abbr.value
     return requests.get(url, headers=headers, params=params)
 
 # Cell
@@ -158,9 +158,9 @@ def get_releases_related_to_master_release(user: Union[UserWithoutAuthentication
     if country:
         params["country"] = country
     if sort:
-        params["sort"] = sort.name
+        params["sort"] = sort.value
     if sort_order:
-        params["sort_order"] = sort_order.name
+        params["sort_order"] = sort_order.value
     return requests.get(url, headers=headers, params=params)
 
 # Cell
@@ -204,9 +204,9 @@ def get_artist_releases(user: Union[UserWithoutAuthentication,
     if per_page:
         params["per_page"] = max(1, per_page)
     if sort:
-        params["sort"] = sort.name
+        params["sort"] = sort.value
     if sort_order:
-        params["sort_order"] = sort_order.name
+        params["sort_order"] = sort_order.value
 
     return requests.get(url, headers=headers, params=params)
 
@@ -253,8 +253,8 @@ def get_label_releases(user: Union[UserWithoutAuthentication,
     if per_page:
         params["per_page"] = max(1, per_page)
     if sort:
-        params["sort"] = sort.name
+        params["sort"] = sort.value
     if sort_order:
-        params["sort_order"] = sort_order.name
+        params["sort_order"] = sort_order.value
 
     return requests.get(url, headers=headers, params=params)
