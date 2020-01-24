@@ -118,5 +118,7 @@ class StatusInventory(Enum):
     Valid status options for inventory items.
     """
 
-    for_sale = "for sale"
-    sold = "sold"
+    for_sale = "For Sale"
+    sold = "Sold"
+    draft = "Draft"
+    expired = "Expired"

@@ -34,8 +34,8 @@ def get_inventory(user: Union[UserWithoutAuthentication,
     headers = user.headers
     params = user.params
     if status:
-        if type(user) is UserWithUserTokenBasedAuthentication:
-            params["status"] = "for sale"
+        if type(user) is UserWithoutAuthentication:
+            params["status"] = StatusInventory.for_sale.value
         else:
             params["status"] = status.value
     if page:
