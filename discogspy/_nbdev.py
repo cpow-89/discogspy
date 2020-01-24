@@ -8,6 +8,7 @@ index = {"BASE_URL": "00_core.constants.ipynb",
          "ARTIST_URL": "00_core.constants.ipynb",
          "LABEL_URL": "00_core.constants.ipynb",
          "USERS_URL": "00_core.constants.ipynb",
+         "LISTINGS_URL": "00_core.constants.ipynb",
          "CurrAbbr": "00_core.constants.ipynb",
          "SortOptionsMaster": "00_core.constants.ipynb",
          "SortOptionsArtist": "00_core.constants.ipynb",
@@ -28,7 +29,8 @@ index = {"BASE_URL": "00_core.constants.ipynb",
          "get_artist_releases": "02_core.rq_database.ipynb",
          "get_label": "02_core.rq_database.ipynb",
          "get_label_releases": "02_core.rq_database.ipynb",
-         "get_inventory": "03_core.rq_marketplace.ipynb"}
+         "get_inventory": "03_core.rq_marketplace.ipynb",
+         "get_listing": "03_core.rq_marketplace.ipynb"}
 
 modules = ["core/constants.py",
            "core/discogs_user.py",
