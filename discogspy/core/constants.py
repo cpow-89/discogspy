@@ -2,7 +2,7 @@
 
 __all__ = ['BASE_URL', 'RELEASES_URL', 'MASTERS_URL', 'ARTIST_URL', 'LABEL_URL', 'USERS_URL', 'LISTINGS_URL',
            'CurrAbbr', 'SortOptionsMaster', 'SortOptionsArtist', 'SortOptionsLabel', 'SortOptionsInventory',
-           'SortOrder', 'StatusInventory', 'ReleaseCondition', 'SleeveCondition']
+           'SortOrder', 'StatusInventory', 'StatusNewListing', 'ReleaseCondition', 'SleeveCondition']
 
 # Cell
 from enum import Enum
@@ -122,6 +122,14 @@ class StatusInventory(Enum):
     sold = "Sold"
     draft = "Draft"
     expired = "Expired"
+
+class StatusNewListing(Enum):
+    """
+    Valid status options for inventory listing.
+    """
+
+    for_sale = "For Sale"
+    draft = "Draft"
 
 # Cell
 
