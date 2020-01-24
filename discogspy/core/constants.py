@@ -2,7 +2,7 @@
 
 __all__ = ['BASE_URL', 'RELEASES_URL', 'MASTERS_URL', 'ARTIST_URL', 'LABEL_URL', 'USERS_URL', 'LISTINGS_URL',
            'CurrAbbr', 'SortOptionsMaster', 'SortOptionsArtist', 'SortOptionsLabel', 'SortOptionsInventory',
-           'SortOrder', 'StatusInventory']
+           'SortOrder', 'StatusInventory', 'ReleaseCondition', 'SleeveCondition']
 
 # Cell
 from enum import Enum
@@ -122,3 +122,41 @@ class StatusInventory(Enum):
     sold = "Sold"
     draft = "Draft"
     expired = "Expired"
+
+# Cell
+
+
+class ReleaseCondition(Enum):
+    """
+    Valid release conditions.
+    """
+
+    mint = "Mint (M)"
+    near_mint = "Near Mint (NM or M-)"
+    very_good_plus = "Very Good Plus (VG+)"
+    very_good = "Very Good (VG)"
+    good_plus = "Good Plus (G+)"
+    good = "Good (G)"
+    fair = "Fair (F)"
+    poor = "Poor (P)"
+
+
+# Cell
+
+
+class SleeveCondition(Enum):
+    """
+    Valid listing conditions.
+    """
+
+    mint = "Mint (M)"
+    near_mint = "Near Mint (NM or M-)"
+    very_good_plus = "Very Good Plus (VG+)"
+    very_good = "Very Good (VG)"
+    good_plus = "Good Plus (G+)"
+    good = "Good (G)"
+    fair = "Fair (F)"
+    poor = "Poor (P)"
+    generic = "Generic"
+    not_graded = "Not Graded"
+    no_cover = "No Cover"

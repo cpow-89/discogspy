@@ -16,7 +16,8 @@ from . import *
 def get_release(user: Union[UserWithoutAuthentication,
                             UserWithUserTokenBasedAuthentication],
                 release_id: int,
-                curr_abbr: Union[CurrAbbr, None] = None) -> requests.models.Response:
+                curr_abbr: Union[CurrAbbr, None] = None
+                ) -> requests.models.Response:
     """
     Get information to a particular release from Discogs database.
     A release represents a particular physical or digital object released by
@@ -37,7 +38,8 @@ def get_release(user: Union[UserWithoutAuthentication,
 def get_release_rating_by_user(user: Union[UserWithoutAuthentication,
                                            UserWithUserTokenBasedAuthentication],
                                release_id: int,
-                               username: str) -> requests.models.Response:
+                               username: str
+                               ) -> requests.models.Response:
     """
     Get the rating of a release made by a given user.
 
@@ -54,7 +56,8 @@ def get_release_rating_by_user(user: Union[UserWithoutAuthentication,
 def update_release_rating_for_given_user(user: UserWithUserTokenBasedAuthentication,
                                          release_id: int,
                                          username: str,
-                                         rating: int) -> requests.models.Response:
+                                         rating: int
+                                         ) -> requests.models.Response:
     """
     Update the rating of a release made by a given user.
     If there is no rating, it will create one.
@@ -73,7 +76,8 @@ def update_release_rating_for_given_user(user: UserWithUserTokenBasedAuthenticat
 
 def delete_release_rating_by_user(user: UserWithUserTokenBasedAuthentication,
                                   release_id: int,
-                                  username: str) -> requests.models.Response:
+                                  username: str
+                                  ) -> requests.models.Response:
     """
     Delete the rating of a release made by a given user.
 
@@ -89,7 +93,8 @@ def delete_release_rating_by_user(user: UserWithUserTokenBasedAuthentication,
 
 def get_release_rating_by_community(user: Union[UserWithoutAuthentication,
                                                 UserWithUserTokenBasedAuthentication],
-                                    release_id: int) -> requests.models.Response:
+                                    release_id: int
+                                    ) -> requests.models.Response:
     """
     Get the rating of a release made by the community.
     A community release rating includes the average rating and
@@ -109,7 +114,8 @@ def get_release_rating_by_community(user: Union[UserWithoutAuthentication,
 
 def get_master_release(user: Union[UserWithoutAuthentication,
                                    UserWithUserTokenBasedAuthentication],
-                       master_id: int) -> requests.models.Response:
+                       master_id: int
+                       ) -> requests.models.Response:
     """
     Get information to a particular master release from Discogs database.
     A Master release represents a set of similar Releases.
@@ -135,7 +141,8 @@ def get_releases_related_to_master_release(user: Union[UserWithoutAuthentication
                                            released: Union[str, None] = None,
                                            country: Union[str, None] = None,
                                            sort: Union[SortOptionsMaster, None] = None,
-                                           sort_order: Union[SortOrder, None] = None) -> requests.models.Response:
+                                           sort_order: Union[SortOrder, None] = None
+                                           ) -> requests.models.Response:
     """
     Get a list of all Releases that are versions of a given master release.
 
@@ -168,7 +175,8 @@ def get_releases_related_to_master_release(user: Union[UserWithoutAuthentication
 
 def get_artist(user: Union[UserWithoutAuthentication,
                            UserWithUserTokenBasedAuthentication],
-               artist_id: int) -> requests.models.Response:
+               artist_id: int
+               ) -> requests.models.Response:
     """
     Get information about an artist.
     An Artist represents a person in the Discogs database who contributed to a Release in some capacity.
@@ -189,7 +197,8 @@ def get_artist_releases(user: Union[UserWithoutAuthentication,
                         page: Union[int, None] = None,
                         per_page: Union[int, None] = None,
                         sort: Union[SortOptionsArtist, None] = None,
-                        sort_order: Union[SortOrder, None] = None) -> requests.models.Response:
+                        sort_order: Union[SortOrder, None] = None
+                        ) -> requests.models.Response:
     """
     Get a list of releases and masters associated with the given artist.
 
@@ -215,7 +224,8 @@ def get_artist_releases(user: Union[UserWithoutAuthentication,
 
 def get_label(user: Union[UserWithoutAuthentication,
                           UserWithUserTokenBasedAuthentication],
-              label_id: int) -> requests.models.Response:
+              label_id: int
+              ) -> requests.models.Response:
     """
     Get information about a label.
     A label resource represents a label, company,
@@ -238,7 +248,8 @@ def get_label_releases(user: Union[UserWithoutAuthentication,
                        page: Union[int, None] = None,
                        per_page: Union[int, None] = None,
                        sort: Union[SortOptionsLabel, None] = None,
-                       sort_order: Union[SortOrder, None] = None) -> requests.models.Response:
+                       sort_order: Union[SortOrder, None] = None
+                       ) -> requests.models.Response:
     """
     Get a list of releases and masters associated with the given label.
 

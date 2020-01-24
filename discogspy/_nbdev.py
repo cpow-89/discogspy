@@ -16,6 +16,8 @@ index = {"BASE_URL": "00_core.constants.ipynb",
          "SortOptionsInventory": "00_core.constants.ipynb",
          "SortOrder": "00_core.constants.ipynb",
          "StatusInventory": "00_core.constants.ipynb",
+         "ReleaseCondition": "00_core.constants.ipynb",
+         "SleeveCondition": "00_core.constants.ipynb",
          "UserWithoutAuthentication": "01_core.discogs_user.ipynb",
          "UserWithUserTokenBasedAuthentication": "01_core.discogs_user.ipynb",
          "get_release": "02_core.rq_database.ipynb",
@@ -30,7 +32,8 @@ index = {"BASE_URL": "00_core.constants.ipynb",
          "get_label": "02_core.rq_database.ipynb",
          "get_label_releases": "02_core.rq_database.ipynb",
          "get_inventory": "03_core.rq_marketplace.ipynb",
-         "get_listing": "03_core.rq_marketplace.ipynb"}
+         "get_listing": "03_core.rq_marketplace.ipynb",
+         "update_listing": "03_core.rq_marketplace.ipynb"}
 
 modules = ["core/constants.py",
            "core/discogs_user.py",
