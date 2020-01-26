@@ -2,8 +2,8 @@
 
 __all__ = ['BASE_URL', 'RELEASES_URL', 'MASTERS_URL', 'ARTIST_URL', 'LABEL_URL', 'USERS_URL', 'MARKETPLACE_URL',
            'LISTINGS_URL', 'ORDERS_URL', 'CurrAbbr', 'SortOptionsMaster', 'SortOptionsArtist', 'SortOptionsLabel',
-           'SortOptionsInventory', 'SortOrder', 'StatusInventory', 'StatusNewListing', 'ReleaseCondition',
-           'SleeveCondition']
+           'SortOptionsInventory', 'SortOrder', 'StatusInventory', 'StatusNewListing', 'StatusOrder',
+           'ReleaseCondition', 'SleeveCondition']
 
 # Cell
 from enum import Enum
@@ -136,6 +136,25 @@ class StatusNewListing(Enum):
 
     for_sale = "For Sale"
     draft = "Draft"
+
+
+# Cell
+
+
+class StatusOrder(Enum):
+    """
+    Valid status options for orders.
+    """
+
+    new_order = "New Order"
+    invoice_sent = "Invoice Sent"
+    payment_pending = "Payment Pending"
+    payment_received = "Payment Received"
+    shipped = "Shipped"
+    refund_sent = "Refund Sent"
+    cancelled_no_payment = "Cancelled (Non-Paying Buyer)"
+    cancelled_item_unavailable = "Cancelled (Item Unavailable)"
+    cancelled_buyer_request = "Cancelled (Per Buyer's Request)"
 
 # Cell
 
