@@ -2,8 +2,8 @@
 
 __all__ = ['BASE_URL', 'RELEASES_URL', 'MASTERS_URL', 'ARTIST_URL', 'LABEL_URL', 'USERS_URL', 'MARKETPLACE_URL',
            'LISTINGS_URL', 'ORDERS_URL', 'CurrAbbr', 'SortOptionsMaster', 'SortOptionsArtist', 'SortOptionsLabel',
-           'SortOptionsInventory', 'SortOrder', 'StatusInventory', 'StatusNewListing', 'StatusOrder',
-           'ReleaseCondition', 'SleeveCondition']
+           'SortOptionsInventory', 'SortOptionsOrders', 'SortOrder', 'StatusInventory', 'StatusNewListing',
+           'StatusOrder', 'StatusOrders', 'ReleaseCondition', 'SleeveCondition']
 
 # Cell
 from enum import Enum
@@ -102,6 +102,21 @@ class SortOptionsInventory(Enum):
     status = "status" # when authenticated as the inventory owner
     location = "location" # when authenticated as the inventory owner
 
+
+# Cell
+
+
+class SortOptionsOrders(Enum):
+    """
+    Valid sort options for orders.
+    """
+
+    id = "id"
+    buyer = "buyer"
+    created = "created"
+    status = "status"
+    last_activity = "last_activity"
+
 # Cell
 
 
@@ -143,10 +158,11 @@ class StatusNewListing(Enum):
 
 class StatusOrder(Enum):
     """
-    Valid status options for orders.
+    Valid status options for updating an order.
     """
 
     new_order = "New Order"
+    buyer_contacted = "Buyer Contacted"
     invoice_sent = "Invoice Sent"
     payment_pending = "Payment Pending"
     payment_received = "Payment Received"
@@ -155,6 +171,30 @@ class StatusOrder(Enum):
     cancelled_no_payment = "Cancelled (Non-Paying Buyer)"
     cancelled_item_unavailable = "Cancelled (Item Unavailable)"
     cancelled_buyer_request = "Cancelled (Per Buyer's Request)"
+
+# Cell
+
+
+class StatusOrders(Enum):
+    """
+    Valid status options for filtering order list.
+    """
+
+    all = "All"
+    new_order = "New Order"
+    invoice_sent = "Invoice Sent"
+    buyer_contacted = "Buyer Contacted"
+    payment_pending = "Payment Pending"
+    payment_received = "Payment Received"
+    shipped = "Shipped"
+    merged = "Merged"
+    order_changed = "Order Changed"
+    refund_sent = "Refund Sent"
+    cancelled = "Cancelled"
+    cancelled_no_payment = "Cancelled (Non-Paying Buyer)"
+    cancelled_item_unavailable = "Cancelled (Item Unavailable)"
+    cancelled_buyer_request = "Cancelled (Per Buyer's Request)"
+    cancelled_refund_received = "Cancelled (Refund Received)"
 
 # Cell
 
