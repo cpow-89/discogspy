@@ -41,7 +41,8 @@ index = {"BASE_URL": "00_core.constants.ipynb",
          "delete_listing": "03_core.rq_marketplace.ipynb",
          "add_new_listing": "03_core.rq_marketplace.ipynb",
          "get_order": "03_core.rq_marketplace.ipynb",
-         "update_order_status": "03_core.rq_marketplace.ipynb"}
+         "update_order_status": "03_core.rq_marketplace.ipynb",
+         "update_order_shipping": "03_core.rq_marketplace.ipynb"}
 
 modules = ["core/constants.py",
            "core/discogs_user.py",
