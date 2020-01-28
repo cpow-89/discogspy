@@ -12,6 +12,7 @@ index = {"BASE_URL": "00_core.constants.ipynb",
          "LISTINGS_URL": "00_core.constants.ipynb",
          "ORDERS_URL": "00_core.constants.ipynb",
          "FEE_URL": "00_core.constants.ipynb",
+         "PRICE_SUGGESTIONS_URL": "00_core.constants.ipynb",
          "CurrAbbr": "00_core.constants.ipynb",
          "SortOptionsMaster": "00_core.constants.ipynb",
          "SortOptionsArtist": "00_core.constants.ipynb",
@@ -49,7 +50,8 @@ index = {"BASE_URL": "00_core.constants.ipynb",
          "get_orders": "03_core.rq_marketplace.ipynb",
          "get_order_messages": "03_core.rq_marketplace.ipynb",
          "post_message_on_order": "03_core.rq_marketplace.ipynb",
-         "get_discogs_fee_for_given_price": "03_core.rq_marketplace.ipynb"}
+         "get_discogs_fee_for_given_price": "03_core.rq_marketplace.ipynb",
+         "get_price_suggestions": "03_core.rq_marketplace.ipynb"}
 
 modules = ["core/constants.py",
            "core/discogs_user.py",

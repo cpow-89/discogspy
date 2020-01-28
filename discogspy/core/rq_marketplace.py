@@ -2,7 +2,7 @@
 
 __all__ = ['get_inventory', 'get_listing', 'update_listing', 'delete_listing', 'add_new_listing', 'get_order',
            'update_order_status', 'update_order_shipping', 'get_orders', 'get_order_messages', 'post_message_on_order',
-           'get_discogs_fee_for_given_price']
+           'get_discogs_fee_for_given_price', 'get_price_suggestions']
 
 # Cell
 import requests
@@ -128,6 +128,8 @@ def update_listing(user: UserWithUserTokenBasedAuthentication,
     return requests.post(url, headers=headers, params=params, json=data)
 
 # Cell
+
+
 def delete_listing(user: UserWithUserTokenBasedAuthentication,
                    listing_id: int
                    ) -> requests.models.Response:
@@ -335,19 +337,43 @@ def post_message_on_order(user: UserWithUserTokenBasedAuthentication,
 
 
 def get_discogs_fee_for_given_price(user: Union[UserWithoutAuthentication,
-                                          UserWithUserTokenBasedAuthentication],
+                                                UserWithUserTokenBasedAuthentication],
                                     price: float
                                     ) -> requests.models.Response:
     """
     Calculate the fee for selling an item on the Marketplace in USD
 
-    Note: According to the Discogs API, it should be possible to change the currency. However, this feature seems to be broken at this point. That's why I did remove this optional argument.
+    Note: According to the Discogs API, it should be possible to change the currency.
+          However, this feature seems to be broken at this point.
+          That's why I did remove this optional argument.
 
     No user Authentication needed.
 
     """
 
     url = f"{FEE_URL}/{price}"
+    headers = user.headers
+    params = user.params
+
+    return requests.get(url, headers=headers, params=params)
+
+# Cell
+
+
+def get_price_suggestions(user: UserWithUserTokenBasedAuthentication,
+                          release_id: int
+                          ) -> requests.models.Response:
+    """
+    Get a price suggestions for the provided release id.
+
+    Note: Suggested prices will be denominated in the user’s selling currency.
+          If no suggestions are available, an empty object will be returned.
+
+    User Authentication needed.
+
+    """
+
+    url = f"{PRICE_SUGGESTIONS_URL}/{release_id}"
     headers = user.headers
     params = user.params
 
