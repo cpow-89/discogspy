@@ -45,7 +45,7 @@ Currently, you have two options for starting requests to Discogs.
 <div class="codecell" markdown="1">
 <div class="input_area" markdown="1">
 
-```python
+```
 from discogspy.core.discogs_user import UserWithoutAuthentication
 from discogspy.core import rq_database
 
@@ -61,7 +61,7 @@ resp = rq_database.get_release(user, 1972502)
 <div class="codecell" markdown="1">
 <div class="input_area" markdown="1">
 
-```python
+```
 from discogspy.core.discogs_user import UserWithUserTokenBasedAuthentication
 from discogspy.core import rq_database
 
