@@ -43,7 +43,7 @@ summary: "Core.rq_marketplace is a collection of function wrappers around the Di
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_inventory" class="doc_header"><code>get_inventory</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/rq_marketplace.py#L14" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_inventory</code>(<strong><code>user</code></strong>:<code>Union</code>[<a href="/discogspy/core.discogs_user#UserWithoutAuthentication"><code>UserWithoutAuthentication</code></a>, <a href="/discogspy/core.discogs_user#UserWithUserTokenBasedAuthentication"><code>UserWithUserTokenBasedAuthentication</code></a>], <strong><code>username</code></strong>:<code>str</code>, <strong><code>status</code></strong>:<code>Optional</code>[<a href="/discogspy/core.constants#StatusInventory"><code>StatusInventory</code></a>]=<em><code>None</code></em>, <strong><code>page</code></strong>:<code>Optional</code>[<code>int</code>]=<em><code>None</code></em>, <strong><code>per_page</code></strong>:<code>Optional</code>[<code>int</code>]=<em><code>None</code></em>, <strong><code>sort</code></strong>:<code>Optional</code>[<a href="/discogspy/core.constants#SortOptionsInventory"><code>SortOptionsInventory</code></a>]=<em><code>None</code></em>, <strong><code>sort_order</code></strong>:<code>Optional</code>[<a href="/discogspy/core.constants#SortOrder"><code>SortOrder</code></a>]=<em><code>None</code></em>)</p>
+<h4 id="get_inventory" class="doc_header"><code>get_inventory</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/rq_marketplace.py#L15" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_inventory</code>(<strong><code>user</code></strong>:<code>Union</code>[<a href="/discogspy/core.discogs_user#UserWithoutAuthentication"><code>UserWithoutAuthentication</code></a>, <a href="/discogspy/core.discogs_user#UserWithUserTokenBasedAuthentication"><code>UserWithUserTokenBasedAuthentication</code></a>], <strong><code>username</code></strong>:<code>str</code>, <strong><code>status</code></strong>:<code>Optional</code>[<a href="/discogspy/core.constants#StatusInventory"><code>StatusInventory</code></a>]=<em><code>None</code></em>, <strong><code>page</code></strong>:<code>Optional</code>[<code>int</code>]=<em><code>None</code></em>, <strong><code>per_page</code></strong>:<code>Optional</code>[<code>int</code>]=<em><code>None</code></em>, <strong><code>sort</code></strong>:<code>Optional</code>[<a href="/discogspy/core.constants#SortOptionsInventory"><code>SortOptionsInventory</code></a>]=<em><code>None</code></em>, <strong><code>sort_order</code></strong>:<code>Optional</code>[<a href="/discogspy/core.constants#SortOrder"><code>SortOrder</code></a>]=<em><code>None</code></em>)</p>
 </blockquote>
 <p>Get a list of listings of a given user inventory.</p>
 <p>No user Authentication needed.</p>
@@ -111,7 +111,7 @@ field indicating whether or not this listing is in their cart."</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_listing" class="doc_header"><code>get_listing</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/rq_marketplace.py#L60" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_listing</code>(<strong><code>user</code></strong>:<code>Union</code>[<a href="/discogspy/core.discogs_user#UserWithoutAuthentication"><code>UserWithoutAuthentication</code></a>, <a href="/discogspy/core.discogs_user#UserWithUserTokenBasedAuthentication"><code>UserWithUserTokenBasedAuthentication</code></a>], <strong><code>listing_id</code></strong>:<code>int</code>, <strong><code>curr_abbr</code></strong>:<code>Optional</code>[<a href="/discogspy/core.constants#CurrAbbr"><code>CurrAbbr</code></a>]=<em><code>None</code></em>)</p>
+<h4 id="get_listing" class="doc_header"><code>get_listing</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/rq_marketplace.py#L61" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_listing</code>(<strong><code>user</code></strong>:<code>Union</code>[<a href="/discogspy/core.discogs_user#UserWithoutAuthentication"><code>UserWithoutAuthentication</code></a>, <a href="/discogspy/core.discogs_user#UserWithUserTokenBasedAuthentication"><code>UserWithUserTokenBasedAuthentication</code></a>], <strong><code>listing_id</code></strong>:<code>int</code>, <strong><code>curr_abbr</code></strong>:<code>Optional</code>[<a href="/discogspy/core.constants#CurrAbbr"><code>CurrAbbr</code></a>]=<em><code>None</code></em>)</p>
 </blockquote>
 <p>Get all the information about the requested listing from the given user inventory.</p>
 <p>No user Authentication needed.</p>
@@ -170,7 +170,7 @@ indicating whether or not this listing is in their cart."</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="update_listing" class="doc_header"><code>update_listing</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/rq_marketplace.py#L85" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>update_listing</code>(<strong><code>user</code></strong>:<a href="/discogspy/core.discogs_user#UserWithUserTokenBasedAuthentication"><code>UserWithUserTokenBasedAuthentication</code></a>, <strong><code>listing_id</code></strong>:<code>int</code>, <strong><code>release_id</code></strong>:<code>int</code>, <strong><code>condition</code></strong>:<a href="/discogspy/core.constants#ReleaseCondition"><code>ReleaseCondition</code></a>, <strong><code>sleeve_condition</code></strong>:<a href="/discogspy/core.constants#SleeveCondition"><code>SleeveCondition</code></a>, <strong><code>price</code></strong>:<code>float</code>, <strong><code>status</code></strong>:<a href="/discogspy/core.constants#StatusInventory"><code>StatusInventory</code></a>, <strong><code>comments</code></strong>:<code>Optional</code>[<code>str</code>]=<em><code>None</code></em>, <strong><code>allow_offers</code></strong>:<code>Optional</code>[<code>bool</code>]=<em><code>None</code></em>, <strong><code>external_id</code></strong>:<code>Optional</code>[<code>str</code>]=<em><code>None</code></em>, <strong><code>location</code></strong>:<code>Optional</code>[<code>str</code>]=<em><code>None</code></em>, <strong><code>weight</code></strong>:<code>Optional</code>[<code>int</code>]=<em><code>None</code></em>, <strong><code>format_quantity</code></strong>:<code>Optional</code>[<code>int</code>]=<em><code>None</code></em>, <strong><code>curr_abbr</code></strong>:<code>Optional</code>[<a href="/discogspy/core.constants#CurrAbbr"><code>CurrAbbr</code></a>]=<em><code>None</code></em>)</p>
+<h4 id="update_listing" class="doc_header"><code>update_listing</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/rq_marketplace.py#L86" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>update_listing</code>(<strong><code>user</code></strong>:<a href="/discogspy/core.discogs_user#UserWithUserTokenBasedAuthentication"><code>UserWithUserTokenBasedAuthentication</code></a>, <strong><code>listing_id</code></strong>:<code>int</code>, <strong><code>release_id</code></strong>:<code>int</code>, <strong><code>condition</code></strong>:<a href="/discogspy/core.constants#ReleaseCondition"><code>ReleaseCondition</code></a>, <strong><code>sleeve_condition</code></strong>:<a href="/discogspy/core.constants#SleeveCondition"><code>SleeveCondition</code></a>, <strong><code>price</code></strong>:<code>float</code>, <strong><code>status</code></strong>:<a href="/discogspy/core.constants#StatusInventory"><code>StatusInventory</code></a>, <strong><code>comments</code></strong>:<code>Optional</code>[<code>str</code>]=<em><code>None</code></em>, <strong><code>allow_offers</code></strong>:<code>Optional</code>[<code>bool</code>]=<em><code>None</code></em>, <strong><code>external_id</code></strong>:<code>Optional</code>[<code>str</code>]=<em><code>None</code></em>, <strong><code>location</code></strong>:<code>Optional</code>[<code>str</code>]=<em><code>None</code></em>, <strong><code>weight</code></strong>:<code>Optional</code>[<code>int</code>]=<em><code>None</code></em>, <strong><code>format_quantity</code></strong>:<code>Optional</code>[<code>int</code>]=<em><code>None</code></em>, <strong><code>curr_abbr</code></strong>:<code>Optional</code>[<a href="/discogspy/core.constants#CurrAbbr"><code>CurrAbbr</code></a>]=<em><code>None</code></em>)</p>
 </blockquote>
 <p>Update the data associated with a listing.</p>
 <p>User Authentication needed.</p>
@@ -239,7 +239,7 @@ indicating whether or not this listing is in their cart."</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="delete_listing" class="doc_header"><code>delete_listing</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/rq_marketplace.py#L130" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>delete_listing</code>(<strong><code>user</code></strong>:<a href="/discogspy/core.discogs_user#UserWithUserTokenBasedAuthentication"><code>UserWithUserTokenBasedAuthentication</code></a>, <strong><code>listing_id</code></strong>:<code>int</code>)</p>
+<h4 id="delete_listing" class="doc_header"><code>delete_listing</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/rq_marketplace.py#L131" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>delete_listing</code>(<strong><code>user</code></strong>:<a href="/discogspy/core.discogs_user#UserWithUserTokenBasedAuthentication"><code>UserWithUserTokenBasedAuthentication</code></a>, <strong><code>listing_id</code></strong>:<code>int</code>)</p>
 </blockquote>
 <p>Delete a given item from the inventory.</p>
 <p>User Authentication needed.</p>
@@ -279,7 +279,7 @@ indicating whether or not this listing is in their cart."</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="add_new_listing" class="doc_header"><code>add_new_listing</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/rq_marketplace.py#L148" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>add_new_listing</code>(<strong><code>user</code></strong>:<a href="/discogspy/core.discogs_user#UserWithUserTokenBasedAuthentication"><code>UserWithUserTokenBasedAuthentication</code></a>, <strong><code>release_id</code></strong>:<code>int</code>, <strong><code>condition</code></strong>:<a href="/discogspy/core.constants#ReleaseCondition"><code>ReleaseCondition</code></a>, <strong><code>sleeve_condition</code></strong>:<a href="/discogspy/core.constants#SleeveCondition"><code>SleeveCondition</code></a>, <strong><code>price</code></strong>:<code>float</code>, <strong><code>status</code></strong>:<a href="/discogspy/core.constants#StatusNewListing"><code>StatusNewListing</code></a>, <strong><code>comments</code></strong>:<code>Optional</code>[<code>str</code>]=<em><code>None</code></em>, <strong><code>allow_offers</code></strong>:<code>Optional</code>[<code>bool</code>]=<em><code>None</code></em>, <strong><code>external_id</code></strong>:<code>Optional</code>[<code>str</code>]=<em><code>None</code></em>, <strong><code>location</code></strong>:<code>Optional</code>[<code>str</code>]=<em><code>None</code></em>, <strong><code>weight</code></strong>:<code>Optional</code>[<code>int</code>]=<em><code>None</code></em>, <strong><code>format_quantity</code></strong>:<code>Optional</code>[<code>int</code>]=<em><code>None</code></em>)</p>
+<h4 id="add_new_listing" class="doc_header"><code>add_new_listing</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/rq_marketplace.py#L149" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>add_new_listing</code>(<strong><code>user</code></strong>:<a href="/discogspy/core.discogs_user#UserWithUserTokenBasedAuthentication"><code>UserWithUserTokenBasedAuthentication</code></a>, <strong><code>release_id</code></strong>:<code>int</code>, <strong><code>condition</code></strong>:<a href="/discogspy/core.constants#ReleaseCondition"><code>ReleaseCondition</code></a>, <strong><code>sleeve_condition</code></strong>:<a href="/discogspy/core.constants#SleeveCondition"><code>SleeveCondition</code></a>, <strong><code>price</code></strong>:<code>float</code>, <strong><code>status</code></strong>:<a href="/discogspy/core.constants#StatusNewListing"><code>StatusNewListing</code></a>, <strong><code>comments</code></strong>:<code>Optional</code>[<code>str</code>]=<em><code>None</code></em>, <strong><code>allow_offers</code></strong>:<code>Optional</code>[<code>bool</code>]=<em><code>None</code></em>, <strong><code>external_id</code></strong>:<code>Optional</code>[<code>str</code>]=<em><code>None</code></em>, <strong><code>location</code></strong>:<code>Optional</code>[<code>str</code>]=<em><code>None</code></em>, <strong><code>weight</code></strong>:<code>Optional</code>[<code>int</code>]=<em><code>None</code></em>, <strong><code>format_quantity</code></strong>:<code>Optional</code>[<code>int</code>]=<em><code>None</code></em>)</p>
 </blockquote>
 <p>Update the data associated with a listing.</p>
 <p>User Authentication needed.</p>
@@ -336,7 +336,7 @@ indicating whether or not this listing is in their cart."</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_order" class="doc_header"><code>get_order</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/rq_marketplace.py#L191" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_order</code>(<strong><code>user</code></strong>:<a href="/discogspy/core.discogs_user#UserWithUserTokenBasedAuthentication"><code>UserWithUserTokenBasedAuthentication</code></a>, <strong><code>order_id</code></strong>:<code>str</code>)</p>
+<h4 id="get_order" class="doc_header"><code>get_order</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/rq_marketplace.py#L192" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_order</code>(<strong><code>user</code></strong>:<a href="/discogspy/core.discogs_user#UserWithUserTokenBasedAuthentication"><code>UserWithUserTokenBasedAuthentication</code></a>, <strong><code>order_id</code></strong>:<code>str</code>)</p>
 </blockquote>
 <p>Get the data associated with an order.</p>
 <p>User Authentication needed.</p>
@@ -376,7 +376,7 @@ indicating whether or not this listing is in their cart."</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="update_order_status" class="doc_header"><code>update_order_status</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/rq_marketplace.py#L207" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>update_order_status</code>(<strong><code>user</code></strong>:<a href="/discogspy/core.discogs_user#UserWithUserTokenBasedAuthentication"><code>UserWithUserTokenBasedAuthentication</code></a>, <strong><code>order_id</code></strong>:<code>str</code>, <strong><code>status</code></strong>:<a href="/discogspy/core.constants#StatusOrder"><code>StatusOrder</code></a>)</p>
+<h4 id="update_order_status" class="doc_header"><code>update_order_status</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/rq_marketplace.py#L208" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>update_order_status</code>(<strong><code>user</code></strong>:<a href="/discogspy/core.discogs_user#UserWithUserTokenBasedAuthentication"><code>UserWithUserTokenBasedAuthentication</code></a>, <strong><code>order_id</code></strong>:<code>str</code>, <strong><code>status</code></strong>:<a href="/discogspy/core.constants#StatusOrder"><code>StatusOrder</code></a>)</p>
 </blockquote>
 <p>Update the status associated with the given order.</p>
 <p>Note: Use get_order to get the next_status key – an array of valid next statuses for this order.</p>
@@ -417,7 +417,7 @@ indicating whether or not this listing is in their cart."</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="update_order_shipping" class="doc_header"><code>update_order_shipping</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/rq_marketplace.py#L231" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>update_order_shipping</code>(<strong><code>user</code></strong>:<a href="/discogspy/core.discogs_user#UserWithUserTokenBasedAuthentication"><code>UserWithUserTokenBasedAuthentication</code></a>, <strong><code>order_id</code></strong>:<code>str</code>, <strong><code>shipping_cost</code></strong>:<code>float</code>)</p>
+<h4 id="update_order_shipping" class="doc_header"><code>update_order_shipping</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/rq_marketplace.py#L232" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>update_order_shipping</code>(<strong><code>user</code></strong>:<a href="/discogspy/core.discogs_user#UserWithUserTokenBasedAuthentication"><code>UserWithUserTokenBasedAuthentication</code></a>, <strong><code>order_id</code></strong>:<code>str</code>, <strong><code>shipping_cost</code></strong>:<code>float</code>)</p>
 </blockquote>
 <p>Update the shipping costs associated with the given order.</p>
 <p>Note: If the order status is neither cancelled, Payment Received, nor Shipped, you can change the shipping.
@@ -459,7 +459,7 @@ indicating whether or not this listing is in their cart."</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_orders" class="doc_header"><code>get_orders</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/rq_marketplace.py#L256" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_orders</code>(<strong><code>user</code></strong>:<a href="/discogspy/core.discogs_user#UserWithUserTokenBasedAuthentication"><code>UserWithUserTokenBasedAuthentication</code></a>, <strong><code>status</code></strong>:<code>Optional</code>[<a href="/discogspy/core.constants#StatusOrders"><code>StatusOrders</code></a>]=<em><code>None</code></em>, <strong><code>page</code></strong>:<code>Optional</code>[<code>int</code>]=<em><code>None</code></em>, <strong><code>per_page</code></strong>:<code>Optional</code>[<code>int</code>]=<em><code>None</code></em>, <strong><code>sort</code></strong>:<code>Optional</code>[<a href="/discogspy/core.constants#SortOptionsOrders"><code>SortOptionsOrders</code></a>]=<em><code>None</code></em>, <strong><code>sort_order</code></strong>:<code>Optional</code>[<a href="/discogspy/core.constants#SortOrder"><code>SortOrder</code></a>]=<em><code>None</code></em>)</p>
+<h4 id="get_orders" class="doc_header"><code>get_orders</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/rq_marketplace.py#L257" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_orders</code>(<strong><code>user</code></strong>:<a href="/discogspy/core.discogs_user#UserWithUserTokenBasedAuthentication"><code>UserWithUserTokenBasedAuthentication</code></a>, <strong><code>status</code></strong>:<code>Optional</code>[<a href="/discogspy/core.constants#StatusOrders"><code>StatusOrders</code></a>]=<em><code>None</code></em>, <strong><code>page</code></strong>:<code>Optional</code>[<code>int</code>]=<em><code>None</code></em>, <strong><code>per_page</code></strong>:<code>Optional</code>[<code>int</code>]=<em><code>None</code></em>, <strong><code>sort</code></strong>:<code>Optional</code>[<a href="/discogspy/core.constants#SortOptionsOrders"><code>SortOptionsOrders</code></a>]=<em><code>None</code></em>, <strong><code>sort_order</code></strong>:<code>Optional</code>[<a href="/discogspy/core.constants#SortOrder"><code>SortOrder</code></a>]=<em><code>None</code></em>)</p>
 </blockquote>
 <p>Get a list of the user's orders.</p>
 <p>Note: In the original API is an optional parameter called "archived".
@@ -502,7 +502,7 @@ indicating whether or not this listing is in their cart."</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_order_messages" class="doc_header"><code>get_order_messages</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/rq_marketplace.py#L290" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_order_messages</code>(<strong><code>user</code></strong>:<a href="/discogspy/core.discogs_user#UserWithUserTokenBasedAuthentication"><code>UserWithUserTokenBasedAuthentication</code></a>, <strong><code>order_id</code></strong>:<code>str</code>, <strong><code>page</code></strong>:<code>Optional</code>[<code>int</code>]=<em><code>None</code></em>, <strong><code>per_page</code></strong>:<code>Optional</code>[<code>int</code>]=<em><code>None</code></em>)</p>
+<h4 id="get_order_messages" class="doc_header"><code>get_order_messages</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/rq_marketplace.py#L291" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_order_messages</code>(<strong><code>user</code></strong>:<a href="/discogspy/core.discogs_user#UserWithUserTokenBasedAuthentication"><code>UserWithUserTokenBasedAuthentication</code></a>, <strong><code>order_id</code></strong>:<code>str</code>, <strong><code>page</code></strong>:<code>Optional</code>[<code>int</code>]=<em><code>None</code></em>, <strong><code>per_page</code></strong>:<code>Optional</code>[<code>int</code>]=<em><code>None</code></em>)</p>
 </blockquote>
 <p>Get a list of messages related to an order, with the most recent first.</p>
 <p>User Authentication needed.</p>
@@ -543,7 +543,7 @@ indicating whether or not this listing is in their cart."</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="post_message_on_order" class="doc_header"><code>post_message_on_order</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/rq_marketplace.py#L314" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>post_message_on_order</code>(<strong><code>user</code></strong>:<a href="/discogspy/core.discogs_user#UserWithUserTokenBasedAuthentication"><code>UserWithUserTokenBasedAuthentication</code></a>, <strong><code>order_id</code></strong>:<code>str</code>, <strong><code>message</code></strong>:<code>str</code>)</p>
+<h4 id="post_message_on_order" class="doc_header"><code>post_message_on_order</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/rq_marketplace.py#L315" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>post_message_on_order</code>(<strong><code>user</code></strong>:<a href="/discogspy/core.discogs_user#UserWithUserTokenBasedAuthentication"><code>UserWithUserTokenBasedAuthentication</code></a>, <strong><code>order_id</code></strong>:<code>str</code>, <strong><code>message</code></strong>:<code>str</code>)</p>
 </blockquote>
 <p>Post a new message to a given order.</p>
 <p>User Authentication needed.</p>
@@ -564,6 +564,53 @@ indicating whether or not this listing is in their cart."</p>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Example for usage of post_message_on_order</span>
 
 <span class="n">post_message_on_order</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="n">example_user</span><span class="p">,</span> <span class="n">order_id</span><span class="o">=</span><span class="s2">&quot;1906948-515&quot;</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s2">&quot;Hello World&quot;</span><span class="p">)</span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Fee">Fee<a class="anchor-link" href="#Fee">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="get_discogs_fee_for_given_price" class="doc_header"><code>get_discogs_fee_for_given_price</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/rq_marketplace.py#L337" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_discogs_fee_for_given_price</code>(<strong><code>user</code></strong>:<code>Union</code>[<a href="/discogspy/core.discogs_user#UserWithoutAuthentication"><code>UserWithoutAuthentication</code></a>, <a href="/discogspy/core.discogs_user#UserWithUserTokenBasedAuthentication"><code>UserWithUserTokenBasedAuthentication</code></a>], <strong><code>price</code></strong>:<code>float</code>)</p>
+</blockquote>
+<p>Calculate the fee for selling an item on the Marketplace in USD</p>
+<p>Note: According to the Discogs API, it should be possible to change the currency. However, this feature seems to be broken at this point. That's why I did remove this optional argument.</p>
+<p>No user Authentication needed.</p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Example for usage of get_discogs_fee_for_given_price</span>
+
+<span class="n">get_discogs_fee_for_given_price</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="n">example_user</span><span class="p">,</span> <span class="n">price</span><span class="o">=</span><span class="mf">5.42</span><span class="p">)</span> 
 </pre></div>
 
     </div>
