@@ -13,6 +13,8 @@ index = {"BASE_URL": "00_core.constants.ipynb",
          "ORDERS_URL": "00_core.constants.ipynb",
          "FEE_URL": "00_core.constants.ipynb",
          "PRICE_SUGGESTIONS_URL": "00_core.constants.ipynb",
+         "INVENTORY_URL": "00_core.constants.ipynb",
+         "INVENTORY_EXPORT_URL": "00_core.constants.ipynb",
          "CurrAbbr": "00_core.constants.ipynb",
          "SortOptionsMaster": "00_core.constants.ipynb",
          "SortOptionsArtist": "00_core.constants.ipynb",
@@ -51,12 +53,14 @@ index = {"BASE_URL": "00_core.constants.ipynb",
          "get_order_messages": "03_core.rq_marketplace.ipynb",
          "post_message_on_order": "03_core.rq_marketplace.ipynb",
          "get_discogs_fee_for_given_price": "03_core.rq_marketplace.ipynb",
-         "get_price_suggestions": "03_core.rq_marketplace.ipynb"}
+         "get_price_suggestions": "03_core.rq_marketplace.ipynb",
+         "request_inventory_export": "04_core.rq_inventory_export.ipynb"}
 
 modules = ["core/constants.py",
            "core/discogs_user.py",
            "core/rq_database.py",
-           "core/rq_marketplace.py"]
+           "core/rq_marketplace.py",
+           "core/rq_inventory_export.py"]
 
 doc_url = "https://cpow-89.github.io/discogspy/"
 

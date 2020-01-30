@@ -47,6 +47,8 @@ summary: "Constants"
 <span class="n">ORDERS_URL</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{MARKETPLACE_URL}</span><span class="s2">/orders&quot;</span>
 <span class="n">FEE_URL</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{MARKETPLACE_URL}</span><span class="s2">/fee&quot;</span>
 <span class="n">PRICE_SUGGESTIONS_URL</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{MARKETPLACE_URL}</span><span class="s2">/price_suggestions&quot;</span>
+<span class="n">INVENTORY_URL</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{BASE_URL}</span><span class="s2">/inventory&quot;</span>
+<span class="n">INVENTORY_EXPORT_URL</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{INVENTORY_URL}</span><span class="s2">/export&quot;</span>
 </pre></div>
 
     </div>
@@ -105,7 +107,7 @@ summary: "Constants"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="CurrAbbr" class="doc_header"><code>class</code> <code>CurrAbbr</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/constants.py#L29" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>CurrAbbr</code>(<strong><code>value</code></strong>, <strong><code>names</code></strong>=<em><code>None</code></em>, <strong><code>module</code></strong>=<em><code>None</code></em>, <strong><code>qualname</code></strong>=<em><code>None</code></em>, <strong><code>type</code></strong>=<em><code>None</code></em>, <strong><code>start</code></strong>=<em><code>1</code></em>) :: <code>Enum</code></p>
+<h2 id="CurrAbbr" class="doc_header"><code>class</code> <code>CurrAbbr</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/constants.py#L32" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>CurrAbbr</code>(<strong><code>value</code></strong>, <strong><code>names</code></strong>=<em><code>None</code></em>, <strong><code>module</code></strong>=<em><code>None</code></em>, <strong><code>qualname</code></strong>=<em><code>None</code></em>, <strong><code>type</code></strong>=<em><code>None</code></em>, <strong><code>start</code></strong>=<em><code>1</code></em>) :: <code>Enum</code></p>
 </blockquote>
 <p>Valid currencies for marketplace data</p>
 
@@ -156,7 +158,7 @@ summary: "Constants"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="SortOptionsMaster" class="doc_header"><code>class</code> <code>SortOptionsMaster</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/constants.py#L51" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>SortOptionsMaster</code>(<strong><code>value</code></strong>, <strong><code>names</code></strong>=<em><code>None</code></em>, <strong><code>module</code></strong>=<em><code>None</code></em>, <strong><code>qualname</code></strong>=<em><code>None</code></em>, <strong><code>type</code></strong>=<em><code>None</code></em>, <strong><code>start</code></strong>=<em><code>1</code></em>) :: <code>Enum</code></p>
+<h2 id="SortOptionsMaster" class="doc_header"><code>class</code> <code>SortOptionsMaster</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/constants.py#L54" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>SortOptionsMaster</code>(<strong><code>value</code></strong>, <strong><code>names</code></strong>=<em><code>None</code></em>, <strong><code>module</code></strong>=<em><code>None</code></em>, <strong><code>qualname</code></strong>=<em><code>None</code></em>, <strong><code>type</code></strong>=<em><code>None</code></em>, <strong><code>start</code></strong>=<em><code>1</code></em>) :: <code>Enum</code></p>
 </blockquote>
 <p>Valid sort options for master releases.</p>
 
@@ -198,7 +200,7 @@ summary: "Constants"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="SortOptionsArtist" class="doc_header"><code>class</code> <code>SortOptionsArtist</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/constants.py#L67" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>SortOptionsArtist</code>(<strong><code>value</code></strong>, <strong><code>names</code></strong>=<em><code>None</code></em>, <strong><code>module</code></strong>=<em><code>None</code></em>, <strong><code>qualname</code></strong>=<em><code>None</code></em>, <strong><code>type</code></strong>=<em><code>None</code></em>, <strong><code>start</code></strong>=<em><code>1</code></em>) :: <code>Enum</code></p>
+<h2 id="SortOptionsArtist" class="doc_header"><code>class</code> <code>SortOptionsArtist</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/constants.py#L70" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>SortOptionsArtist</code>(<strong><code>value</code></strong>, <strong><code>names</code></strong>=<em><code>None</code></em>, <strong><code>module</code></strong>=<em><code>None</code></em>, <strong><code>qualname</code></strong>=<em><code>None</code></em>, <strong><code>type</code></strong>=<em><code>None</code></em>, <strong><code>start</code></strong>=<em><code>1</code></em>) :: <code>Enum</code></p>
 </blockquote>
 <p>Valid sort options for artist releases.</p>
 
@@ -239,7 +241,7 @@ summary: "Constants"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="SortOptionsLabel" class="doc_header"><code>class</code> <code>SortOptionsLabel</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/constants.py#L80" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>SortOptionsLabel</code>(<strong><code>value</code></strong>, <strong><code>names</code></strong>=<em><code>None</code></em>, <strong><code>module</code></strong>=<em><code>None</code></em>, <strong><code>qualname</code></strong>=<em><code>None</code></em>, <strong><code>type</code></strong>=<em><code>None</code></em>, <strong><code>start</code></strong>=<em><code>1</code></em>) :: <code>Enum</code></p>
+<h2 id="SortOptionsLabel" class="doc_header"><code>class</code> <code>SortOptionsLabel</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/constants.py#L83" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>SortOptionsLabel</code>(<strong><code>value</code></strong>, <strong><code>names</code></strong>=<em><code>None</code></em>, <strong><code>module</code></strong>=<em><code>None</code></em>, <strong><code>qualname</code></strong>=<em><code>None</code></em>, <strong><code>type</code></strong>=<em><code>None</code></em>, <strong><code>start</code></strong>=<em><code>1</code></em>) :: <code>Enum</code></p>
 </blockquote>
 <p>Valid sort options for label releases.</p>
 
@@ -287,7 +289,7 @@ summary: "Constants"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="SortOptionsInventory" class="doc_header"><code>class</code> <code>SortOptionsInventory</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/constants.py#L92" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>SortOptionsInventory</code>(<strong><code>value</code></strong>, <strong><code>names</code></strong>=<em><code>None</code></em>, <strong><code>module</code></strong>=<em><code>None</code></em>, <strong><code>qualname</code></strong>=<em><code>None</code></em>, <strong><code>type</code></strong>=<em><code>None</code></em>, <strong><code>start</code></strong>=<em><code>1</code></em>) :: <code>Enum</code></p>
+<h2 id="SortOptionsInventory" class="doc_header"><code>class</code> <code>SortOptionsInventory</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/constants.py#L95" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>SortOptionsInventory</code>(<strong><code>value</code></strong>, <strong><code>names</code></strong>=<em><code>None</code></em>, <strong><code>module</code></strong>=<em><code>None</code></em>, <strong><code>qualname</code></strong>=<em><code>None</code></em>, <strong><code>type</code></strong>=<em><code>None</code></em>, <strong><code>start</code></strong>=<em><code>1</code></em>) :: <code>Enum</code></p>
 </blockquote>
 <p>Valid sort options for inventory.</p>
 
@@ -330,7 +332,7 @@ summary: "Constants"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="SortOptionsOrders" class="doc_header"><code>class</code> <code>SortOptionsOrders</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/constants.py#L111" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>SortOptionsOrders</code>(<strong><code>value</code></strong>, <strong><code>names</code></strong>=<em><code>None</code></em>, <strong><code>module</code></strong>=<em><code>None</code></em>, <strong><code>qualname</code></strong>=<em><code>None</code></em>, <strong><code>type</code></strong>=<em><code>None</code></em>, <strong><code>start</code></strong>=<em><code>1</code></em>) :: <code>Enum</code></p>
+<h2 id="SortOptionsOrders" class="doc_header"><code>class</code> <code>SortOptionsOrders</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/constants.py#L114" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>SortOptionsOrders</code>(<strong><code>value</code></strong>, <strong><code>names</code></strong>=<em><code>None</code></em>, <strong><code>module</code></strong>=<em><code>None</code></em>, <strong><code>qualname</code></strong>=<em><code>None</code></em>, <strong><code>type</code></strong>=<em><code>None</code></em>, <strong><code>start</code></strong>=<em><code>1</code></em>) :: <code>Enum</code></p>
 </blockquote>
 <p>Valid sort options for orders.</p>
 
@@ -376,7 +378,7 @@ summary: "Constants"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="SortOrder" class="doc_header"><code>class</code> <code>SortOrder</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/constants.py#L125" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>SortOrder</code>(<strong><code>value</code></strong>, <strong><code>names</code></strong>=<em><code>None</code></em>, <strong><code>module</code></strong>=<em><code>None</code></em>, <strong><code>qualname</code></strong>=<em><code>None</code></em>, <strong><code>type</code></strong>=<em><code>None</code></em>, <strong><code>start</code></strong>=<em><code>1</code></em>) :: <code>Enum</code></p>
+<h2 id="SortOrder" class="doc_header"><code>class</code> <code>SortOrder</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/constants.py#L128" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>SortOrder</code>(<strong><code>value</code></strong>, <strong><code>names</code></strong>=<em><code>None</code></em>, <strong><code>module</code></strong>=<em><code>None</code></em>, <strong><code>qualname</code></strong>=<em><code>None</code></em>, <strong><code>type</code></strong>=<em><code>None</code></em>, <strong><code>start</code></strong>=<em><code>1</code></em>) :: <code>Enum</code></p>
 </blockquote>
 <p>Valid sort order options.</p>
 
@@ -424,7 +426,7 @@ summary: "Constants"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="StatusInventory" class="doc_header"><code>class</code> <code>StatusInventory</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/constants.py#L136" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>StatusInventory</code>(<strong><code>value</code></strong>, <strong><code>names</code></strong>=<em><code>None</code></em>, <strong><code>module</code></strong>=<em><code>None</code></em>, <strong><code>qualname</code></strong>=<em><code>None</code></em>, <strong><code>type</code></strong>=<em><code>None</code></em>, <strong><code>start</code></strong>=<em><code>1</code></em>) :: <code>Enum</code></p>
+<h2 id="StatusInventory" class="doc_header"><code>class</code> <code>StatusInventory</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/constants.py#L139" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>StatusInventory</code>(<strong><code>value</code></strong>, <strong><code>names</code></strong>=<em><code>None</code></em>, <strong><code>module</code></strong>=<em><code>None</code></em>, <strong><code>qualname</code></strong>=<em><code>None</code></em>, <strong><code>type</code></strong>=<em><code>None</code></em>, <strong><code>start</code></strong>=<em><code>1</code></em>) :: <code>Enum</code></p>
 </blockquote>
 <p>Valid status options for inventory items.</p>
 
@@ -465,7 +467,7 @@ summary: "Constants"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="StatusNewListing" class="doc_header"><code>class</code> <code>StatusNewListing</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/constants.py#L149" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>StatusNewListing</code>(<strong><code>value</code></strong>, <strong><code>names</code></strong>=<em><code>None</code></em>, <strong><code>module</code></strong>=<em><code>None</code></em>, <strong><code>qualname</code></strong>=<em><code>None</code></em>, <strong><code>type</code></strong>=<em><code>None</code></em>, <strong><code>start</code></strong>=<em><code>1</code></em>) :: <code>Enum</code></p>
+<h2 id="StatusNewListing" class="doc_header"><code>class</code> <code>StatusNewListing</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/constants.py#L152" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>StatusNewListing</code>(<strong><code>value</code></strong>, <strong><code>names</code></strong>=<em><code>None</code></em>, <strong><code>module</code></strong>=<em><code>None</code></em>, <strong><code>qualname</code></strong>=<em><code>None</code></em>, <strong><code>type</code></strong>=<em><code>None</code></em>, <strong><code>start</code></strong>=<em><code>1</code></em>) :: <code>Enum</code></p>
 </blockquote>
 <p>Valid status options for inventory listing.</p>
 
@@ -513,7 +515,7 @@ summary: "Constants"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="StatusOrder" class="doc_header"><code>class</code> <code>StatusOrder</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/constants.py#L161" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>StatusOrder</code>(<strong><code>value</code></strong>, <strong><code>names</code></strong>=<em><code>None</code></em>, <strong><code>module</code></strong>=<em><code>None</code></em>, <strong><code>qualname</code></strong>=<em><code>None</code></em>, <strong><code>type</code></strong>=<em><code>None</code></em>, <strong><code>start</code></strong>=<em><code>1</code></em>) :: <code>Enum</code></p>
+<h2 id="StatusOrder" class="doc_header"><code>class</code> <code>StatusOrder</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/constants.py#L164" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>StatusOrder</code>(<strong><code>value</code></strong>, <strong><code>names</code></strong>=<em><code>None</code></em>, <strong><code>module</code></strong>=<em><code>None</code></em>, <strong><code>qualname</code></strong>=<em><code>None</code></em>, <strong><code>type</code></strong>=<em><code>None</code></em>, <strong><code>start</code></strong>=<em><code>1</code></em>) :: <code>Enum</code></p>
 </blockquote>
 <p>Valid status options for updating an order.</p>
 
@@ -566,7 +568,7 @@ summary: "Constants"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="StatusOrders" class="doc_header"><code>class</code> <code>StatusOrders</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/constants.py#L180" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>StatusOrders</code>(<strong><code>value</code></strong>, <strong><code>names</code></strong>=<em><code>None</code></em>, <strong><code>module</code></strong>=<em><code>None</code></em>, <strong><code>qualname</code></strong>=<em><code>None</code></em>, <strong><code>type</code></strong>=<em><code>None</code></em>, <strong><code>start</code></strong>=<em><code>1</code></em>) :: <code>Enum</code></p>
+<h2 id="StatusOrders" class="doc_header"><code>class</code> <code>StatusOrders</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/constants.py#L183" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>StatusOrders</code>(<strong><code>value</code></strong>, <strong><code>names</code></strong>=<em><code>None</code></em>, <strong><code>module</code></strong>=<em><code>None</code></em>, <strong><code>qualname</code></strong>=<em><code>None</code></em>, <strong><code>type</code></strong>=<em><code>None</code></em>, <strong><code>start</code></strong>=<em><code>1</code></em>) :: <code>Enum</code></p>
 </blockquote>
 <p>Valid status options for filtering order list.</p>
 
@@ -625,7 +627,7 @@ summary: "Constants"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="ReleaseCondition" class="doc_header"><code>class</code> <code>ReleaseCondition</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/constants.py#L204" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>ReleaseCondition</code>(<strong><code>value</code></strong>, <strong><code>names</code></strong>=<em><code>None</code></em>, <strong><code>module</code></strong>=<em><code>None</code></em>, <strong><code>qualname</code></strong>=<em><code>None</code></em>, <strong><code>type</code></strong>=<em><code>None</code></em>, <strong><code>start</code></strong>=<em><code>1</code></em>) :: <code>Enum</code></p>
+<h2 id="ReleaseCondition" class="doc_header"><code>class</code> <code>ReleaseCondition</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/constants.py#L207" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>ReleaseCondition</code>(<strong><code>value</code></strong>, <strong><code>names</code></strong>=<em><code>None</code></em>, <strong><code>module</code></strong>=<em><code>None</code></em>, <strong><code>qualname</code></strong>=<em><code>None</code></em>, <strong><code>type</code></strong>=<em><code>None</code></em>, <strong><code>start</code></strong>=<em><code>1</code></em>) :: <code>Enum</code></p>
 </blockquote>
 <p>Valid release conditions.</p>
 
@@ -675,7 +677,7 @@ summary: "Constants"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="SleeveCondition" class="doc_header"><code>class</code> <code>SleeveCondition</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/constants.py#L222" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>SleeveCondition</code>(<strong><code>value</code></strong>, <strong><code>names</code></strong>=<em><code>None</code></em>, <strong><code>module</code></strong>=<em><code>None</code></em>, <strong><code>qualname</code></strong>=<em><code>None</code></em>, <strong><code>type</code></strong>=<em><code>None</code></em>, <strong><code>start</code></strong>=<em><code>1</code></em>) :: <code>Enum</code></p>
+<h2 id="SleeveCondition" class="doc_header"><code>class</code> <code>SleeveCondition</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/constants.py#L225" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>SleeveCondition</code>(<strong><code>value</code></strong>, <strong><code>names</code></strong>=<em><code>None</code></em>, <strong><code>module</code></strong>=<em><code>None</code></em>, <strong><code>qualname</code></strong>=<em><code>None</code></em>, <strong><code>type</code></strong>=<em><code>None</code></em>, <strong><code>start</code></strong>=<em><code>1</code></em>) :: <code>Enum</code></p>
 </blockquote>
 <p>Valid listing conditions.</p>
 

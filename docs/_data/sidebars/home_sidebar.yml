@@ -21,6 +21,9 @@ entries:
     - output: web,pdf
       title: Core Marketplace Requests
       url: /core.rq_marketplace
+    - output: web,pdf
+      title: Core Inventory Export Requests
+      url: /core.rq_inventory_export
     output: web
     title: discogspy
   output: web
