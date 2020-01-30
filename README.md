@@ -26,7 +26,7 @@ Important: This package is under substantial development. See Road Map for more 
     
     a) Wrap database calls (done - except search request cause I personally dont have any usecase for it)<br>
     b) Wrap marketplace calls (done)<br>
-    c) Wrap inventory export calls<br>
+    c) Wrap inventory export calls (done)<br>
     d) Wrap inventory upload calls<br>
     e) Wrap user identity calls<br>
     f) Wrap user collection calls<br>

@@ -55,8 +55,9 @@ index = {"BASE_URL": "00_core.constants.ipynb",
          "get_discogs_fee_for_given_price": "03_core.rq_marketplace.ipynb",
          "get_price_suggestions": "03_core.rq_marketplace.ipynb",
          "request_inventory_export": "04_core.rq_inventory_export.ipynb",
-         "get_recent_exports": "04_core.rq_inventory_export.ipynb",
-         "get_export_details": "04_core.rq_inventory_export.ipynb"}
+         "get_recent_inventory_exports": "04_core.rq_inventory_export.ipynb",
+         "get_inventory_export_details": "04_core.rq_inventory_export.ipynb",
+         "download_inventory_export": "04_core.rq_inventory_export.ipynb"}
 
 modules = ["core/constants.py",
            "core/discogs_user.py",
