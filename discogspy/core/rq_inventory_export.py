@@ -71,6 +71,7 @@ def download_inventory_export(user: UserWithUserTokenBasedAuthentication,
                               ) -> requests.models.Response:
     """
     Download an existing inventory export.
+    The response will be a zipped csv file.
 
     User Authentication needed.
     """
