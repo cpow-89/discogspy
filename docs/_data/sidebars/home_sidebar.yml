@@ -24,6 +24,9 @@ entries:
     - output: web,pdf
       title: Core Inventory Export Requests
       url: /core.rq_inventory_export
+    - output: web,pdf
+      title: Core Inventory Upload Requests
+      url: /core.rq_inventory_upload
     output: web
     title: discogspy
   output: web

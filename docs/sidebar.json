@@ -5,6 +5,7 @@
     "Core User": "/core.discogs_user",
     "Core Database Requests": "/core.rq_database",
     "Core Marketplace Requests": "/core.rq_marketplace",
-    "Core Inventory Export Requests": "/core.rq_inventory_export"
+    "Core Inventory Export Requests": "/core.rq_inventory_export",
+    "Core Inventory Upload Requests": "/core.rq_inventory_upload"
   }
 }
