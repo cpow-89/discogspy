@@ -62,7 +62,8 @@ index = {"BASE_URL": "00_core.constants.ipynb",
          "add_new_listings_using_csv": "05_core.rq_inventory_upload.ipynb",
          "update_existing_listings_using_csv": "05_core.rq_inventory_upload.ipynb",
          "delete_listings_using_csv": "05_core.rq_inventory_upload.ipynb",
-         "get_list_of_recent_uploads": "05_core.rq_inventory_upload.ipynb"}
+         "get_list_of_recent_uploads": "05_core.rq_inventory_upload.ipynb",
+         "get_upload": "05_core.rq_inventory_upload.ipynb"}
 
 modules = ["core/constants.py",
            "core/discogs_user.py",
