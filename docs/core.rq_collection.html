@@ -38,7 +38,7 @@ summary: "Core.rq_collection is a collection of function wrappers around the Dis
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_user_collection_folders" class="doc_header"><code>get_user_collection_folders</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/rq_collection.py#L13" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_user_collection_folders</code>(<strong><code>user</code></strong>:<code>Union</code>[<a href="/discogspy/core.discogs_user#UserWithoutAuthentication"><code>UserWithoutAuthentication</code></a>, <a href="/discogspy/core.discogs_user#UserWithUserTokenBasedAuthentication"><code>UserWithUserTokenBasedAuthentication</code></a>], <strong><code>username</code></strong>:<code>str</code>)</p>
+<h4 id="get_user_collection_folders" class="doc_header"><code>get_user_collection_folders</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/rq_collection.py#L14" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_user_collection_folders</code>(<strong><code>user</code></strong>:<code>Union</code>[<a href="/discogspy/core.discogs_user#UserWithoutAuthentication"><code>UserWithoutAuthentication</code></a>, <a href="/discogspy/core.discogs_user#UserWithUserTokenBasedAuthentication"><code>UserWithUserTokenBasedAuthentication</code></a>], <strong><code>username</code></strong>:<code>str</code>)</p>
 </blockquote>
 <p>Get a list of folders in a user’s collection.</p>
 <p>Note: If you are not authenticated as the collection owner,
@@ -79,7 +79,7 @@ summary: "Core.rq_collection is a collection of function wrappers around the Dis
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="create_new_user_collection_folder" class="doc_header"><code>create_new_user_collection_folder</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/rq_collection.py#L34" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>create_new_user_collection_folder</code>(<strong><code>user</code></strong>:<a href="/discogspy/core.discogs_user#UserWithUserTokenBasedAuthentication"><code>UserWithUserTokenBasedAuthentication</code></a>, <strong><code>username</code></strong>:<code>str</code>, <strong><code>folder_name</code></strong>:<code>str</code>)</p>
+<h4 id="create_new_user_collection_folder" class="doc_header"><code>create_new_user_collection_folder</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/rq_collection.py#L35" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>create_new_user_collection_folder</code>(<strong><code>user</code></strong>:<a href="/discogspy/core.discogs_user#UserWithUserTokenBasedAuthentication"><code>UserWithUserTokenBasedAuthentication</code></a>, <strong><code>username</code></strong>:<code>str</code>, <strong><code>folder_name</code></strong>:<code>str</code>)</p>
 </blockquote>
 <p>Create a new folder in a user’s collection.</p>
 <p>User Authentication needed.</p>
@@ -118,7 +118,7 @@ summary: "Core.rq_collection is a collection of function wrappers around the Dis
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_folder_metadata" class="doc_header"><code>get_folder_metadata</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/rq_collection.py#L54" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_folder_metadata</code>(<strong><code>user</code></strong>:<code>Union</code>[<a href="/discogspy/core.discogs_user#UserWithoutAuthentication"><code>UserWithoutAuthentication</code></a>, <a href="/discogspy/core.discogs_user#UserWithUserTokenBasedAuthentication"><code>UserWithUserTokenBasedAuthentication</code></a>], <strong><code>username</code></strong>:<code>str</code>, <strong><code>folder_id</code></strong>:<code>int</code>)</p>
+<h4 id="get_folder_metadata" class="doc_header"><code>get_folder_metadata</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/rq_collection.py#L55" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_folder_metadata</code>(<strong><code>user</code></strong>:<code>Union</code>[<a href="/discogspy/core.discogs_user#UserWithoutAuthentication"><code>UserWithoutAuthentication</code></a>, <a href="/discogspy/core.discogs_user#UserWithUserTokenBasedAuthentication"><code>UserWithUserTokenBasedAuthentication</code></a>], <strong><code>username</code></strong>:<code>str</code>, <strong><code>folder_id</code></strong>:<code>int</code>)</p>
 </blockquote>
 <p>Get metadata about a folder in a user’s collection.</p>
 <p>Note: If folder_id is not 0, authentication as the collection owner is required.</p>
@@ -139,6 +139,46 @@ summary: "Core.rq_collection is a collection of function wrappers around the Dis
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Example for usage of get_folder_metadata</span>
 <span class="n">get_folder_metadata</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="n">example_user</span><span class="p">,</span> <span class="n">username</span><span class="o">=</span><span class="s2">&quot;discogspy&quot;</span><span class="p">,</span> <span class="n">folder_id</span><span class="o">=</span><span class="mi">1996907</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="change_collection_folder_name" class="doc_header"><code>change_collection_folder_name</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/rq_collection.py#L76" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>change_collection_folder_name</code>(<strong><code>user</code></strong>:<a href="/discogspy/core.discogs_user#UserWithUserTokenBasedAuthentication"><code>UserWithUserTokenBasedAuthentication</code></a>, <strong><code>username</code></strong>:<code>str</code>, <strong><code>folder_id</code></strong>:<code>int</code>, <strong><code>new_folder_name</code></strong>:<code>str</code>)</p>
+</blockquote>
+<p>Change the name of an existing collection folder in a user’s collection.</p>
+<p>User Authentication needed.</p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Example for usage of change_collection_folder_name</span>
+<span class="n">change_collection_folder_name</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="n">example_user</span><span class="p">,</span> <span class="n">username</span><span class="o">=</span><span class="s2">&quot;discogspy&quot;</span><span class="p">,</span> 
+                              <span class="n">folder_id</span><span class="o">=</span><span class="mi">1996907</span><span class="p">,</span> <span class="n">new_folder_name</span><span class="o">=</span><span class="s2">&quot;new_folder&quot;</span><span class="p">)</span>
 </pre></div>
 
     </div>
