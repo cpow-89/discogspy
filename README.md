@@ -13,11 +13,11 @@ Important: This package is under substantial development. See Road Map for more 
 
 1. Create type save python wrapper around the Discogs API
     
-    a) Wrap database calls (done - except search request cause I personally dont have any usecase for it)<br>
+    a) Wrap database calls (done - except search request cause I personally dont have any use case for it)<br>
     b) Wrap marketplace calls (done)<br>
     c) Wrap inventory export calls (done)<br>
-    d) Wrap inventory upload calls<br>
-    e) Wrap user identity calls<br>
+    d) Wrap inventory upload calls (done)<br>
+    e) Wrap user identity calls (maybe later - I personally dont have any use case for it)<br>
     f) Wrap user collection calls<br>
     g) Wrap user wantlist calls<br>
     h) Wrap user lists calls<br>

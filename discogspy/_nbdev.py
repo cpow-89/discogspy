@@ -63,14 +63,16 @@ index = {"BASE_URL": "00_core.constants.ipynb",
          "update_existing_listings_using_csv": "05_core.rq_inventory_upload.ipynb",
          "delete_listings_using_csv": "05_core.rq_inventory_upload.ipynb",
          "get_list_of_recent_uploads": "05_core.rq_inventory_upload.ipynb",
-         "get_upload": "05_core.rq_inventory_upload.ipynb"}
+         "get_upload": "05_core.rq_inventory_upload.ipynb",
+         "get_user_collection_folders": "06_core.rq_collection.ipynb"}
 
 modules = ["core/constants.py",
            "core/discogs_user.py",
            "core/rq_database.py",
            "core/rq_marketplace.py",
            "core/rq_inventory_export.py",
-           "core/rq_inventory_upload.py"]
+           "core/rq_inventory_upload.py",
+           "core/rq_collection.py"]
 
 doc_url = "https://cpow-89.github.io/discogspy/"
 
