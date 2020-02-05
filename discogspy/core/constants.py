@@ -3,8 +3,8 @@
 __all__ = ['BASE_URL', 'RELEASES_URL', 'MASTERS_URL', 'ARTIST_URL', 'LABEL_URL', 'USERS_URL', 'MARKETPLACE_URL',
            'LISTINGS_URL', 'ORDERS_URL', 'FEE_URL', 'PRICE_SUGGESTIONS_URL', 'INVENTORY_URL', 'INVENTORY_EXPORT_URL',
            'INVENTORY_UPLOAD_URL', 'CurrAbbr', 'SortOptionsMaster', 'SortOptionsArtist', 'SortOptionsLabel',
-           'SortOptionsInventory', 'SortOptionsOrders', 'SortOrder', 'StatusInventory', 'StatusNewListing',
-           'StatusOrder', 'StatusOrders', 'ReleaseCondition', 'SleeveCondition']
+           'SortOptionsInventory', 'SortOptionsOrders', 'SortOptionsCollection', 'SortOrder', 'StatusInventory',
+           'StatusNewListing', 'StatusOrder', 'StatusOrders', 'ReleaseCondition', 'SleeveCondition']
 
 # Cell
 from enum import Enum
@@ -122,6 +122,24 @@ class SortOptionsOrders(Enum):
     created = "created"
     status = "status"
     last_activity = "last_activity"
+
+
+# Cell
+
+
+class SortOptionsCollection(Enum):
+    """
+    Valid sort options for collections.
+    """
+
+    label = "label"
+    artist = "artist"
+    title = "title"
+    catno = "catno"
+    format = "format"
+    rating = "rating"
+    added = "added"
+    year = "year"
 
 # Cell
 
