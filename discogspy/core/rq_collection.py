@@ -2,7 +2,7 @@
 
 __all__ = ['get_user_collection_folders', 'create_new_user_collection_folder', 'get_folder_metadata',
            'change_collection_folder_name', 'delete_collection_folder', 'get_collection_folder_by_release',
-           'get_collection_items_by_folder']
+           'get_collection_items_by_folder', 'add_release_to_collection_folder']
 
 # Cell
 import requests
@@ -175,3 +175,23 @@ def get_collection_items_by_folder(user: Union[UserWithoutAuthentication,
         params["sort_order"] = sort_order.name
 
     return requests.get(url, headers=headers, params=params)
+
+# Cell
+
+
+def add_release_to_collection_folder(user: UserWithUserTokenBasedAuthentication,
+                                     username: str,
+                                     folder_id: int,
+                                     release_id: int
+                                     ) -> requests.models.Response:
+    """
+    Add a release to a folder in a user’s collection.
+
+    User Authentication needed.
+    """
+
+    url = f"{USERS_URL}/{username}/collection/folders/{folder_id}/releases/{release_id}"
+    headers = user.headers
+    params = user.params
+
+    return requests.post(url, headers=headers, params=params)
