@@ -68,7 +68,8 @@ index = {"BASE_URL": "00_core.constants.ipynb",
          "create_new_user_collection_folder": "06_core.rq_collection.ipynb",
          "get_folder_metadata": "06_core.rq_collection.ipynb",
          "change_collection_folder_name": "06_core.rq_collection.ipynb",
-         "delete_collection_folder": "06_core.rq_collection.ipynb"}
+         "delete_collection_folder": "06_core.rq_collection.ipynb",
+         "get_collection_folder_by_release": "06_core.rq_collection.ipynb"}
 
 modules = ["core/constants.py",
            "core/discogs_user.py",
