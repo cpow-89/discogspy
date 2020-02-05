@@ -3,7 +3,7 @@
 __all__ = ['get_user_collection_folders', 'create_new_user_collection_folder', 'get_folder_metadata',
            'change_collection_folder_name', 'delete_collection_folder', 'get_collection_folder_by_release',
            'get_collection_items_by_folder', 'add_release_to_collection_folder',
-           'move_release_to_another_collection_folder']
+           'move_release_to_another_collection_folder', 'change_rating_of_release_in_collection_folder']
 
 # Cell
 import requests
@@ -217,5 +217,29 @@ def move_release_to_another_collection_folder(user: UserWithUserTokenBasedAuthen
     params = user.params
 
     data = {"folder_id": destination_folder_id}
+
+    return requests.post(url, params=params, json=data)
+
+# Cell
+
+
+def change_rating_of_release_in_collection_folder(user: UserWithUserTokenBasedAuthentication,
+                                                  username: str,
+                                                  folder_id: int,
+                                                  release_id: int,
+                                                  instance_id: int,
+                                                  rating: int
+                                                  ) -> requests.models.Response:
+    """
+    Change the rating of the instance of an release in given collection folder.
+
+    User Authentication needed.
+    """
+
+    url = f"{USERS_URL}/{username}/collection/folders/{folder_id}/releases/{release_id}/instances/{instance_id}"
+    params = user.params
+
+    rating = min(max(0, rating), 5)
+    data = {"rating": rating}
 
     return requests.post(url, params=params, json=data)
