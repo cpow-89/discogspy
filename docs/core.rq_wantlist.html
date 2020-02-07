@@ -38,7 +38,7 @@ summary: "Core.rq_wantlist is a collection of function wrappers around the Disco
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_user_wantlist" class="doc_header"><code>get_user_wantlist</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/rq_wantlist.py#L13" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_user_wantlist</code>(<strong><code>user</code></strong>:<code>Union</code>[<a href="/discogspy/core.discogs_user#UserWithoutAuthentication"><code>UserWithoutAuthentication</code></a>, <a href="/discogspy/core.discogs_user#UserWithUserTokenBasedAuthentication"><code>UserWithUserTokenBasedAuthentication</code></a>], <strong><code>username</code></strong>:<code>str</code>, <strong><code>page</code></strong>:<code>Optional</code>[<code>int</code>]=<em><code>None</code></em>, <strong><code>per_page</code></strong>:<code>Optional</code>[<code>int</code>]=<em><code>None</code></em>)</p>
+<h4 id="get_user_wantlist" class="doc_header"><code>get_user_wantlist</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/rq_wantlist.py#L14" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_user_wantlist</code>(<strong><code>user</code></strong>:<code>Union</code>[<a href="/discogspy/core.discogs_user#UserWithoutAuthentication"><code>UserWithoutAuthentication</code></a>, <a href="/discogspy/core.discogs_user#UserWithUserTokenBasedAuthentication"><code>UserWithUserTokenBasedAuthentication</code></a>], <strong><code>username</code></strong>:<code>str</code>, <strong><code>page</code></strong>:<code>Optional</code>[<code>int</code>]=<em><code>None</code></em>, <strong><code>per_page</code></strong>:<code>Optional</code>[<code>int</code>]=<em><code>None</code></em>)</p>
 </blockquote>
 <p>Get a list of releases from the wantlist of a given user.</p>
 <p>Note: If the wantlist has been made private by its owner,
@@ -79,7 +79,7 @@ summary: "Core.rq_wantlist is a collection of function wrappers around the Disco
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="add_release_to_wantlist" class="doc_header"><code>add_release_to_wantlist</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/rq_wantlist.py#L42" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>add_release_to_wantlist</code>(<strong><code>user</code></strong>:<a href="/discogspy/core.discogs_user#UserWithUserTokenBasedAuthentication"><code>UserWithUserTokenBasedAuthentication</code></a>, <strong><code>username</code></strong>:<code>str</code>, <strong><code>release_id</code></strong>:<code>int</code>, <strong><code>notes</code></strong>:<code>Optional</code>[<code>str</code>]=<em><code>None</code></em>, <strong><code>rating</code></strong>:<code>Optional</code>[<code>int</code>]=<em><code>None</code></em>)</p>
+<h4 id="add_release_to_wantlist" class="doc_header"><code>add_release_to_wantlist</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/rq_wantlist.py#L43" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>add_release_to_wantlist</code>(<strong><code>user</code></strong>:<a href="/discogspy/core.discogs_user#UserWithUserTokenBasedAuthentication"><code>UserWithUserTokenBasedAuthentication</code></a>, <strong><code>username</code></strong>:<code>str</code>, <strong><code>release_id</code></strong>:<code>int</code>, <strong><code>notes</code></strong>:<code>Optional</code>[<code>str</code>]=<em><code>None</code></em>, <strong><code>rating</code></strong>:<code>Optional</code>[<code>int</code>]=<em><code>None</code></em>)</p>
 </blockquote>
 <p>Add a releases to the wantlist of a given user.</p>
 <p>User Authentication needed.</p>
@@ -119,7 +119,7 @@ summary: "Core.rq_wantlist is a collection of function wrappers around the Disco
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="change_notes_of_a_release_from_wantlist" class="doc_header"><code>change_notes_of_a_release_from_wantlist</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/rq_wantlist.py#L69" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>change_notes_of_a_release_from_wantlist</code>(<strong><code>user</code></strong>:<a href="/discogspy/core.discogs_user#UserWithUserTokenBasedAuthentication"><code>UserWithUserTokenBasedAuthentication</code></a>, <strong><code>username</code></strong>:<code>str</code>, <strong><code>release_id</code></strong>:<code>int</code>, <strong><code>notes</code></strong>:<code>str</code>)</p>
+<h4 id="change_notes_of_a_release_from_wantlist" class="doc_header"><code>change_notes_of_a_release_from_wantlist</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/rq_wantlist.py#L70" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>change_notes_of_a_release_from_wantlist</code>(<strong><code>user</code></strong>:<a href="/discogspy/core.discogs_user#UserWithUserTokenBasedAuthentication"><code>UserWithUserTokenBasedAuthentication</code></a>, <strong><code>username</code></strong>:<code>str</code>, <strong><code>release_id</code></strong>:<code>int</code>, <strong><code>notes</code></strong>:<code>str</code>)</p>
 </blockquote>
 <p>Change the notes of a releases from the wantlist of a given user.</p>
 <p>User Authentication needed.</p>
@@ -140,6 +140,46 @@ summary: "Core.rq_wantlist is a collection of function wrappers around the Disco
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Example for change_notes_of_a_release_from_wantlist</span>
 <span class="n">change_notes_of_a_release_from_wantlist</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="n">example_user</span><span class="p">,</span> <span class="n">username</span><span class="o">=</span><span class="s2">&quot;discogspy&quot;</span><span class="p">,</span> <span class="n">release_id</span><span class="o">=</span><span class="mi">1995816</span><span class="p">,</span> 
                                         <span class="n">notes</span><span class="o">=</span><span class="s2">&quot;one of the greatest albums of all time&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="change_rating_of_a_release_from_wantlist" class="doc_header"><code>change_rating_of_a_release_from_wantlist</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/rq_wantlist.py#L91" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>change_rating_of_a_release_from_wantlist</code>(<strong><code>user</code></strong>:<a href="/discogspy/core.discogs_user#UserWithUserTokenBasedAuthentication"><code>UserWithUserTokenBasedAuthentication</code></a>, <strong><code>username</code></strong>:<code>str</code>, <strong><code>release_id</code></strong>:<code>int</code>, <strong><code>rating</code></strong>:<code>int</code>)</p>
+</blockquote>
+<p>Change the rating of a releases from the wantlist of a given user.</p>
+<p>User Authentication needed.</p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Example for change_rating_of_a_release_from_wantlist</span>
+<span class="n">change_rating_of_a_release_from_wantlist</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="n">example_user</span><span class="p">,</span> <span class="n">username</span><span class="o">=</span><span class="s2">&quot;discogspy&quot;</span><span class="p">,</span> 
+                                         <span class="n">release_id</span><span class="o">=</span><span class="mi">4802434</span><span class="p">,</span> <span class="n">rating</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 
     </div>
