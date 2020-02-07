@@ -4,7 +4,8 @@ __all__ = ['get_user_collection_folders', 'create_new_user_collection_folder', '
            'change_collection_folder_name', 'delete_collection_folder', 'get_collection_folder_by_release',
            'get_collection_items_by_folder', 'add_release_to_collection_folder',
            'move_release_to_another_collection_folder', 'change_rating_of_release_in_collection_folder',
-           'delete_release_instance_from_collection_folder', 'list_custom_fields_for_collection_folders']
+           'delete_release_instance_from_collection_folder', 'list_custom_fields_for_collection_folders',
+           'edit_custom_field_value_for_release_instance_from_collection_folder']
 
 # Cell
 import requests
@@ -288,3 +289,26 @@ def list_custom_fields_for_collection_folders(user: Union[UserWithoutAuthenticat
     params = user.params
 
     return requests.get(url, headers=headers, params=params)
+
+# Cell
+
+
+def edit_custom_field_value_for_release_instance_from_collection_folder(user: UserWithUserTokenBasedAuthentication,
+                                                                        username: str,
+                                                                        value: str,
+                                                                        folder_id: int,
+                                                                        release_id: int,
+                                                                        instance_id: int,
+                                                                        field_id: int,
+                                                                        ) -> requests.models.Response:
+    """
+    Change the value of a custom field on a particular instance of an release in given collection folder.
+
+    No user Authentication needed.
+    """
+
+    url = f"{USERS_URL}/{username}/collection/folders/{folder_id}/releases/{release_id}/instances/{instance_id}/fields/{field_id}"
+    params = user.params
+    data = {"value": value}
+
+    return requests.post(url, params=params, json=data)
