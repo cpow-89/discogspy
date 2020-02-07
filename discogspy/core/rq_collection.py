@@ -5,7 +5,7 @@ __all__ = ['get_user_collection_folders', 'create_new_user_collection_folder', '
            'get_collection_items_by_folder', 'add_release_to_collection_folder',
            'move_release_to_another_collection_folder', 'change_rating_of_release_in_collection_folder',
            'delete_release_instance_from_collection_folder', 'list_custom_fields_for_collection_folders',
-           'edit_custom_field_value_for_release_instance_from_collection_folder']
+           'edit_custom_field_value_for_release_instance_from_collection_folder', 'get_collection_value']
 
 # Cell
 import requests
@@ -107,6 +107,8 @@ def delete_collection_folder(user: UserWithUserTokenBasedAuthentication,
                              ) -> requests.models.Response:
     """
     Delete an existing collection folder from a user’s collection.
+
+    Note: Only possible if folder is empty.
 
     User Authentication needed.
     """
@@ -312,3 +314,21 @@ def edit_custom_field_value_for_release_instance_from_collection_folder(user: Us
     data = {"value": value}
 
     return requests.post(url, params=params, json=data)
+
+# Cell
+
+
+def get_collection_value(user: UserWithUserTokenBasedAuthentication,
+                         username: str
+                         ) -> requests.models.Response:
+    """
+    Get the minimum, median, and maximum value of a given collection.
+
+    User Authentication needed.
+    """
+
+    url = f"{USERS_URL}/{username}/collection/value"
+    headers = user.headers
+    params = user.params
+
+    return requests.get(url, headers=headers, params=params)

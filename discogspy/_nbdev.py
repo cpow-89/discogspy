@@ -77,7 +77,8 @@ index = {"BASE_URL": "00_core.constants.ipynb",
          "change_rating_of_release_in_collection_folder": "06_core.rq_collection.ipynb",
          "delete_release_instance_from_collection_folder": "06_core.rq_collection.ipynb",
          "list_custom_fields_for_collection_folders": "06_core.rq_collection.ipynb",
-         "edit_custom_field_value_for_release_instance_from_collection_folder": "06_core.rq_collection.ipynb"}
+         "edit_custom_field_value_for_release_instance_from_collection_folder": "06_core.rq_collection.ipynb",
+         "get_collection_value": "06_core.rq_collection.ipynb"}
 
 modules = ["core/constants.py",
            "core/discogs_user.py",
