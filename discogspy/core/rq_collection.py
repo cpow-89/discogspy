@@ -3,7 +3,8 @@
 __all__ = ['get_user_collection_folders', 'create_new_user_collection_folder', 'get_folder_metadata',
            'change_collection_folder_name', 'delete_collection_folder', 'get_collection_folder_by_release',
            'get_collection_items_by_folder', 'add_release_to_collection_folder',
-           'move_release_to_another_collection_folder', 'change_rating_of_release_in_collection_folder']
+           'move_release_to_another_collection_folder', 'change_rating_of_release_in_collection_folder',
+           'delete_release_instance_from_collection_folder']
 
 # Cell
 import requests
@@ -243,3 +244,24 @@ def change_rating_of_release_in_collection_folder(user: UserWithUserTokenBasedAu
     data = {"rating": rating}
 
     return requests.post(url, params=params, json=data)
+
+# Cell
+
+
+def delete_release_instance_from_collection_folder(user: UserWithUserTokenBasedAuthentication,
+                                                   username: str,
+                                                   folder_id: int,
+                                                   release_id: int,
+                                                   instance_id: int
+                                                   ) -> requests.models.Response:
+    """
+    Remove an instance of a release from a given collection folder.
+
+    User Authentication needed.
+    """
+
+    url = f"{USERS_URL}/{username}/collection/folders/{folder_id}/releases/{release_id}/instances/{instance_id}"
+    headers = user.headers
+    params = user.params
+
+    return requests.delete(url, headers=headers, params=params)
