@@ -7,6 +7,7 @@
     "Core Marketplace Requests": "/core.rq_marketplace",
     "Core Inventory Export Requests": "/core.rq_inventory_export",
     "Core Inventory Upload Requests": "/core.rq_inventory_upload",
-    "Core Collection Requests": "/core.rq_collection"
+    "Core Collection Requests": "/core.rq_collection",
+    "Core Wantlist Requests": "/core.rq_wantlist"
   }
 }

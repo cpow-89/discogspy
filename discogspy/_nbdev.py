@@ -78,7 +78,8 @@ index = {"BASE_URL": "00_core.constants.ipynb",
          "delete_release_instance_from_collection_folder": "06_core.rq_collection.ipynb",
          "list_custom_fields_for_collection_folders": "06_core.rq_collection.ipynb",
          "edit_custom_field_value_for_release_instance_from_collection_folder": "06_core.rq_collection.ipynb",
-         "get_collection_value": "06_core.rq_collection.ipynb"}
+         "get_collection_value": "06_core.rq_collection.ipynb",
+         "get_user_wantlist": "07_core.rq_wantlist.ipynb"}
 
 modules = ["core/constants.py",
            "core/discogs_user.py",
@@ -86,7 +87,8 @@ modules = ["core/constants.py",
            "core/rq_marketplace.py",
            "core/rq_inventory_export.py",
            "core/rq_inventory_upload.py",
-           "core/rq_collection.py"]
+           "core/rq_collection.py",
+           "core/rq_wantlist.py"]
 
 doc_url = "https://cpow-89.github.io/discogspy/"
 

@@ -30,6 +30,9 @@ entries:
     - output: web,pdf
       title: Core Collection Requests
       url: /core.rq_collection
+    - output: web,pdf
+      title: Core Wantlist Requests
+      url: /core.rq_wantlist
     output: web
     title: discogspy
   output: web
