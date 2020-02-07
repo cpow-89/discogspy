@@ -4,7 +4,7 @@ __all__ = ['get_user_collection_folders', 'create_new_user_collection_folder', '
            'change_collection_folder_name', 'delete_collection_folder', 'get_collection_folder_by_release',
            'get_collection_items_by_folder', 'add_release_to_collection_folder',
            'move_release_to_another_collection_folder', 'change_rating_of_release_in_collection_folder',
-           'delete_release_instance_from_collection_folder']
+           'delete_release_instance_from_collection_folder', 'list_custom_fields_for_collection_folders']
 
 # Cell
 import requests
@@ -265,3 +265,26 @@ def delete_release_instance_from_collection_folder(user: UserWithUserTokenBasedA
     params = user.params
 
     return requests.delete(url, headers=headers, params=params)
+
+# Cell
+
+
+def list_custom_fields_for_collection_folders(user: Union[UserWithoutAuthentication,
+                                                          UserWithUserTokenBasedAuthentication],
+                                              username: str
+                                              ) -> requests.models.Response:
+    """
+    Retrieve a list of user-defined collection notes fields.
+    These fields are available on every release in the collection.
+
+    Note: If you are not authenticated as the collection owner,
+          only fields with public set to true will be visible.
+
+    No user Authentication needed.
+    """
+
+    url = f"{USERS_URL}/{username}/collection/fields"
+    headers = user.headers
+    params = user.params
+
+    return requests.get(url, headers=headers, params=params)
