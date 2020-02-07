@@ -81,7 +81,9 @@ index = {"BASE_URL": "00_core.constants.ipynb",
          "get_collection_value": "06_core.rq_collection.ipynb",
          "get_user_wantlist": "07_core.rq_wantlist.ipynb",
          "add_release_to_wantlist": "07_core.rq_wantlist.ipynb",
-         "change_notes_of_a_release_from_wantlist": "07_core.rq_wantlist.ipynb"}
+         "change_notes_of_a_release_from_wantlist": "07_core.rq_wantlist.ipynb",
+         "change_rating_of_a_release_from_wantlist": "07_core.rq_wantlist.ipynb",
+         "delete_release_from_wantlist": "07_core.rq_wantlist.ipynb"}
 
 modules = ["core/constants.py",
            "core/discogs_user.py",
