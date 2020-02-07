@@ -79,7 +79,9 @@ index = {"BASE_URL": "00_core.constants.ipynb",
          "list_custom_fields_for_collection_folders": "06_core.rq_collection.ipynb",
          "edit_custom_field_value_for_release_instance_from_collection_folder": "06_core.rq_collection.ipynb",
          "get_collection_value": "06_core.rq_collection.ipynb",
-         "get_user_wantlist": "07_core.rq_wantlist.ipynb"}
+         "get_user_wantlist": "07_core.rq_wantlist.ipynb",
+         "add_release_to_wantlist": "07_core.rq_wantlist.ipynb",
+         "change_notes_of_a_release_from_wantlist": "07_core.rq_wantlist.ipynb"}
 
 modules = ["core/constants.py",
            "core/discogs_user.py",
