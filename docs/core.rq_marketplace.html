@@ -79,8 +79,13 @@ only items that have a status of "For Sale" will be visible.</p>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Example for usage of get_inventory</span>
-<span class="n">get_inventory</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="n">example_user</span><span class="p">,</span> <span class="n">username</span><span class="o">=</span><span class="s2">&quot;Les_nuits_noires&quot;</span><span class="p">,</span> <span class="n">status</span><span class="o">=</span><span class="n">StatusInventory</span><span class="o">.</span><span class="n">for_sale</span><span class="p">,</span>
-              <span class="n">page</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">per_page</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">sort</span><span class="o">=</span><span class="n">SortOptionsInventory</span><span class="o">.</span><span class="n">price</span><span class="p">,</span> <span class="n">sort_order</span><span class="o">=</span><span class="n">SortOrder</span><span class="o">.</span><span class="n">asc</span><span class="p">)</span>
+<span class="n">get_inventory</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="n">example_user</span><span class="p">,</span> 
+              <span class="n">username</span><span class="o">=</span><span class="s2">&quot;Les_nuits_noires&quot;</span><span class="p">,</span> 
+              <span class="n">status</span><span class="o">=</span><span class="n">StatusInventory</span><span class="o">.</span><span class="n">for_sale</span><span class="p">,</span>
+              <span class="n">page</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
+              <span class="n">per_page</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> 
+              <span class="n">sort</span><span class="o">=</span><span class="n">SortOptionsInventory</span><span class="o">.</span><span class="n">price</span><span class="p">,</span> 
+              <span class="n">sort_order</span><span class="o">=</span><span class="n">SortOrder</span><span class="o">.</span><span class="n">asc</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -147,7 +152,9 @@ only items that have a status of "For Sale" will be visible.</p>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Example for usage of get_listing</span>
-<span class="n">get_listing</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="n">example_user</span><span class="p">,</span> <span class="n">listing_id</span><span class="o">=</span><span class="mi">1034876519</span><span class="p">,</span> <span class="n">curr_abbr</span><span class="o">=</span><span class="n">CurrAbbr</span><span class="o">.</span><span class="n">EUR</span><span class="p">)</span>
+<span class="n">get_listing</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="n">example_user</span><span class="p">,</span> 
+            <span class="n">listing_id</span><span class="o">=</span><span class="mi">1034876519</span><span class="p">,</span> 
+            <span class="n">curr_abbr</span><span class="o">=</span><span class="n">CurrAbbr</span><span class="o">.</span><span class="n">EUR</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -311,7 +318,8 @@ only items that have a status of "For Sale" will be visible.</p>
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Example for usage of delete_listing</span>
 
-<span class="n">delete_listing</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="n">example_user</span><span class="p">,</span> <span class="n">listing_id</span><span class="o">=</span><span class="mi">1052411061</span><span class="p">)</span>
+<span class="n">delete_listing</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="n">example_user</span><span class="p">,</span> 
+               <span class="n">listing_id</span><span class="o">=</span><span class="mi">1052411061</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -475,7 +483,8 @@ only items that have a status of "For Sale" will be visible.</p>
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Example for usage of get_order</span>
 
-<span class="n">get_order</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="n">example_user</span><span class="p">,</span> <span class="n">order_id</span><span class="o">=</span><span class="s2">&quot;1906948-512&quot;</span><span class="p">)</span> 
+<span class="n">get_order</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="n">example_user</span><span class="p">,</span> 
+          <span class="n">order_id</span><span class="o">=</span><span class="s2">&quot;1906948-512&quot;</span><span class="p">)</span> 
 </pre></div>
 
     </div>
@@ -539,7 +548,9 @@ only items that have a status of "For Sale" will be visible.</p>
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Example for usage of update_order_status</span>
 
-<span class="n">update_order_status</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="n">example_user</span><span class="p">,</span> <span class="n">order_id</span><span class="o">=</span><span class="s2">&quot;1906948-522&quot;</span><span class="p">,</span> <span class="n">status</span><span class="o">=</span><span class="n">StatusOrder</span><span class="o">.</span><span class="n">payment_received</span><span class="p">)</span> 
+<span class="n">update_order_status</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="n">example_user</span><span class="p">,</span> 
+                    <span class="n">order_id</span><span class="o">=</span><span class="s2">&quot;1906948-522&quot;</span><span class="p">,</span> 
+                    <span class="n">status</span><span class="o">=</span><span class="n">StatusOrder</span><span class="o">.</span><span class="n">payment_received</span><span class="p">)</span> 
 </pre></div>
 
     </div>
@@ -603,7 +614,9 @@ only items that have a status of "For Sale" will be visible.</p>
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Example for usage of update_order_shipping</span>
 
-<span class="n">update_order_shipping</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="n">example_user</span><span class="p">,</span> <span class="n">order_id</span><span class="o">=</span><span class="s2">&quot;1906948-516&quot;</span><span class="p">,</span> <span class="n">shipping_cost</span><span class="o">=</span><span class="mf">3.70</span><span class="p">)</span> 
+<span class="n">update_order_shipping</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="n">example_user</span><span class="p">,</span> 
+                      <span class="n">order_id</span><span class="o">=</span><span class="s2">&quot;1906948-516&quot;</span><span class="p">,</span> 
+                      <span class="n">shipping_cost</span><span class="o">=</span><span class="mf">3.70</span><span class="p">)</span> 
 </pre></div>
 
     </div>
@@ -673,8 +686,12 @@ only items that have a status of "For Sale" will be visible.</p>
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Example for usage of get_orders</span>
 
-<span class="n">get_orders</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="n">example_user</span><span class="p">,</span> <span class="n">status</span><span class="o">=</span><span class="n">StatusOrders</span><span class="o">.</span><span class="n">payment_pending</span><span class="p">,</span> <span class="n">page</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
-           <span class="n">per_page</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">sort</span><span class="o">=</span><span class="n">SortOptionsOrders</span><span class="o">.</span><span class="n">created</span><span class="p">,</span> <span class="n">sort_order</span><span class="o">=</span><span class="n">SortOrder</span><span class="o">.</span><span class="n">asc</span><span class="p">)</span> 
+<span class="n">get_orders</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="n">example_user</span><span class="p">,</span> 
+           <span class="n">status</span><span class="o">=</span><span class="n">StatusOrders</span><span class="o">.</span><span class="n">payment_pending</span><span class="p">,</span> 
+           <span class="n">page</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
+           <span class="n">per_page</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> 
+           <span class="n">sort</span><span class="o">=</span><span class="n">SortOptionsOrders</span><span class="o">.</span><span class="n">created</span><span class="p">,</span> 
+           <span class="n">sort_order</span><span class="o">=</span><span class="n">SortOrder</span><span class="o">.</span><span class="n">asc</span><span class="p">)</span> 
 </pre></div>
 
     </div>
@@ -738,7 +755,10 @@ only items that have a status of "For Sale" will be visible.</p>
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Example for usage of get_order_messages</span>
 
-<span class="n">get_order_messages</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="n">example_user</span><span class="p">,</span> <span class="n">order_id</span><span class="o">=</span><span class="s2">&quot;1906948-515&quot;</span><span class="p">,</span> <span class="n">page</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">per_page</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span> 
+<span class="n">get_order_messages</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="n">example_user</span><span class="p">,</span> 
+                   <span class="n">order_id</span><span class="o">=</span><span class="s2">&quot;1906948-515&quot;</span><span class="p">,</span> 
+                   <span class="n">page</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
+                   <span class="n">per_page</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span> 
 </pre></div>
 
     </div>
@@ -799,7 +819,9 @@ only items that have a status of "For Sale" will be visible.</p>
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Example for usage of post_message_on_order</span>
 
-<span class="n">post_message_on_order</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="n">example_user</span><span class="p">,</span> <span class="n">order_id</span><span class="o">=</span><span class="s2">&quot;1906948-516&quot;</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s2">&quot;Hello World&quot;</span><span class="p">)</span> 
+<span class="n">post_message_on_order</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="n">example_user</span><span class="p">,</span> 
+                      <span class="n">order_id</span><span class="o">=</span><span class="s2">&quot;1906948-516&quot;</span><span class="p">,</span> 
+                      <span class="n">message</span><span class="o">=</span><span class="s2">&quot;Hello World&quot;</span><span class="p">)</span> 
 </pre></div>
 
     </div>
@@ -868,7 +890,8 @@ only items that have a status of "For Sale" will be visible.</p>
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Example for usage of get_discogs_fee_for_given_price</span>
 
-<span class="n">get_discogs_fee_for_given_price</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="n">example_user</span><span class="p">,</span> <span class="n">price</span><span class="o">=</span><span class="mf">5.42</span><span class="p">)</span> 
+<span class="n">get_discogs_fee_for_given_price</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="n">example_user</span><span class="p">,</span> 
+                                <span class="n">price</span><span class="o">=</span><span class="mf">5.42</span><span class="p">)</span> 
 </pre></div>
 
     </div>
@@ -936,7 +959,8 @@ only items that have a status of "For Sale" will be visible.</p>
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Example for usage of get_price_suggestions</span>
 
-<span class="n">get_price_suggestions</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="n">example_user</span><span class="p">,</span> <span class="n">release_id</span><span class="o">=</span><span class="mi">9453891</span><span class="p">)</span> 
+<span class="n">get_price_suggestions</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="n">example_user</span><span class="p">,</span> 
+                      <span class="n">release_id</span><span class="o">=</span><span class="mi">9453891</span><span class="p">)</span> 
 </pre></div>
 
     </div>

@@ -70,7 +70,9 @@ summary: "Core.rq_database is a collection of function wrappers around the Disco
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Example for usage of get_releases</span>
-<span class="n">get_release</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="n">example_user</span><span class="p">,</span> <span class="n">release_id</span><span class="o">=</span><span class="mi">6067651</span><span class="p">,</span> <span class="n">curr_abbr</span><span class="o">=</span><span class="n">CurrAbbr</span><span class="o">.</span><span class="n">EUR</span><span class="p">)</span>
+<span class="n">get_release</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="n">example_user</span><span class="p">,</span> 
+            <span class="n">release_id</span><span class="o">=</span><span class="mi">6067651</span><span class="p">,</span> 
+            <span class="n">curr_abbr</span><span class="o">=</span><span class="n">CurrAbbr</span><span class="o">.</span><span class="n">EUR</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -131,7 +133,9 @@ summary: "Core.rq_database is a collection of function wrappers around the Disco
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Example for usage of get_user_release_rating</span>
-<span class="n">get_user_release_rating</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="n">example_user</span><span class="p">,</span> <span class="n">release_id</span><span class="o">=</span><span class="mi">9453891</span><span class="p">,</span> <span class="n">username</span><span class="o">=</span><span class="s2">&quot;darkwolf&quot;</span><span class="p">)</span>
+<span class="n">get_user_release_rating</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="n">example_user</span><span class="p">,</span> 
+                        <span class="n">release_id</span><span class="o">=</span><span class="mi">9453891</span><span class="p">,</span> 
+                        <span class="n">username</span><span class="o">=</span><span class="s2">&quot;darkwolf&quot;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -196,8 +200,10 @@ If there is no rating, it will create one.</p>
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Example for usage of update_user_release_rating</span>
 
-<span class="n">update_user_release_rating</span><span class="p">(</span><span class="n">example_user</span><span class="p">,</span> <span class="n">release_id</span><span class="o">=</span><span class="mi">10361797</span><span class="p">,</span>
-                           <span class="n">username</span><span class="o">=</span><span class="s2">&quot;discogspy&quot;</span><span class="p">,</span> <span class="n">rating</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">update_user_release_rating</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="n">example_user</span><span class="p">,</span> 
+                           <span class="n">release_id</span><span class="o">=</span><span class="mi">10361797</span><span class="p">,</span>
+                           <span class="n">username</span><span class="o">=</span><span class="s2">&quot;discogspy&quot;</span><span class="p">,</span> 
+                           <span class="n">rating</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -259,7 +265,9 @@ If there is no rating, it will create one.</p>
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Example for usage of delete_user_release_rating</span>
 
-<span class="n">delete_user_release_rating</span><span class="p">(</span><span class="n">example_user</span><span class="p">,</span> <span class="n">release_id</span><span class="o">=</span><span class="mi">10361797</span><span class="p">,</span> <span class="n">username</span><span class="o">=</span><span class="s2">&quot;discogspy&quot;</span><span class="p">)</span>
+<span class="n">delete_user_release_rating</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="n">example_user</span><span class="p">,</span> 
+                           <span class="n">release_id</span><span class="o">=</span><span class="mi">10361797</span><span class="p">,</span> 
+                           <span class="n">username</span><span class="o">=</span><span class="s2">&quot;discogspy&quot;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -322,7 +330,8 @@ the total number of user ratings for a given release.</p>
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Example for usage of get_community_release_rating</span>
 
-<span class="n">get_community_release_rating</span><span class="p">(</span><span class="n">example_user</span><span class="p">,</span> <span class="n">release_id</span><span class="o">=</span><span class="mi">1995816</span><span class="p">)</span>
+<span class="n">get_community_release_rating</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="n">example_user</span><span class="p">,</span> 
+                             <span class="n">release_id</span><span class="o">=</span><span class="mi">1995816</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -389,7 +398,8 @@ the total number of user ratings for a given release.</p>
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Example for usage of get_master_release</span>
 
-<span class="n">get_master_release</span><span class="p">(</span><span class="n">example_user</span><span class="p">,</span> <span class="n">master_id</span><span class="o">=</span><span class="mi">195663</span><span class="p">)</span>
+<span class="n">get_master_release</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="n">example_user</span><span class="p">,</span> 
+                   <span class="n">master_id</span><span class="o">=</span><span class="mi">195663</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -465,8 +475,16 @@ the total number of user ratings for a given release.</p>
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Example for usage of get_releases_related_to_master_release</span>
 
-<span class="n">get_releases_related_to_master_release</span><span class="p">(</span><span class="n">example_user</span><span class="p">,</span> <span class="n">master_id</span><span class="o">=</span><span class="mi">57960</span><span class="p">,</span> 
-                                       <span class="n">release_format</span><span class="o">=</span><span class="s2">&quot;Cassette&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Roadrunner Records&quot;</span><span class="p">)</span>
+<span class="n">get_releases_related_to_master_release</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="n">example_user</span><span class="p">,</span> 
+                                       <span class="n">master_id</span><span class="o">=</span><span class="mi">57960</span><span class="p">,</span> 
+                                       <span class="n">page</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
+                                       <span class="n">per_page</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> 
+                                       <span class="n">release_format</span><span class="o">=</span><span class="s2">&quot;CD&quot;</span><span class="p">,</span>
+                                       <span class="n">label</span><span class="o">=</span><span class="s2">&quot;label&quot;</span><span class="p">,</span> 
+                                       <span class="n">released</span><span class="o">=</span><span class="s2">&quot;1989&quot;</span><span class="p">,</span>
+                                       <span class="n">country</span><span class="o">=</span><span class="s2">&quot;country&quot;</span><span class="p">,</span> 
+                                       <span class="n">sort</span><span class="o">=</span><span class="n">SortOptionsMaster</span><span class="o">.</span><span class="n">released</span><span class="p">,</span>
+                                       <span class="n">sort_order</span><span class="o">=</span><span class="n">SortOrder</span><span class="o">.</span><span class="n">asc</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -532,7 +550,8 @@ the total number of user ratings for a given release.</p>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Example for usage of get_artist</span>
-<span class="n">get_artist</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="n">example_user</span><span class="p">,</span> <span class="n">artist_id</span><span class="o">=</span><span class="mi">1516559</span><span class="p">)</span>
+<span class="n">get_artist</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="n">example_user</span><span class="p">,</span> 
+           <span class="n">artist_id</span><span class="o">=</span><span class="mi">1516559</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -599,8 +618,12 @@ the total number of user ratings for a given release.</p>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Example for usage of get_artist_releases</span>
-<span class="n">get_artist_releases</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="n">example_user</span><span class="p">,</span> <span class="n">artist_id</span><span class="o">=</span><span class="mi">1516559</span><span class="p">,</span> <span class="n">page</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">per_page</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> 
-                    <span class="n">sort</span><span class="o">=</span><span class="n">SortOptionsArtist</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="n">sort_order</span><span class="o">=</span><span class="n">SortOrder</span><span class="o">.</span><span class="n">desc</span><span class="p">)</span>
+<span class="n">get_artist_releases</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="n">example_user</span><span class="p">,</span> 
+                    <span class="n">artist_id</span><span class="o">=</span><span class="mi">1516559</span><span class="p">,</span> 
+                    <span class="n">page</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
+                    <span class="n">per_page</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> 
+                    <span class="n">sort</span><span class="o">=</span><span class="n">SortOptionsArtist</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> 
+                    <span class="n">sort_order</span><span class="o">=</span><span class="n">SortOrder</span><span class="o">.</span><span class="n">desc</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -666,7 +689,8 @@ the total number of user ratings for a given release.</p>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Example for usage of get_label</span>
-<span class="n">get_label</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="n">example_user</span><span class="p">,</span> <span class="n">label_id</span><span class="o">=</span><span class="mi">18263</span><span class="p">)</span>
+<span class="n">get_label</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="n">example_user</span><span class="p">,</span> 
+          <span class="n">label_id</span><span class="o">=</span><span class="mi">18263</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -733,8 +757,12 @@ the total number of user ratings for a given release.</p>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Example for usage of get_label_releases</span>
-<span class="n">get_label_releases</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="n">example_user</span><span class="p">,</span> <span class="n">label_id</span><span class="o">=</span><span class="mi">18263</span><span class="p">,</span> <span class="n">page</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">per_page</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> 
-                   <span class="n">sort</span><span class="o">=</span><span class="n">SortOptionsLabel</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="n">sort_order</span><span class="o">=</span><span class="n">SortOrder</span><span class="o">.</span><span class="n">desc</span><span class="p">)</span>
+<span class="n">get_label_releases</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="n">example_user</span><span class="p">,</span> 
+                   <span class="n">label_id</span><span class="o">=</span><span class="mi">18263</span><span class="p">,</span> 
+                   <span class="n">page</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
+                   <span class="n">per_page</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> 
+                   <span class="n">sort</span><span class="o">=</span><span class="n">SortOptionsLabel</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> 
+                   <span class="n">sort_order</span><span class="o">=</span><span class="n">SortOrder</span><span class="o">.</span><span class="n">desc</span><span class="p">)</span>
 </pre></div>
 
     </div>
