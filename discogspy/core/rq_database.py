@@ -19,26 +19,25 @@ def get_release(user: Union[UserWithoutAuthentication,
                 ) -> requests.models.Response:
     """
     Get information about a particular release from the Discogs database.
-    A release represents a particular physical or digital object released by
-    one or more Artists.
 
     No user Authentication needed.
 
     Parameters:
 
-    user: user object
+    user: user object (required)
 
     release_id : number (required)
-        The Release ID.
+        -> The Release ID.
 
     curr_abbr: string (optional)
-        Currency for marketplace data. Defaults to the authenticated users currency.
+        -> Currency for marketplace data. Defaults to the authenticated users currency.
     """
     url = f"{RELEASES_URL}/{release_id}"
     headers = user.headers
     params = user.params
     if curr_abbr:
         params["curr_abbr"] = curr_abbr.value
+
     return requests.get(url, headers=headers, params=params)
 
 # Cell
@@ -56,17 +55,18 @@ def get_user_release_rating(user: Union[UserWithoutAuthentication,
 
     Parameters:
 
-    user: user object
+    user: user object (required)
 
     release_id : number (required)
-        The Release ID.
+        -> The Release ID.
 
     username: string (required)
-        The username of the rating you are trying to request.
+        -> The username of the rating you are trying to request.
     """
     url = f"{RELEASES_URL}/{release_id}/rating/{username}"
     headers = user.headers
     params = user.params
+
     return requests.get(url, headers=headers, params=params)
 
 # Cell
@@ -85,16 +85,16 @@ def update_user_release_rating(user: UserWithUserTokenBasedAuthentication,
 
     Parameters:
 
-    user: user object
+    user: user object (required)
 
     release_id : number (required)
-        The Release ID.
+        -> The Release ID.
 
     username: string (required)
-        The username of the rating you are trying to request.
+        -> The username of the rating you are trying to request.
 
     rating: int (required)
-        The new rating value. Must be a value between 1 and 5.
+        -> The new rating value. Must be a value between 1 and 5.
 
     """
     url = f"{RELEASES_URL}/{release_id}/rating/{username}"
@@ -102,6 +102,7 @@ def update_user_release_rating(user: UserWithUserTokenBasedAuthentication,
     params = user.params
     rating = min(max(0, rating), 5)
     data = {"rating": rating}
+
     return requests.put(url, headers=headers, params=params, json=data)
 
 # Cell
@@ -118,18 +119,19 @@ def delete_user_release_rating(user: UserWithUserTokenBasedAuthentication,
 
     Parameters:
 
-    user: user object
+    user: user object (required)
 
     release_id : number (required)
-        The Release ID.
+        -> The Release ID.
 
     username: string (required)
-        The username of the rating you are trying to delete.
+        -> The username of the rating you are trying to delete.
 
     """
     url = f"{RELEASES_URL}/{release_id}/rating/{username}"
     headers = user.headers
     params = user.params
+
     return requests.delete(url, headers=headers, params=params)
 
 # Cell
@@ -150,15 +152,16 @@ def get_community_release_rating(user: Union[UserWithoutAuthentication,
 
     Parameters:
 
-    user: user object
+    user: user object (required)
 
     release_id : number (required)
-        The Release ID.
+        -> The Release ID.
 
     """
     url = f"{RELEASES_URL}/{release_id}/rating"
     headers = user.headers
     params = user.params
+
     return requests.get(url, headers=headers, params=params)
 
 # Cell
@@ -170,22 +173,21 @@ def get_master_release(user: Union[UserWithoutAuthentication,
                        ) -> requests.models.Response:
     """
     Get information to a particular master release from Discogs database.
-    A Master release represents a set of similar Releases.
-    Masters releases have a “main release” which is often the chronologically earliest.
 
     No user Authentication needed.
 
     Parameters:
 
-    user: user object
+    user: user object (required)
 
     master_id : number (required)
-        The Master ID.
+        -> The Master ID.
 
     """
     url = f"{MASTERS_URL}/{master_id}"
     headers = user.headers
     params = user.params
+
     return requests.get(url, headers=headers, params=params)
 
 # Cell
@@ -210,34 +212,34 @@ def get_releases_related_to_master_release(user: Union[UserWithoutAuthentication
 
     Parameters:
 
-    user: user object.
+    user: user object (required).
 
     master_id : number (required)
-        The Master ID.
+        -> The Master ID.
 
     page: number (optional)
-        The page you want to request.
+        -> The page you want to request.
 
     per_page: number (optional)
-        The number of items per page.
+        -> The number of items per page.
 
     release_format: string (optional)
-        The format to filter.
+        -> The format to filter.
 
     label: string (optional)
-        The label to filter.
+        -> The label to filter.
 
     released: string (optional)
-        The release year to filter.
+        -> The release year to filter.
 
     country: string (optional)
-        The country to filter.
+        -> The country to filter.
 
     sort: string (optional)
-        Sort items by this field.
+        -> Sort items by this field.
 
     sort_order: string (optional)
-        Sort items in a particular order (one of asc, desc)
+        -> Sort items in a particular order (one of asc, desc)
     """
 
     url = f"{MASTERS_URL}/{master_id}/versions"
@@ -259,6 +261,7 @@ def get_releases_related_to_master_release(user: Union[UserWithoutAuthentication
         params["sort"] = sort.value
     if sort_order:
         params["sort_order"] = sort_order.value
+
     return requests.get(url, headers=headers, params=params)
 
 # Cell
@@ -275,15 +278,16 @@ def get_artist(user: Union[UserWithoutAuthentication,
 
     Parameters:
 
-    user: user object.
+    user: user object (required).
 
     artist_id : number (required)
-        The Artist ID.
+        -> The Artist ID.
 
     """
     url = f"{ARTIST_URL}/{artist_id}"
     headers = user.headers
     params = user.params
+
     return requests.get(url, headers=headers, params=params)
 
 # Cell
@@ -304,22 +308,22 @@ def get_artist_releases(user: Union[UserWithoutAuthentication,
 
     Parameters:
 
-    user: user object.
+    user: user object (required).
 
     artist_id : number (required)
-        The Artist ID.
+        -> The Artist ID.
 
     page: number (optional)
-        The page you want to request.
+        -> The page you want to request.
 
     per_page: number (optional)
-        The number of items per page.
+        -> The number of items per page.
 
     sort: string (optional)
-        Sort items by this field.
+        -> Sort items by this field.
 
     sort_order: string (optional)
-        Sort items in a particular order (one of asc, desc)
+        -> Sort items in a particular order (one of asc, desc)
     """
     url = f"{ARTIST_URL}/{artist_id}/releases"
     headers = user.headers
@@ -350,10 +354,10 @@ def get_label(user: Union[UserWithoutAuthentication,
 
     Parameters:
 
-    user: user object.
+    user: user object (required).
 
     label_id : number (required)
-        The Label ID.
+        -> The Label ID.
 
     """
     url = f"{LABEL_URL}/{label_id}"
@@ -380,22 +384,22 @@ def get_label_releases(user: Union[UserWithoutAuthentication,
 
     Parameters:
 
-    user: user object.
+    user: user object (required).
 
     label_id : number (required)
-        The Label ID.
+        -> The Label ID.
 
     page: number (optional)
-        The page you want to request.
+        -> The page you want to request.
 
     per_page: number (optional)
-        The number of items per page.
+        -> The number of items per page.
 
     sort: string (optional)
-        Sort items by this field.
+        -> Sort items by this field.
 
     sort_order: string (optional)
-        Sort items in a particular order (one of asc, desc)
+        -> Sort items in a particular order (one of asc, desc)
     """
     url = f"{LABEL_URL}/{label_id}/releases"
     headers = user.headers

@@ -24,14 +24,33 @@ def get_inventory(user: Union[UserWithoutAuthentication,
     """
     Get a list of listings of a given user inventory.
 
+    If you are not authenticated as the inventory owner,
+    only items that have a status of "For Sale" will be visible.
+
     No user Authentication needed.
 
-    Note from the Discogs API: "If you are not authenticated as the inventory owner,
-    only items that have a status of For Sale will be visible.
-    If you are authenticated as the inventory owner you will get additional weight,
-    format_quantity, external_id, and location keys.
-    If the user is authorized, the listing will contain a in_cart boolean
-    field indicating whether or not this listing is in their cart."
+    Parameters:
+
+    user: user object (required).
+
+    username: string (required)
+        -> The username for whose inventory you are fetching
+
+    status: string (optional)
+        -> Only show items with this status.
+
+    page: number (optional)
+        -> The page you want to request.
+
+    per_page: number (optional)
+        -> The number of items per page.
+
+    sort: string (optional)
+        -> Sort items by this field.
+
+    sort_order: string (optional)
+        -> Sort items in a particular order (one of asc, desc)
+
     """
     url = f"{USERS_URL}/{username}/inventory"
     headers = user.headers
@@ -53,6 +72,7 @@ def get_inventory(user: Union[UserWithoutAuthentication,
             params["sort"] = sort.name
     if sort_order:
         params["sort_order"] = sort_order.name
+
     return requests.get(url, headers=headers, params=params)
 
 # Cell
@@ -68,16 +88,22 @@ def get_listing(user: Union[UserWithoutAuthentication,
 
     No user Authentication needed.
 
-    Note from the Discogs API: "If the authorized user is the listing owner the listing
-    will include the weight, format_quantity, external_id, and location keys.
-    If the user is authorized, the listing will contain a in_cart boolean field
-    indicating whether or not this listing is in their cart."
+    Parameters:
+
+    user: user object (required).
+
+    listing_id: number (required)
+        -> The username for whose inventory you are fetching
+
+    curr_abbr: string (optional)
+        -> Currency for marketplace data. Defaults to the authenticated users currency.
     """
     url = f"{LISTINGS_URL}/{listing_id}"
     headers = user.headers
     params = user.params
     if curr_abbr:
         params["curr_abbr"] = curr_abbr.value
+
     return requests.get(url, headers=headers, params=params)
 
 # Cell
@@ -87,9 +113,9 @@ def update_listing(user: UserWithUserTokenBasedAuthentication,
                    listing_id: int,
                    release_id: int,
                    condition: ReleaseCondition,
-                   sleeve_condition: SleeveCondition,
                    price: float,
-                   status: StatusInventory,
+                   sleeve_condition: Union[SleeveCondition, None] = None,
+                   status: Union[StatusInventory, None] = None,
                    comments: Union[str, None] = None,
                    allow_offers: Union[bool, None] = None,
                    external_id: Union[str, None] = None,
@@ -102,10 +128,59 @@ def update_listing(user: UserWithUserTokenBasedAuthentication,
     Update the data associated with a listing.
 
     User Authentication needed.
+
+    Parameters:
+
+    user: user object (required).
+
+    listing_id: number (required)
+        -> The username for whose inventory you are fetching
+
+    release_id: number (required)
+        -> The ID of the release you are posting
+
+    condition: string (required)
+        -> The condition of the release you are posting.
+
+    price: number (required)
+        -> The price of the item (in the seller’s currency).
+
+    status: string (required)
+        -> The status of the listing. Defaults to For Sale.
+
+    sleeve_condition: string (optional)
+        -> The condition of the sleeve of the item you are posting.
+
+    comments: string (optional)
+        -> Any remarks about the item that will be displayed to buyers.
+
+    allow_offers: boolean (optional)
+        -> Whether or not to allow buyers to make offers on the item. Defaults to false.
+
+    external_id: string (optional)
+        -> A freeform field that can be used for the seller’s own reference.
+        -> Information stored here will not be displayed to anyone other than the seller.
+        -> This field is called “Private Comments” on the Discogs website.
+
+    location: string (optional)
+        -> A freeform field that is intended to help identify an item’s physical storage location.
+        -> Information stored here will not be displayed to anyone other than the seller.
+        -> This field will be visible on the inventory management page and will be available in inventory exports via the website.
+
+    weight: number (optional)
+        -> The weight, in grams, of this listing, for the purpose of calculating shipping.
+        -> Set this field to auto to have the weight automatically estimated for you.
+
+    format_quantity: number (optional)
+        -> The number of items this listing counts as, for the purpose of calculating shipping.
+        -> This field is called “Counts As” on the Discogs website.
+        -> Set this field to auto to have the quantity automatically estimated for you.
+
+    curr_abbr: string (optional)
+        -> Currency for marketplace data. Defaults to the authenticated users currency.
     """
 
     url = f"{LISTINGS_URL}/{listing_id}"
-    headers = user.headers
 
     params = user.params
     if curr_abbr:
@@ -114,18 +189,26 @@ def update_listing(user: UserWithUserTokenBasedAuthentication,
     data = {
         "release_id": release_id,
         "condition": condition.value,
-        "sleeve_condition": sleeve_condition.value,
         "price": price,
         "status": status.value,
-        "comments": comments,
-        "allow_offers": allow_offers,
-        "external_id": external_id,
-        "location": location,
-        "weight": weight,
-        "format_quantity": format_quantity
     }
 
-    return requests.post(url, headers=headers, params=params, json=data)
+    if sleeve_condition:
+        data["sleeve_condition"] = sleeve_condition.value
+    if comments:
+        data["comments"] = comments
+    if allow_offers is not None:
+        data["allow_offers"] = allow_offers
+    if external_id:
+        data["external_id"] = external_id
+    if location:
+        data["location"] = location
+    if weight:
+        data["weight"] = weight
+    if format_quantity:
+        data["format_quantity"] = format_quantity
+
+    return requests.post(url, params=params, json=data)
 
 # Cell
 
@@ -134,9 +217,16 @@ def delete_listing(user: UserWithUserTokenBasedAuthentication,
                    listing_id: int
                    ) -> requests.models.Response:
     """
-    Delete a given item from the inventory.
+    Delete a given listing from the inventory.
 
     User Authentication needed.
+
+    Parameters:
+
+    user: user object (required).
+
+    listing_id: number (required)
+        -> The username for whose inventory you are fetching.
     """
 
     url = f"{LISTINGS_URL}/{listing_id}"
@@ -151,9 +241,9 @@ def delete_listing(user: UserWithUserTokenBasedAuthentication,
 def add_new_listing(user: UserWithUserTokenBasedAuthentication,
                     release_id: int,
                     condition: ReleaseCondition,
-                    sleeve_condition: SleeveCondition,
                     price: float,
                     status: StatusNewListing,
+                    sleeve_condition: Union[SleeveCondition, None] = None,
                     comments: Union[str, None] = None,
                     allow_offers: Union[bool, None] = None,
                     external_id: Union[str, None] = None,
@@ -162,9 +252,53 @@ def add_new_listing(user: UserWithUserTokenBasedAuthentication,
                     format_quantity: Union[int, None] = None
                     ) -> requests.models.Response:
     """
-    Update the data associated with a listing.
+    Add a new listing to the given user inventory.
 
     User Authentication needed.
+
+    Parameters:
+
+    user: user object (required).
+
+    release_id: number (required)
+        -> The ID of the release you are posting
+
+    condition: string (required)
+        -> The condition of the release you are posting.
+
+    price: number (required)
+        -> The price of the item (in the seller’s currency).
+
+    status: string (required)
+        -> The status of the listing. Defaults to For Sale.
+
+    sleeve_condition: string (optional)
+        -> The condition of the sleeve of the item you are posting.
+
+    comments: string (optional)
+        -> Any remarks about the item that will be displayed to buyers.
+
+    allow_offers: boolean (optional)
+        -> Whether or not to allow buyers to make offers on the item. Defaults to false.
+
+    external_id: string (optional)
+        -> A freeform field that can be used for the seller’s own reference.
+        -> Information stored here will not be displayed to anyone other than the seller.
+        -> This field is called “Private Comments” on the Discogs website.
+
+    location: string (optional)
+        -> A freeform field that is intended to help identify an item’s physical storage location.
+        -> Information stored here will not be displayed to anyone other than the seller.
+        -> This field will be visible on the inventory management page and will be available in inventory exports via the website.
+
+    weight: number (optional)
+        -> The weight, in grams, of this listing, for the purpose of calculating shipping.
+        -> Set this field to auto to have the weight automatically estimated for you.
+
+    format_quantity: number (optional)
+        -> The number of items this listing counts as, for the purpose of calculating shipping.
+        -> This field is called “Counts As” on the Discogs website.
+        -> Set this field to auto to have the quantity automatically estimated for you.
     """
 
     url = f"{LISTINGS_URL}"
@@ -175,16 +309,24 @@ def add_new_listing(user: UserWithUserTokenBasedAuthentication,
     data = {
         "release_id": release_id,
         "condition": condition.value,
-        "sleeve_condition": sleeve_condition.value,
         "price": price,
         "status": status.value,
-        "comments": comments,
-        "allow_offers": allow_offers,
-        "external_id": external_id,
-        "location": location,
-        "weight": weight,
-        "format_quantity": format_quantity
     }
+
+    if sleeve_condition:
+        data["sleeve_condition"] = sleeve_condition.value
+    if comments:
+        data["comments"] = comments
+    if allow_offers is not None:
+        data["allow_offers"] = allow_offers
+    if external_id:
+        data["external_id"] = external_id
+    if location:
+        data["location"] = location
+    if weight:
+        data["weight"] = weight
+    if format_quantity:
+        data["format_quantity"] = format_quantity
 
     return requests.post(url, headers=headers, params=params, json=data)
 
@@ -195,13 +337,21 @@ def get_order(user: UserWithUserTokenBasedAuthentication,
               order_id: str
               ) -> requests.models.Response:
     """
-    Get the data associated with an order.
+    Get the data associated with the given order.
 
     User Authentication needed.
+
+    Parameters:
+
+    user: user object (required).
+
+    order_id: string (required)
+        -> The ID of the order you are fetching
     """
     url = f"{ORDERS_URL}/{order_id}"
     headers = user.headers
     params = user.params
+
     return requests.get(url, headers=headers, params=params)
 
 # Cell
@@ -214,17 +364,26 @@ def update_order_status(user: UserWithUserTokenBasedAuthentication,
     """
     Update the status associated with the given order.
 
-    Note: Use get_order to get the next_status key – an array of valid next statuses for this order.
+    Note: Use get_order to get the next_status key.
+          The next_status key is an array of valid next statuses for this order.
 
     User Authentication needed.
+
+    Parameters:
+
+    user: user object (required).
+
+    order_id: string (required)
+        -> The ID of the order you are fetching
+
+    status: string (required)
+        -> The status of the Order you are updating.
     """
     url = f"{ORDERS_URL}/{order_id}"
     headers = user.headers
     params = user.params
 
-    data = {
-        "status": status.value
-    }
+    data = {"status": status.value}
 
     return requests.post(url, headers=headers, params=params, json=data)
 
@@ -242,14 +401,22 @@ def update_order_shipping(user: UserWithUserTokenBasedAuthentication,
           Doing so will send an invoice to the buyer and set the order status to Invoice Sent.
 
     User Authentication needed.
+
+    Parameters:
+
+    user: user object (required).
+
+    order_id: string (required)
+        -> The ID of the order you are fetching
+
+    shipping_cost: number (required)
+        -> The order shipping amount.
     """
     url = f"{ORDERS_URL}/{order_id}"
     headers = user.headers
     params = user.params
 
-    data = {
-        "shipping": shipping_cost
-    }
+    data = {"shipping": shipping_cost}
 
     return requests.post(url, headers=headers, params=params, json=data)
 
@@ -264,12 +431,31 @@ def get_orders(user: UserWithUserTokenBasedAuthentication,
                sort_order: Union[SortOrder, None] = None
                ) -> requests.models.Response:
     """
-    Get a list of the user's orders.
+    Get a list of orders associated with the given user.
 
-    Note: In the original API is an optional parameter called "archived".
+    Note: In the Discogs API is an optional parameter called "archived".
           I did not implement it because it always caused a server-sided crash.
 
     User Authentication needed.
+
+    Parameters:
+
+    user: user object (required).
+
+    status: string (optional)
+        -> Only show items with this status.
+
+    page: number (optional)
+        -> The page you want to request.
+
+    per_page: number (optional)
+        -> The number of items per page.
+
+    sort: string (optional)
+        -> Sort items by this field.
+
+    sort_order: string (optional)
+        -> Sort items in a particular order (one of asc, desc)
     """
     url = f"{ORDERS_URL}"
     headers = user.headers
@@ -285,6 +471,7 @@ def get_orders(user: UserWithUserTokenBasedAuthentication,
         params["sort"] = sort.name
     if sort_order:
         params["sort_order"] = sort_order.name
+
     return requests.get(url, headers=headers, params=params)
 
 # Cell
@@ -296,9 +483,22 @@ def get_order_messages(user: UserWithUserTokenBasedAuthentication,
                        per_page: Union[int, None] = None
                        ) -> requests.models.Response:
     """
-    Get a list of messages related to an order, with the most recent first.
+    Get a list of messages associated with the given order, with the most recent first.
 
     User Authentication needed.
+
+    Parameters:
+
+    user: user object (required)
+
+    order_id: string (required)
+        -> The ID of the order you are fetching
+
+    page: number (optional)
+        -> The page you want to request.
+
+    per_page: number (optional)
+        -> The number of items per page.
     """
     url = f"{ORDERS_URL}/{order_id}/messages"
     headers = user.headers
@@ -319,9 +519,18 @@ def post_message_on_order(user: UserWithUserTokenBasedAuthentication,
                           message: str,
                           ) -> requests.models.Response:
     """
-    Post a new message to a given order.
+    Post a new message to the given order.
 
     User Authentication needed.
+
+    Parameters:
+
+    user: user object (required)
+
+    order_id: string (required)
+        -> The ID of the order you are fetching
+
+    message: string (required)
     """
     url = f"{ORDERS_URL}/{order_id}/messages"
     headers = user.headers
@@ -349,6 +558,12 @@ def get_discogs_fee_for_given_price(user: Union[UserWithoutAuthentication,
 
     No user Authentication needed.
 
+    Parameters:
+
+    user: user object (required)
+
+    price: number (required)
+        -> The price to calculate a fee from
     """
 
     url = f"{FEE_URL}/{price}"
@@ -364,13 +579,19 @@ def get_price_suggestions(user: UserWithUserTokenBasedAuthentication,
                           release_id: int
                           ) -> requests.models.Response:
     """
-    Get a price suggestions for the provided release id.
+    Get a price suggestions for the given release id.
 
     Note: Suggested prices will be denominated in the user’s selling currency.
           If no suggestions are available, an empty object will be returned.
 
     User Authentication needed.
 
+    Parameters:
+
+    user: user object (required)
+
+    release_id: number (required)
+        -> The release ID to calculate a price from.
     """
 
     url = f"{PRICE_SUGGESTIONS_URL}/{release_id}"

@@ -10,8 +10,7 @@ class UserWithoutAuthentication(object):
     def __init__(self):
         self.headers = {
             "Accept": "json",
-            "Accept-Encoding": "gzip",
-            "Content-Type": "application/x-www-form-urlencoded"
+            "Accept-Encoding": "gzip"
         }
         self.params = {}
 
@@ -24,7 +23,6 @@ class UserWithUserTokenBasedAuthentication(object):
         self.headers = {
             "Accept": "json",
             "Accept-Encoding": "gzip",
-            "Content-Type": "application/x-www-form-urlencoded",
             "User-Agent": user_agent
         }
         self.params = {"token": user_token}
