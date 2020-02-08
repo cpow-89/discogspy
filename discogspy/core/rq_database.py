@@ -24,8 +24,8 @@ def get_release(user: Union[UserWithoutAuthentication,
 
     No user Authentication needed.
 
-    Parameter
-    ----------
+    Parameters:
+
     user: user object
 
     release_id : number (required)
@@ -54,8 +54,8 @@ def get_user_release_rating(user: Union[UserWithoutAuthentication,
 
     No user Authentication needed.
 
-    Parameters
-    ----------
+    Parameters:
+
     user: user object
 
     release_id : number (required)
@@ -83,8 +83,8 @@ def update_user_release_rating(user: UserWithUserTokenBasedAuthentication,
 
     User Authentication needed.
 
-    Parameters
-    ----------
+    Parameters:
+
     user: user object
 
     release_id : number (required)
@@ -116,8 +116,8 @@ def delete_user_release_rating(user: UserWithUserTokenBasedAuthentication,
 
     User Authentication needed.
 
-    Parameters
-    ----------
+    Parameters:
+
     user: user object
 
     release_id : number (required)
@@ -148,8 +148,8 @@ def get_community_release_rating(user: Union[UserWithoutAuthentication,
 
     No user Authentication needed.
 
-    Parameters
-    ----------
+    Parameters:
+
     user: user object
 
     release_id : number (required)
@@ -175,8 +175,8 @@ def get_master_release(user: Union[UserWithoutAuthentication,
 
     No user Authentication needed.
 
-    Parameters
-    ----------
+    Parameters:
+
     user: user object
 
     master_id : number (required)
@@ -208,8 +208,8 @@ def get_releases_related_to_master_release(user: Union[UserWithoutAuthentication
 
     No user Authentication needed.
 
-    Parameters
-    ----------
+    Parameters:
+
     user: user object.
 
     master_id : number (required)
@@ -273,8 +273,8 @@ def get_artist(user: Union[UserWithoutAuthentication,
 
     No user Authentication needed.
 
-    Parameters
-    ----------
+    Parameters:
+
     user: user object.
 
     artist_id : number (required)
@@ -302,8 +302,8 @@ def get_artist_releases(user: Union[UserWithoutAuthentication,
 
     No user Authentication needed.
 
-    Parameters
-    ----------
+    Parameters:
+
     user: user object.
 
     artist_id : number (required)
@@ -348,8 +348,8 @@ def get_label(user: Union[UserWithoutAuthentication,
 
     No user Authentication needed.
 
-    Parameters
-    ----------
+    Parameters:
+
     user: user object.
 
     label_id : number (required)
@@ -378,8 +378,8 @@ def get_label_releases(user: Union[UserWithoutAuthentication,
 
     No user Authentication needed.
 
-    Parameters
-    ----------
+    Parameters:
+
     user: user object.
 
     label_id : number (required)
