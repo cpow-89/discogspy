@@ -24,7 +24,7 @@ def get_release(user: Union[UserWithoutAuthentication,
 
     No user Authentication needed.
 
-    Parameters
+    Parameter
     ----------
     user: user object
 
