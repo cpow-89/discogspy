@@ -77,10 +77,11 @@ def add_new_listings_using_csv(user: UserWithUserTokenBasedAuthentication,
     """
 
     url = f"{INVENTORY_UPLOAD_URL}/add"
+    headers = user.headers
     params = user.params
     files = {"upload": file}
 
-    return requests.post(url, params=params, files=files)
+    return requests.post(url, headers=headers, params=params, files=files)
 
 # Cell
 
@@ -150,10 +151,11 @@ def update_existing_listings_using_csv(user: UserWithUserTokenBasedAuthenticatio
     """
 
     url = f"{INVENTORY_UPLOAD_URL}/change"
+    headers = user.headers
     params = user.params
     files = {"upload": file}
 
-    return requests.post(url, params=params, files=files)
+    return requests.post(url, headers=headers, params=params, files=files)
 
 # Cell
 
@@ -183,10 +185,11 @@ def delete_listings_using_csv(user: UserWithUserTokenBasedAuthentication,
     """
 
     url = f"{INVENTORY_UPLOAD_URL}/delete"
+    headers = user.headers
     params = user.params
     files = {"upload": file}
 
-    return requests.post(url, params=params, files=files)
+    return requests.post(url, headers=headers, params=params, files=files)
 
 # Cell
 

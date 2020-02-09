@@ -20,12 +20,19 @@ def get_user_collection_folders(user: Union[UserWithoutAuthentication,
                                 username: str
                                 ) -> requests.models.Response:
     """
-    Get a list of folders in a user’s collection.
+    Get a list of folders for the given user collection.
 
     Note: If you are not authenticated as the collection owner,
           only folder ID 0 (the “All” folder) will be visible (if the requested user’s collection is public).
 
     No user Authentication needed.
+
+    Parameters:
+
+    user: user object (required)
+
+    username: string (required)
+        -> The username of the collection you are trying to retrieve.
     """
 
     url = f"{USERS_URL}/{username}/collection/folders"
@@ -42,18 +49,28 @@ def create_new_user_collection_folder(user: UserWithUserTokenBasedAuthentication
                                       folder_name: str
                                       ) -> requests.models.Response:
     """
-    Create a new folder in a user’s collection.
+    Create a new folder in for the given user collection.
 
     User Authentication needed.
+
+    Parameters:
+
+    user: user object (required)
+
+    username: string (required)
+        -> The username of the collection you are trying to retrieve.
+
+    folder_name: string (required)
+        -> The name of the newly-created folder.
     """
 
     url = f"{USERS_URL}/{username}/collection/folders"
-
+    headers = user.headers
     params = user.params
 
     data = {"name": folder_name}
 
-    return requests.post(url, params=params, json=data)
+    return requests.post(url, headers=headers, params=params, json=data)
 
 # Cell
 
@@ -69,6 +86,16 @@ def get_folder_metadata(user: Union[UserWithoutAuthentication,
     Note: If folder_id is not 0, authentication as the collection owner is required.
 
     No user Authentication needed.
+
+    Parameters:
+
+    user: user object (required)
+
+    username: string (required)
+        -> The username of the collection you are trying to retrieve.
+
+    folder_id: number (required)
+        -> The ID of the folder to request.
     """
 
     url = f"{USERS_URL}/{username}/collection/folders/{folder_id}"
@@ -86,17 +113,32 @@ def change_collection_folder_name(user: UserWithUserTokenBasedAuthentication,
                                   new_folder_name: str
                                   ) -> requests.models.Response:
     """
-    Change the name of an existing collection folder in a user’s collection.
+    Change the name of an existing collection folder for the given user collection.
+
+    Note: Folders 0 and 1 cannot be renamed.
 
     User Authentication needed.
+
+    Parameters:
+
+    user: user object (required)
+
+    username: string (required)
+        -> The username of the collection you are trying to retrieve.
+
+    folder_id: number (required)
+        -> The ID of the folder to modify.
+
+    new_folder_name: string (required)
+        -> The new folder name.
     """
 
     url = f"{USERS_URL}/{username}/collection/folders/{folder_id}"
     params = user.params
-
+    headers = user.headers
     data = {"name": new_folder_name}
 
-    return requests.post(url, params=params, json=data)
+    return requests.post(url, headers=headers, params=params, json=data)
 
 # Cell
 
@@ -106,11 +148,22 @@ def delete_collection_folder(user: UserWithUserTokenBasedAuthentication,
                              folder_id: int
                              ) -> requests.models.Response:
     """
-    Delete an existing collection folder from a user’s collection.
+    Delete an existing collection folder from the given user collection.
 
     Note: Only possible if folder is empty.
+          Folders 0 and 1 cannot be deleted.
 
     User Authentication needed.
+
+    Parameters:
+
+    user: user object (required)
+
+    username: string (required)
+        -> The username of the collection you are trying to retrieve.
+
+    folder_id: number (required)
+        -> The ID of the folder to delete.
     """
 
     url = f"{USERS_URL}/{username}/collection/folders/{folder_id}"
@@ -132,6 +185,22 @@ def get_collection_folder_by_release(user: UserWithUserTokenBasedAuthentication,
     Get the user’s collection folders which contain a specified release.
 
     User Authentication needed.
+
+    Parameters:
+
+    user: user object (required)
+
+    username: string (required)
+        -> The username of the collection you are trying to retrieve.
+
+    release_id: number (required)
+        -> The ID of the release to request.
+
+    page: number (optional)
+        -> The page you want to request.
+
+    per_page: number (optional)
+        -> The number of items per page.
     """
 
     url = f"{USERS_URL}/{username}/collection/releases/{release_id}"
@@ -158,12 +227,34 @@ def get_collection_items_by_folder(user: Union[UserWithoutAuthentication,
                                    sort_order: Union[SortOrder, None] = None
                                    ) -> requests.models.Response:
     """
-    Get a list of item in a folder in a user’s collection.
+    Get a list of item in a folder from the given user collection.
 
     Note: If folder_id is not 0, or the collection has been made private by its owner,
           authentication as the collection owner is required.
 
     No user Authentication needed.
+
+    Parameters:
+
+    user: user object (required)
+
+    username: string (required)
+        -> The username of the collection you are trying to retrieve.
+
+    folder_id: number (required)
+        -> The ID of the folder to request.
+
+    page: number (optional)
+        -> The page you want to request.
+
+    per_page: number (optional)
+        -> The number of items per page.
+
+    sort: string (optional)
+        -> Sort items by this field.
+
+    sort_order: string (optional)
+        -> Sort items in a particular order (one of asc, desc)
     """
 
     url = f"{USERS_URL}/{username}/collection/folders/{folder_id}/releases"
@@ -190,9 +281,22 @@ def add_release_to_collection_folder(user: UserWithUserTokenBasedAuthentication,
                                      release_id: int
                                      ) -> requests.models.Response:
     """
-    Add a release to a folder in a user’s collection.
+    Add a release to a folder in the given user collection.
 
     User Authentication needed.
+
+    Parameters:
+
+    user: user object (required)
+
+    username: string (required)
+        -> The username of the collection you are trying to retrieve.
+
+    folder_id: number (required)
+        -> The ID of the folder to request.
+
+    release_id: number (required)
+        -> The ID of the release you are adding.
     """
 
     url = f"{USERS_URL}/{username}/collection/folders/{folder_id}/releases/{release_id}"
@@ -215,14 +319,33 @@ def move_release_to_another_collection_folder(user: UserWithUserTokenBasedAuthen
     Move the instance of an release to another folder.
 
     User Authentication needed.
+
+    Parameters:
+
+    user: user object (required)
+
+    username: string (required)
+        -> The username of the collection you are trying to retrieve.
+
+    source_folder_id: number (required)
+        -> The ID of the source folder.
+
+    destination_folder_id: number (required)
+        -> The ID of the destination folder.
+
+    release_id: number (required)
+        -> The ID of the release you are modifying.
+
+    instance_id: number (required)
+        -> The ID of the instance.
     """
 
     url = f"{USERS_URL}/{username}/collection/folders/{source_folder_id}/releases/{release_id}/instances/{instance_id}"
     params = user.params
-
+    headers = user.headers
     data = {"folder_id": destination_folder_id}
 
-    return requests.post(url, params=params, json=data)
+    return requests.post(url, headers=headers, params=params, json=data)
 
 # Cell
 
@@ -235,18 +358,38 @@ def change_rating_of_release_in_collection_folder(user: UserWithUserTokenBasedAu
                                                   rating: int
                                                   ) -> requests.models.Response:
     """
-    Change the rating of the instance of an release in given collection folder.
+    Change the rating of the instance of an release in the given collection folder.
 
     User Authentication needed.
+
+    Parameters:
+
+    user: user object (required)
+
+    username: string (required)
+        -> The username of the collection you are trying to retrieve.
+
+    folder_id: number (required)
+        -> The ID of the source folder.
+
+    folder_id: number (required)
+        -> The ID of the folder to modify.
+
+    release_id: number (required)
+        -> The ID of the release you are modifying.
+
+    rating: number (required)
+        -> The rating of the instance you are supplying.
     """
 
     url = f"{USERS_URL}/{username}/collection/folders/{folder_id}/releases/{release_id}/instances/{instance_id}"
+    headers = user.headers
     params = user.params
 
     rating = min(max(0, rating), 5)
     data = {"rating": rating}
 
-    return requests.post(url, params=params, json=data)
+    return requests.post(url, headers=headers, params=params, json=data)
 
 # Cell
 
@@ -261,6 +404,22 @@ def delete_release_instance_from_collection_folder(user: UserWithUserTokenBasedA
     Remove an instance of a release from a given collection folder.
 
     User Authentication needed.
+
+    Parameters:
+
+    user: user object (required)
+
+    username: string (required)
+        -> The username of the collection you are trying to retrieve.
+
+    folder_id: number (required)
+        -> The ID of the folder to modify.
+
+    release_id: number (required)
+        -> The ID of the release you are modifying.
+
+    instance_id: number (required)
+        -> The ID of the instance you want to delete.
     """
 
     url = f"{USERS_URL}/{username}/collection/folders/{folder_id}/releases/{release_id}/instances/{instance_id}"
@@ -284,6 +443,13 @@ def list_custom_fields_for_collection_folders(user: Union[UserWithoutAuthenticat
           only fields with public set to true will be visible.
 
     No user Authentication needed.
+
+    Parameters:
+
+    user: user object (required)
+
+    username: string (required)
+        -> The username of the collection you are trying to retrieve.
     """
 
     url = f"{USERS_URL}/{username}/collection/fields"
@@ -304,16 +470,40 @@ def edit_custom_field_value_for_release_instance_from_collection_folder(user: Us
                                                                         field_id: int,
                                                                         ) -> requests.models.Response:
     """
-    Change the value of a custom field on a particular instance of an release in given collection folder.
+    Change the value of a custom field on a particular instance of an release in the given collection folder.
 
     No user Authentication needed.
+
+    Parameters:
+
+    user: user object (required)
+
+    username: string (required)
+        -> The username of the collection you are trying to retrieve.
+
+    value: string (required)
+        -> The new value of the field. If the field’s type is dropdown,
+           the value must match one of the values in the field’s list of options.
+
+    folder_id: number (required)
+        -> The ID of the folder to modify.
+
+    release_id: number (required)
+        -> he ID of the release you are modifying.
+
+    instance_id: number (required)
+        -> The ID of the instance.
+
+    field_id: number (required)
+        -> The ID of the field.
     """
 
     url = f"{USERS_URL}/{username}/collection/folders/{folder_id}/releases/{release_id}/instances/{instance_id}/fields/{field_id}"
+    headers = user.headers
     params = user.params
     data = {"value": value}
 
-    return requests.post(url, params=params, json=data)
+    return requests.post(url, headers=headers, params=params, json=data)
 
 # Cell
 
@@ -325,6 +515,13 @@ def get_collection_value(user: UserWithUserTokenBasedAuthentication,
     Get the minimum, median, and maximum value of a given collection.
 
     User Authentication needed.
+
+    Parameters:
+
+    user: user object (required)
+
+    username: string (required)
+        -> The username of the collection you are trying to retrieve.
     """
 
     url = f"{USERS_URL}/{username}/collection/value"
