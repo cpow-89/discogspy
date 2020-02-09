@@ -5,7 +5,7 @@ title: Core Inventory Export Requests
 keywords: fastai
 sidebar: home_sidebar
 
-summary: "Core.rq_inventory_export is a collection of function wrappers around the Discogs api for inventory exports."
+summary: "Core.rq_inventory_export is a collection of function wrappers around the Discogs API for inventory exports."
 ---
 <!--
 
@@ -18,7 +18,8 @@ summary: "Core.rq_inventory_export is a collection of function wrappers around t
 -->
 
 <div class="container" id="notebook-container">
-    
+    {% raw %}
+        
 <div class="cell border-box-sizing code_cell rendered">
 
 </div>
@@ -39,8 +40,10 @@ summary: "Core.rq_inventory_export is a collection of function wrappers around t
 <div class="output_markdown rendered_html output_subarea ">
 <h4 id="request_inventory_export" class="doc_header"><code>request_inventory_export</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/rq_inventory_export.py#L14" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>request_inventory_export</code>(<strong><code>user</code></strong>:<a href="/discogspy/core.discogs_user#UserWithUserTokenBasedAuthentication"><code>UserWithUserTokenBasedAuthentication</code></a>)</p>
 </blockquote>
-<p>Request an export of your inventory as a CSV.</p>
+<p>Request an csv export for the given inventory.</p>
 <p>User Authentication needed.</p>
+<p>Parameters:</p>
+<p>user: user object (required)</p>
 
 </div>
 
@@ -92,10 +95,16 @@ summary: "Core.rq_inventory_export is a collection of function wrappers around t
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_recent_inventory_exports" class="doc_header"><code>get_recent_inventory_exports</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/rq_inventory_export.py#L29" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_recent_inventory_exports</code>(<strong><code>user</code></strong>:<a href="/discogspy/core.discogs_user#UserWithUserTokenBasedAuthentication"><code>UserWithUserTokenBasedAuthentication</code></a>, <strong><code>page</code></strong>:<code>Optional</code>[<code>int</code>]=<em><code>None</code></em>, <strong><code>per_page</code></strong>:<code>Optional</code>[<code>int</code>]=<em><code>None</code></em>)</p>
+<h4 id="get_recent_inventory_exports" class="doc_header"><code>get_recent_inventory_exports</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/rq_inventory_export.py#L34" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_recent_inventory_exports</code>(<strong><code>user</code></strong>:<a href="/discogspy/core.discogs_user#UserWithUserTokenBasedAuthentication"><code>UserWithUserTokenBasedAuthentication</code></a>, <strong><code>page</code></strong>:<code>Optional</code>[<code>int</code>]=<em><code>None</code></em>, <strong><code>per_page</code></strong>:<code>Optional</code>[<code>int</code>]=<em><code>None</code></em>)</p>
 </blockquote>
-<p>Get a list of all recent exports of your inventory.</p>
+<p>Get a list of all recent exports for the given inventory.</p>
 <p>User Authentication needed.</p>
+<p>Parameters:</p>
+<p>user: user object (required)</p>
+<p>page: number (optional)
+    -&gt; The page you want to request.</p>
+<p>per_page: number (optional)
+    -&gt; The number of items per page.</p>
 
 </div>
 
@@ -111,7 +120,9 @@ summary: "Core.rq_inventory_export is a collection of function wrappers around t
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Example for usage of get_recent_inventory_exports</span>
-<span class="n">get_recent_inventory_exports</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="n">example_user</span><span class="p">,</span> <span class="n">page</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">per_page</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">get_recent_inventory_exports</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="n">example_user</span><span class="p">,</span> 
+                             <span class="n">page</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
+                             <span class="n">per_page</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -147,10 +158,14 @@ summary: "Core.rq_inventory_export is a collection of function wrappers around t
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_inventory_export_details" class="doc_header"><code>get_inventory_export_details</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/rq_inventory_export.py#L52" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_inventory_export_details</code>(<strong><code>user</code></strong>:<a href="/discogspy/core.discogs_user#UserWithUserTokenBasedAuthentication"><code>UserWithUserTokenBasedAuthentication</code></a>, <strong><code>export_id</code></strong>:<code>int</code>)</p>
+<h4 id="get_inventory_export_details" class="doc_header"><code>get_inventory_export_details</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/rq_inventory_export.py#L67" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_inventory_export_details</code>(<strong><code>user</code></strong>:<a href="/discogspy/core.discogs_user#UserWithUserTokenBasedAuthentication"><code>UserWithUserTokenBasedAuthentication</code></a>, <strong><code>export_id</code></strong>:<code>int</code>)</p>
 </blockquote>
-<p>Get details about the status of an inventory export.</p>
+<p>Get details about the status of the given inventory export.</p>
 <p>User Authentication needed.</p>
+<p>Parameters:</p>
+<p>user: user object (required)</p>
+<p>export_id: number (required)
+    -&gt; Id of the export.</p>
 
 </div>
 
@@ -166,7 +181,8 @@ summary: "Core.rq_inventory_export is a collection of function wrappers around t
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Example for usage of get_inventory_export_details</span>
-<span class="n">get_inventory_export_details</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="n">example_user</span><span class="p">,</span> <span class="n">export_id</span><span class="o">=</span><span class="mi">835445</span><span class="p">)</span>
+<span class="n">get_inventory_export_details</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="n">example_user</span><span class="p">,</span> 
+                             <span class="n">export_id</span><span class="o">=</span><span class="mi">838414</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -202,11 +218,15 @@ summary: "Core.rq_inventory_export is a collection of function wrappers around t
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="download_inventory_export" class="doc_header"><code>download_inventory_export</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/rq_inventory_export.py#L69" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>download_inventory_export</code>(<strong><code>user</code></strong>:<a href="/discogspy/core.discogs_user#UserWithUserTokenBasedAuthentication"><code>UserWithUserTokenBasedAuthentication</code></a>, <strong><code>export_id</code></strong>:<code>int</code>)</p>
+<h4 id="download_inventory_export" class="doc_header"><code>download_inventory_export</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/rq_inventory_export.py#L91" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>download_inventory_export</code>(<strong><code>user</code></strong>:<a href="/discogspy/core.discogs_user#UserWithUserTokenBasedAuthentication"><code>UserWithUserTokenBasedAuthentication</code></a>, <strong><code>export_id</code></strong>:<code>int</code>)</p>
 </blockquote>
 <p>Download an existing inventory export.
 The response will be a zipped csv file.</p>
 <p>User Authentication needed.</p>
+<p>Parameters:</p>
+<p>user: user object (required)</p>
+<p>export_id: number (required)
+    -&gt; Id of the export.</p>
 
 </div>
 
@@ -222,7 +242,7 @@ The response will be a zipped csv file.</p>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Example for usage of download_inventory_export</span>
-<span class="n">download_inventory_export</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="n">example_user</span><span class="p">,</span> <span class="n">export_id</span><span class="o">=</span><span class="mi">835445</span><span class="p">)</span>
+<span class="n">download_inventory_export</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="n">example_user</span><span class="p">,</span> <span class="n">export_id</span><span class="o">=</span><span class="mi">838414</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -246,6 +266,7 @@ The response will be a zipped csv file.</p>
 </div>
 
 </div>
+    {% endraw %}
 </div>
  
 

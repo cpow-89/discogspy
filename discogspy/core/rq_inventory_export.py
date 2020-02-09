@@ -11,11 +11,16 @@ from . import *
 # Cell
 
 
-def request_inventory_export(user: UserWithUserTokenBasedAuthentication) -> requests.models.Response:
+def request_inventory_export(user: UserWithUserTokenBasedAuthentication
+                            ) -> requests.models.Response:
     """
-    Request an export of your inventory as a CSV.
+    Request an csv export for the given inventory.
 
     User Authentication needed.
+
+    Parameters:
+
+    user: user object (required)
     """
     url = f"{INVENTORY_EXPORT_URL}"
     headers = user.headers
@@ -31,9 +36,19 @@ def get_recent_inventory_exports(user: UserWithUserTokenBasedAuthentication,
                                  per_page: Union[int, None] = None
                                  ) -> requests.models.Response:
     """
-    Get a list of all recent exports of your inventory.
+    Get a list of all recent exports for the given inventory.
 
     User Authentication needed.
+
+    Parameters:
+
+    user: user object (required)
+
+    page: number (optional)
+        -> The page you want to request.
+
+    per_page: number (optional)
+        -> The number of items per page.
     """
     url = f"{INVENTORY_EXPORT_URL}"
     headers = user.headers
@@ -53,9 +68,16 @@ def get_inventory_export_details(user: UserWithUserTokenBasedAuthentication,
                                  export_id: int
                                  ) -> requests.models.Response:
     """
-    Get details about the status of an inventory export.
+    Get details about the status of the given inventory export.
 
     User Authentication needed.
+
+    Parameters:
+
+    user: user object (required)
+
+    export_id: number (required)
+        -> Id of the export.
     """
     url = f"{INVENTORY_EXPORT_URL}/{export_id}"
     headers = user.headers
@@ -74,6 +96,13 @@ def download_inventory_export(user: UserWithUserTokenBasedAuthentication,
     The response will be a zipped csv file.
 
     User Authentication needed.
+
+    Parameters:
+
+    user: user object (required)
+
+    export_id: number (required)
+        -> Id of the export.
     """
     url = f"{INVENTORY_EXPORT_URL}/{export_id}/download"
     headers = user.headers

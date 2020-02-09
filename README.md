@@ -15,8 +15,7 @@ Important information:
 <br>
 Requests to the Discogs API are throttled by the server by source IP to 60 per minute for authenticated requests, and 25 per minute for unauthenticated requests, with some exceptions.
 
-<br><br>
-Note: This package is under substantial development. See Road Map for more information.
+
 
 ## Install
 

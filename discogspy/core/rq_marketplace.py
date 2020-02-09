@@ -31,7 +31,7 @@ def get_inventory(user: Union[UserWithoutAuthentication,
 
     Parameters:
 
-    user: user object (required).
+    user: user object (required)
 
     username: string (required)
         -> The username for whose inventory you are fetching
@@ -90,7 +90,7 @@ def get_listing(user: Union[UserWithoutAuthentication,
 
     Parameters:
 
-    user: user object (required).
+    user: user object (required)
 
     listing_id: number (required)
         -> The username for whose inventory you are fetching
@@ -131,7 +131,7 @@ def update_listing(user: UserWithUserTokenBasedAuthentication,
 
     Parameters:
 
-    user: user object (required).
+    user: user object (required)
 
     listing_id: number (required)
         -> The username for whose inventory you are fetching
@@ -223,7 +223,7 @@ def delete_listing(user: UserWithUserTokenBasedAuthentication,
 
     Parameters:
 
-    user: user object (required).
+    user: user object (required)
 
     listing_id: number (required)
         -> The username for whose inventory you are fetching.
@@ -258,7 +258,7 @@ def add_new_listing(user: UserWithUserTokenBasedAuthentication,
 
     Parameters:
 
-    user: user object (required).
+    user: user object (required)
 
     release_id: number (required)
         -> The ID of the release you are posting
@@ -343,7 +343,7 @@ def get_order(user: UserWithUserTokenBasedAuthentication,
 
     Parameters:
 
-    user: user object (required).
+    user: user object (required)
 
     order_id: string (required)
         -> The ID of the order you are fetching
@@ -371,7 +371,7 @@ def update_order_status(user: UserWithUserTokenBasedAuthentication,
 
     Parameters:
 
-    user: user object (required).
+    user: user object (required)
 
     order_id: string (required)
         -> The ID of the order you are fetching
@@ -404,7 +404,7 @@ def update_order_shipping(user: UserWithUserTokenBasedAuthentication,
 
     Parameters:
 
-    user: user object (required).
+    user: user object (required)
 
     order_id: string (required)
         -> The ID of the order you are fetching
@@ -440,7 +440,7 @@ def get_orders(user: UserWithUserTokenBasedAuthentication,
 
     Parameters:
 
-    user: user object (required).
+    user: user object (required)
 
     status: string (optional)
         -> Only show items with this status.

@@ -212,7 +212,7 @@ def get_releases_related_to_master_release(user: Union[UserWithoutAuthentication
 
     Parameters:
 
-    user: user object (required).
+    user: user object (required)
 
     master_id : number (required)
         -> The Master ID.
@@ -278,7 +278,7 @@ def get_artist(user: Union[UserWithoutAuthentication,
 
     Parameters:
 
-    user: user object (required).
+    user: user object (required)
 
     artist_id : number (required)
         -> The Artist ID.
@@ -308,7 +308,7 @@ def get_artist_releases(user: Union[UserWithoutAuthentication,
 
     Parameters:
 
-    user: user object (required).
+    user: user object (required)
 
     artist_id : number (required)
         -> The Artist ID.
@@ -354,7 +354,7 @@ def get_label(user: Union[UserWithoutAuthentication,
 
     Parameters:
 
-    user: user object (required).
+    user: user object (required)
 
     label_id : number (required)
         -> The Label ID.
@@ -384,7 +384,7 @@ def get_label_releases(user: Union[UserWithoutAuthentication,
 
     Parameters:
 
-    user: user object (required).
+    user: user object (required)
 
     label_id : number (required)
         -> The Label ID.
