@@ -16,7 +16,7 @@ from . import *
 
 
 def get_user_collection_folders(user: Union[UserWithoutAuthentication,
-                                      UserWithUserTokenBasedAuthentication],
+                                            UserWithUserTokenBasedAuthentication],
                                 username: str
                                 ) -> requests.models.Response:
     """

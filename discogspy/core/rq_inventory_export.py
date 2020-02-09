@@ -12,7 +12,7 @@ from . import *
 
 
 def request_inventory_export(user: UserWithUserTokenBasedAuthentication
-                            ) -> requests.models.Response:
+                             ) -> requests.models.Response:
     """
     Request an csv export for the given inventory.
 
