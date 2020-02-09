@@ -18,12 +18,25 @@ def get_user_wantlist(user: Union[UserWithoutAuthentication,
                       per_page: Union[int, None] = None,
                       ) -> requests.models.Response:
     """
-    Get a list of releases from the wantlist of a given user.
+    Get a list of releases from the wantlist for the given user.
 
     Note: If the wantlist has been made private by its owner,
           you must be authenticated as the owner to view it.
 
     No user Authentication needed.
+
+    Parameters:
+
+    user: user object (required)
+
+    username: string (required)
+        -> The username of the wantlist you are trying to fetch.
+
+    page: number (optional)
+        -> The page you want to request.
+
+    per_page: number (optional)
+        -> The number of items per page.
     """
 
     url = f"{USERS_URL}/{username}/wants"
@@ -47,22 +60,39 @@ def add_release_to_wantlist(user: UserWithUserTokenBasedAuthentication,
                             rating: Union[int, None] = None
                             ) -> requests.models.Response:
     """
-    Add a releases to the wantlist of a given user.
+    Add a releases to the wantlist of the given user.
 
     User Authentication needed.
+
+    Parameters:
+
+    user: user object (required)
+
+    username: string (required)
+        -> The username of the wantlist you are trying to fetch.
+
+    release_id: number (required)
+        -> The ID of the release you are adding.
+
+    notes: string (optional)
+        -> User notes to associate with this release.
+
+    rating: number (optional)
+        -> User’s rating of this release, from 0 (unrated) to 5 (best). Defaults to 0.
     """
 
     url = f"{USERS_URL}/{username}/wants/{release_id}"
+    headers = user.headers
     params = user.params
-    data = {}
 
+    data = {}
     if rating:
         rating = min(max(0, rating), 5)
         data["rating"] = rating
     if notes:
         data["notes"] = notes
 
-    return requests.put(url, params=params, json=data)
+    return requests.put(url, headers=headers, params=params, json=data)
 
 # Cell
 
@@ -73,17 +103,31 @@ def change_notes_of_a_release_from_wantlist(user: UserWithUserTokenBasedAuthenti
                                             notes: str
                                             ) -> requests.models.Response:
     """
-    Change the notes of a releases from the wantlist of a given user.
+    Change the notes of a releases from the wantlist for the given user.
 
     User Authentication needed.
+
+    Parameters:
+
+    user: user object (required)
+
+    username: string (required)
+        -> The username of the wantlist you are trying to fetch.
+
+    release_id: number (required)
+        -> The ID of the release you are modifying.
+
+    notes: string (required)
+        -> Updated user notes to associate with this release.
     """
 
     url = f"{USERS_URL}/{username}/wants/{release_id}"
+    headers = user.headers
     params = user.params
 
     data = {"notes": notes}
 
-    return requests.post(url, params=params, json=data)
+    return requests.post(url, headers=headers, params=params, json=data)
 
 # Cell
 
@@ -94,18 +138,32 @@ def change_rating_of_a_release_from_wantlist(user: UserWithUserTokenBasedAuthent
                                              rating: int
                                              ) -> requests.models.Response:
     """
-    Change the rating of a releases from the wantlist of a given user.
+    Change the rating of a releases from the wantlist of the given user.
 
     User Authentication needed.
+
+    Parameters:
+
+    user: user object (required)
+
+    username: string (required)
+        -> The username of the wantlist you are trying to fetch.
+
+    release_id: number (required)
+        -> The ID of the release you are modifying.
+
+    rating: number (optional)
+        -> Updated user rating of this release, from 0 (unrated) to 5 (best). Defaults to 0.
     """
 
     url = f"{USERS_URL}/{username}/wants/{release_id}"
+    headers = user.headers
     params = user.params
 
     rating = min(max(0, rating), 5)
     data = {"rating": rating}
 
-    return requests.post(url, params=params, json=data)
+    return requests.post(url, headers=headers, params=params, json=data)
 
 # Cell
 
@@ -115,9 +173,19 @@ def delete_release_from_wantlist(user: UserWithUserTokenBasedAuthentication,
                                  release_id: int
                                  ) -> requests.models.Response:
     """
-    Delete a releases from the wantlist of a given user.
+    Delete a releases from the wantlist of the given user.
 
     User Authentication needed.
+
+    Parameters:
+
+    user: user object (required)
+
+    username: string (required)
+        -> The username of the wantlist you are trying to fetch.
+
+    release_id: number (required)
+        -> The ID of the release you are deleting.
     """
 
     url = f"{USERS_URL}/{username}/wants/{release_id}"
