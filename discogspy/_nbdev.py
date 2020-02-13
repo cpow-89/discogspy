@@ -16,6 +16,7 @@ index = {"BASE_URL": "00_core.constants.ipynb",
          "INVENTORY_URL": "00_core.constants.ipynb",
          "INVENTORY_EXPORT_URL": "00_core.constants.ipynb",
          "INVENTORY_UPLOAD_URL": "00_core.constants.ipynb",
+         "LISTS_URL": "00_core.constants.ipynb",
          "CurrAbbr": "00_core.constants.ipynb",
          "SortOptionsMaster": "00_core.constants.ipynb",
          "SortOptionsArtist": "00_core.constants.ipynb",
@@ -84,7 +85,8 @@ index = {"BASE_URL": "00_core.constants.ipynb",
          "change_notes_of_a_release_from_wantlist": "07_core.rq_wantlist.ipynb",
          "change_rating_of_a_release_from_wantlist": "07_core.rq_wantlist.ipynb",
          "delete_release_from_wantlist": "07_core.rq_wantlist.ipynb",
-         "get_userlists": "08_core.rq_userlists.ipynb"}
+         "get_userlists": "08_core.rq_userlists.ipynb",
+         "get_userlist": "08_core.rq_userlists.ipynb"}
 
 modules = ["core/constants.py",
            "core/discogs_user.py",

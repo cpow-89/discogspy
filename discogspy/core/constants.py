@@ -2,9 +2,9 @@
 
 __all__ = ['BASE_URL', 'RELEASES_URL', 'MASTERS_URL', 'ARTIST_URL', 'LABEL_URL', 'USERS_URL', 'MARKETPLACE_URL',
            'LISTINGS_URL', 'ORDERS_URL', 'FEE_URL', 'PRICE_SUGGESTIONS_URL', 'INVENTORY_URL', 'INVENTORY_EXPORT_URL',
-           'INVENTORY_UPLOAD_URL', 'CurrAbbr', 'SortOptionsMaster', 'SortOptionsArtist', 'SortOptionsLabel',
-           'SortOptionsInventory', 'SortOptionsOrders', 'SortOptionsCollection', 'SortOrder', 'StatusInventory',
-           'StatusNewListing', 'StatusOrder', 'StatusOrders', 'ReleaseCondition', 'SleeveCondition']
+           'INVENTORY_UPLOAD_URL', 'LISTS_URL', 'CurrAbbr', 'SortOptionsMaster', 'SortOptionsArtist',
+           'SortOptionsLabel', 'SortOptionsInventory', 'SortOptionsOrders', 'SortOptionsCollection', 'SortOrder',
+           'StatusInventory', 'StatusNewListing', 'StatusOrder', 'StatusOrders', 'ReleaseCondition', 'SleeveCondition']
 
 # Cell
 from enum import Enum
@@ -26,6 +26,7 @@ PRICE_SUGGESTIONS_URL = f"{MARKETPLACE_URL}/price_suggestions"
 INVENTORY_URL = f"{BASE_URL}/inventory"
 INVENTORY_EXPORT_URL = f"{INVENTORY_URL}/export"
 INVENTORY_UPLOAD_URL = f"{INVENTORY_URL}/upload"
+LISTS_URL = f"{BASE_URL}/lists"
 
 # Cell
 
