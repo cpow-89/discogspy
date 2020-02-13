@@ -6,3 +6,4 @@ from .rq_inventory_export import *
 from .rq_inventory_upload import *
 from .rq_collection import *
 from .rq_wantlist import *
+from .rq_userlists import *

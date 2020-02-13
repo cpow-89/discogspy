@@ -33,6 +33,9 @@ entries:
     - output: web,pdf
       title: Core Wantlist Requests
       url: /core.rq_wantlist
+    - output: web,pdf
+      title: Core User Lists Requests
+      url: /core.rq_userlists
     output: web
     title: discogspy
   output: web
