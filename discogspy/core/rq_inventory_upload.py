@@ -112,6 +112,9 @@ def update_existing_listings_using_csv(user: UserWithUserTokenBasedAuthenticatio
     release_id: number (optional)
         -> This value corresponds with the Discogs database Release ID.
 
+    listing_id: number (required)
+        -> This is the ID of the listing you wish to update.
+
     media_condition: string (optional)
         -> The condition of the release you are posting.
 
@@ -180,8 +183,8 @@ def delete_listings_using_csv(user: UserWithUserTokenBasedAuthentication,
 
     Csv File Values:
 
-    release_id: number (required)
-        -> This value corresponds with the Discogs database Release ID.
+    listing_id: number (required)
+        -> This is the ID of the listing you wish to delete.
     """
 
     url = f"{INVENTORY_UPLOAD_URL}/delete"

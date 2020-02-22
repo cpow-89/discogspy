@@ -33,7 +33,7 @@ Requests to the Discogs API are throttled by the server by source IP to 60 per m
     e) Wrap user identity calls (maybe later - I personally dont have any use case for it)<br>
     f) Wrap user collection calls (done)<br>
     g) Wrap user wantlist calls (done)<br>
-    h) Wrap user lists calls<br>
+    h) Wrap user lists calls (done)<br>
 
 2. Create response wrapper
 

@@ -202,6 +202,8 @@ summary: "Core.rq_inventory_upload is a collection of function wrappers around t
 <p>Csv File Values:</p>
 <p>release_id: number (optional)
     -&gt; This value corresponds with the Discogs database Release ID.</p>
+<p>listing_id: number (required)
+    -&gt; This is the ID of the listing you wish to update.</p>
 <p>media_condition: string (optional)
     -&gt; The condition of the release you are posting.</p>
 <p>price: number (optional)
@@ -285,6 +287,7 @@ summary: "Core.rq_inventory_upload is a collection of function wrappers around t
     <tr style="text-align: right;">
       <th></th>
       <th>release_id</th>
+      <th>listing_id</th>
       <th>price</th>
       <th>media_condition</th>
       <th>comments</th>
@@ -294,6 +297,7 @@ summary: "Core.rq_inventory_upload is a collection of function wrappers around t
     <tr>
       <th>0</th>
       <td>123</td>
+      <td>456</td>
       <td>1.5</td>
       <td>Mint (M)</td>
       <td>Comments about this release for sale</td>
@@ -301,14 +305,16 @@ summary: "Core.rq_inventory_upload is a collection of function wrappers around t
     <tr>
       <th>1</th>
       <td>456</td>
-      <td>2.5</td>
+      <td>789</td>
+      <td>1.5</td>
       <td>Near Mint (NM or M-)</td>
       <td>More comments</td>
     </tr>
     <tr>
       <th>2</th>
       <td>7890</td>
-      <td>3.5</td>
+      <td>101112</td>
+      <td>1.5</td>
       <td>Good (G)</td>
       <td>Signed vinyl copy</td>
     </tr>
@@ -335,7 +341,7 @@ summary: "Core.rq_inventory_upload is a collection of function wrappers around t
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="delete_listings_using_csv" class="doc_header"><code>delete_listings_using_csv</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/rq_inventory_upload.py#L163" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>delete_listings_using_csv</code>(<strong><code>user</code></strong>:<a href="/discogspy/core.discogs_user#UserWithUserTokenBasedAuthentication"><code>UserWithUserTokenBasedAuthentication</code></a>, <strong><code>file</code></strong>:<code>BufferedReader</code>)</p>
+<h4 id="delete_listings_using_csv" class="doc_header"><code>delete_listings_using_csv</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/rq_inventory_upload.py#L166" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>delete_listings_using_csv</code>(<strong><code>user</code></strong>:<a href="/discogspy/core.discogs_user#UserWithUserTokenBasedAuthentication"><code>UserWithUserTokenBasedAuthentication</code></a>, <strong><code>file</code></strong>:<code>BufferedReader</code>)</p>
 </blockquote>
 <p>Upload a CSV file with listings to delete from the given inventory.</p>
 <p>Note: The file you upload must be a comma-separated CSV.
@@ -346,8 +352,8 @@ summary: "Core.rq_inventory_upload is a collection of function wrappers around t
 <p>file: file (required)
     -&gt; The CSV file of items to add to your inventory.</p>
 <p>Csv File Values:</p>
-<p>release_id: number (required)
-    -&gt; This value corresponds with the Discogs database Release ID.</p>
+<p>listing_id: number (required)
+    -&gt; This is the ID of the listing you wish to delete.</p>
 
 </div>
 
@@ -441,7 +447,7 @@ summary: "Core.rq_inventory_upload is a collection of function wrappers around t
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_list_of_recent_uploads" class="doc_header"><code>get_list_of_recent_uploads</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/rq_inventory_upload.py#L197" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_list_of_recent_uploads</code>(<strong><code>user</code></strong>:<a href="/discogspy/core.discogs_user#UserWithUserTokenBasedAuthentication"><code>UserWithUserTokenBasedAuthentication</code></a>, <strong><code>page</code></strong>:<code>Optional</code>[<code>int</code>]=<em><code>None</code></em>, <strong><code>per_page</code></strong>:<code>Optional</code>[<code>int</code>]=<em><code>None</code></em>)</p>
+<h4 id="get_list_of_recent_uploads" class="doc_header"><code>get_list_of_recent_uploads</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/rq_inventory_upload.py#L200" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_list_of_recent_uploads</code>(<strong><code>user</code></strong>:<a href="/discogspy/core.discogs_user#UserWithUserTokenBasedAuthentication"><code>UserWithUserTokenBasedAuthentication</code></a>, <strong><code>page</code></strong>:<code>Optional</code>[<code>int</code>]=<em><code>None</code></em>, <strong><code>per_page</code></strong>:<code>Optional</code>[<code>int</code>]=<em><code>None</code></em>)</p>
 </blockquote>
 <p>Get a list of all recent inventory uploads for the given inventory.</p>
 <p>User Authentication needed.</p>
@@ -505,7 +511,7 @@ summary: "Core.rq_inventory_upload is a collection of function wrappers around t
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_upload" class="doc_header"><code>get_upload</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/rq_inventory_upload.py#L231" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_upload</code>(<strong><code>user</code></strong>:<a href="/discogspy/core.discogs_user#UserWithUserTokenBasedAuthentication"><code>UserWithUserTokenBasedAuthentication</code></a>, <strong><code>upload_id</code></strong>:<code>int</code>)</p>
+<h4 id="get_upload" class="doc_header"><code>get_upload</code><a href="https://github.com/cpow-89/discogspy/tree/master/discogspy/core/rq_inventory_upload.py#L234" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_upload</code>(<strong><code>user</code></strong>:<a href="/discogspy/core.discogs_user#UserWithUserTokenBasedAuthentication"><code>UserWithUserTokenBasedAuthentication</code></a>, <strong><code>upload_id</code></strong>:<code>int</code>)</p>
 </blockquote>
 <p>Get details about the status of the given inventory upload.</p>
 <p>User Authentication needed.</p>
